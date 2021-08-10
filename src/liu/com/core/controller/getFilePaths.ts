@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { EstabFile } from '../service/estabFile';
 import { GetFilePathSer } from '../service/getFilePaths';
 
@@ -14,8 +14,11 @@ export class GetFilePaths {
   }
 
   @Get('/estabFile')
-  estabFile(): string {
-    this.EstabFileSer.estabFile('/a');
-    return this.GetFilePathService.getFilePaths();
+  estabFile(@Query('path') path: string): string {
+    console.log(path);
+    this.EstabFileSer.estabFile('/' + path);
+    return JSON.stringify({
+      result: 'ok',
+    });
   }
 }

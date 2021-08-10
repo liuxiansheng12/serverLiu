@@ -5,6 +5,6 @@ import { dirname } from 'src/utiles/getPathRoot';
 @Injectable()
 export class EstabFile {
   public estabFile(path: string): void {
-    fs.mkdirSync(dirname + '/c/e', { recursive: true });
+    fs.mkdirSync(dirname + path, { recursive: true });
   }
 }
