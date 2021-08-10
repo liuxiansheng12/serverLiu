@@ -12,6 +12,8 @@
     <button class="b1">开始上传</button>
     新文件夹地址<input type="text" class="url">
     <button class="b2">新建文件</button>
+    文件地址<input type="text" class="url2">
+    <button class="b3">删除文件</button>
     <script>
         const dom1 = document.querySelector(".b1");
         dom1.onclick = async () => {
@@ -35,6 +37,12 @@
         dom2.onclick = async () => {
             const text = document.querySelector(".url").value;
             await fetch("/core/estabFile?path=" + text);
+        }
+
+        const dom3 = document.querySelector(".b3");
+        dom3.onclick = async () => {
+            const text = document.querySelector(".url2").value;
+            await fetch("/core/removeFile?path=" + text);
         }
     </script>
 </body>
