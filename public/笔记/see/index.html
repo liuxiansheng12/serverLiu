@@ -7,11 +7,14 @@
     <title>笔记列表</title>
 
     <style>
-        .root {
-            width: 900px;
+        .roots {
+            width: 1200px;
             margin: 0 auto;
             border: 2px solid #f4f4f4;
             margin-top: 40px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
         }
         .margin-1 {
             margin-left: 10px;
@@ -111,6 +114,8 @@
 
         function createDoms(data, url, name) {
             let str = document.createElement('div');
+            str.style.marginTop = "30px";
+            str.className = "roots";
 
             let dom = document.createElement('div');
             dom.innerHTML = name;
