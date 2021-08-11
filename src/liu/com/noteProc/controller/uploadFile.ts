@@ -11,7 +11,7 @@ import { createWriteStream } from 'fs';
 import { join } from 'path';
 import { dirname } from 'src/utiles/getPathRoot';
 
-@Controller('/uploadFile')
+@Controller('/noteProc/uploadFile')
 export class UploadFile {
   @Post('file')
   // img1，表示文件数据 对应的那个key

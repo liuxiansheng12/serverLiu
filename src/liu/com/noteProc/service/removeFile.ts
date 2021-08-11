@@ -7,4 +7,7 @@ export class RemoveFile {
   public removeFile(path: string): void {
     fs.unlinkSync(dirname + path);
   }
+  public removeDir(path: string): void {
+    fs.rmdirSync(dirname + path);
+  }
 }

@@ -3,7 +3,7 @@ import { EstabFile } from '../service/estabFile';
 import { GetFilePathSer } from '../service/getFilePaths';
 import { RemoveFile } from '../service/removeFile';
 
-@Controller('/core')
+@Controller('/noteProc')
 export class GetFilePaths {
   constructor(
     private readonly GetFilePathService: GetFilePathSer,
@@ -26,6 +26,14 @@ export class GetFilePaths {
   @Get('/removeFile')
   removeFile(@Query('path') path: string): string {
     this.RemoveFileSer.removeFile('/' + path);
+    return JSON.stringify({
+      result: 'ok',
+    });
+  }
+
+  @Get('/removeDir')
+  removeDir(@Query('path') path: string): string {
+    this.RemoveFileSer.removeDir('/' + path);
     return JSON.stringify({
       result: 'ok',
     });

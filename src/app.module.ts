@@ -1,13 +1,9 @@
 import { Module } from '@nestjs/common';
-import { GetFilePaths } from './liu/com/core/controller/getFilePaths';
-import { UploadFile } from './liu/com/core/controller/uploadFile';
-import { EstabFile } from './liu/com/core/service/estabFile';
-import { GetFilePathSer } from './liu/com/core/service/getFilePaths';
-import { RemoveFile } from './liu/com/core/service/removeFile';
+import { module as noteProcModule } from './liu/com/noteProc/module';
 
 @Module({
   imports: [],
-  controllers: [GetFilePaths, UploadFile],
-  providers: [GetFilePathSer, EstabFile, RemoveFile],
+  controllers: [...noteProcModule.controllers],
+  providers: [...noteProcModule.providers],
 })
 export class AppModule {}

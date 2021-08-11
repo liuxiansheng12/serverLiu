@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 500px;
+            margin: 20px auto;
+            border: 2px solid #f4f4f4;
+            padding: 14px 0;
+        }
+        .d {
+            width: 460px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        button {
+            display: block;
+            width: 160px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        span {
+            margin-right: 10px;
+            color: #999;
+            width: 100px;
+            display: inline-block;
+        }
+        .text {
+            width: 300px;
+            height: 30px;
+        }
+
+        h1 {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>笔记上传控制中心</h1>
+    <div class="div div_a">
+        <div class="d">
+          <span>上传文件：</span>
+          <input type="file" class="a">
+        </div>
+        <div class="d">
+            <span>上传地址：</span>
+            <input type="text" class="b text">
+        </div>
+        <button class="b1">开始上传</button>
+    </div>
+    <div class="div div_b">
+        <div class="d">
+            <span>新文件夹地址</span>
+            <input type="text" class="url text">
+        </div>
+        <button class="b2">新建文件</button>
+    </div>
+    <div class="div div_c">
+        <div class="d">
+            <span>文件地址</span>
+            <input type="text" class="url2 text">
+        </div>
+        <button class="b3">删除文件</button>
+    </div>
+    <div class="div div_d">
+        <div class="d">
+            <span>空文件夹地址</span>
+            <input type="text" class="url3 text">
+        </div>
+        <button class="b4">删除空文件夹</button>
+    </div>
+    <script>
+        const dom1 = document.querySelector(".b1");
+        dom1.onclick = async () => {
+            const text = document.querySelector(".b").value;
+            const file = document.querySelector(".a").files[0];
+
+            const res = new FormData();
+            // img为服务器约定的键名，传入input标签选中的文件数据
+            res.append("file", file);
+            res.append("path", text);
+            
+            // 发送请求
+            await fetch("/noteProc/uploadFile/file", {
+                method: "POST",
+                body: res
+            });
+            console.log(text, file);
+        }
+
+        const dom2 = document.querySelector(".b2");
+        dom2.onclick = async () => {
+            const text = document.querySelector(".url").value;
+            await fetch("/noteProc/estabFile?path=" + text);
+        }
+
+        const dom3 = document.querySelector(".b3");
+        dom3.onclick = async () => {
+            const text = document.querySelector(".url2").value;
+            await fetch("/noteProc/removeFile?path=" + text);
+        }
+
+        const dom4 = document.querySelector(".b4");
+        dom4.onclick = async () => {
+            const text = document.querySelector(".url3").value;
+            await fetch("/noteProc/removeDir?path=" + text);
+        }
+    </script>
+</body>
+</html>
