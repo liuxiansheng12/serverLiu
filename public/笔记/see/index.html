@@ -4,17 +4,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>笔记列表</title>
+
+    <style>
+        .root {
+            width: 900px;
+            margin: 0 auto;
+            border: 2px solid #f4f4f4;
+            margin-top: 40px;
+        }
+        .margin-1 {
+            margin-left: 10px;
+        }
+        .margin-2 {
+            margin-left: 20px;
+        }
+        .margin-3 {
+            margin-left: 30px;
+        }
+        .margin-4 {
+            margin-left: 40px;
+        }
+        .margin-5 {
+            margin-left: 50px;
+        }
+        .margin-6 {
+            margin-left: 60px;
+        }
+        .margin {
+            padding: 6px 0;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <div class="root">
+
+    </div>
     <script>
+
+        const map = new Map();
         async function getData() {
             const d = await fetch("/noteProc/getFilePaths")
             const data = await d.json();
-            console.log(data);
+            for(let i = 0; i < data.result.length; i ++) {
+                const d = data.result[i];
+                if(d.path === "前端笔记" || d.path === "后端Java笔记") {
+                    map.set(d.path, chuLi(d.childrenPath));
+                }
+            }
+            xuanRan(map);
+        }
+        function sort(data) {
+            for(let i = 0; i < data.length; i ++) {
+                let a = 0;
+                if(data[i].path) a = parseInt(data[i].path);
+                else a = parseInt(data[i]);
+
+                for(let j = i + 1; j < data.length; j ++) {
+                    let b = 0;
+                    if(data[j].path) b = parseInt(data[j].path);
+                    else b = parseInt(data[j]);
+
+                    if(a > b) {
+                        const lin = data[j];
+                        data[j] = data[i];
+                        data[i] = lin;
+                    }
+                } 
+            }
+        }
+        function chuLi(data) {
+            const arr = [];
+            const wenJian = [];
+            for(let i = 0; i < data.length; i ++) {
+                if(data[i].childrenPath && data[i].childrenPath.length > 0) {
+                    const obj = {};
+                    obj["path"] = data[i].path;
+                    obj["childrenPath"] = chuLi(data[i].childrenPath);
+                    wenJian.push(obj);
+                }
+                else {
+                    arr.push(data[i].path);
+                }
+            }
+            sort(wenJian);
+            sort(arr);
+            return [...arr, ...wenJian];
         }
 
         getData();
+
+        function xuanRan(data) {
+            const qian = data.get("前端笔记");
+            let str = document.createElement('div');
+            
+            if(qian) {
+                createDoms(qian, "前端笔记", "前端笔记");
+            }
+        }
+
+
+        function createDoms(data, url, name) {
+            let str = document.createElement('div');
+
+            let dom = document.createElement('div');
+            dom.innerHTML = name;
+            str.appendChild(dom);
+
+            str.appendChild(createDome(data, 1, url));
+            document.querySelector(".root").appendChild(str);
+        }
+
+        function createDome(data, h, url) {
+            let str = document.createElement('div');
+            for(let i = 0; i < data.length; i ++) {
+                if(data[i].childrenPath) {
+                    let dom = document.createElement('div');
+                    dom.className = `margin ${"margin-" + h}`;
+                    dom.innerHTML = data[i].path;
+                    str.appendChild(dom);
+                    dom.onclick = () => {
+                        document.querySelector(".root").innerHTML = "";
+                        createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
+                    }
+
+                    str.appendChild(createDome(data[i].childrenPath, h + 1, url + "/" + data[i].path));
+                }
+                else {
+                    let dom = document.createElement('div');
+                    dom.className = `margin ${"margin-" + h}`;
+                    dom.innerHTML = data[i];
+                    dom.onclick = () => {
+                        location.href = "/笔记/" + url + "/" + data[i];
+                    }
+                    str.appendChild(dom);
+                }
+            }
+            return str;
+        }
+
     </script>
 </body>
 </html>
