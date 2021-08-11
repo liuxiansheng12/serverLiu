@@ -97,10 +97,14 @@
 
         function xuanRan(data) {
             const qian = data.get("前端笔记");
-            let str = document.createElement('div');
             
             if(qian) {
                 createDoms(qian, "前端笔记", "前端笔记");
+            }
+            
+            const houJava = data.get("后端Java笔记");
+            if(houJava) {
+                createDoms(houJava, "后端Java笔记", "后端Java笔记");
             }
         }
 
