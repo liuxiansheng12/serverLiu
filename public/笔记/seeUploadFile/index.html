@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记列表</title>
+
+    <style>
+        .roots {
+            width: 1200px;
+            margin: 0 auto;
+            border: 2px solid #f4f4f4;
+            margin-top: 40px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+        .margin-1 {
+            margin-left: 10px;
+        }
+        .margin-2 {
+            margin-left: 20px;
+        }
+        .margin-3 {
+            margin-left: 30px;
+        }
+        .margin-4 {
+            margin-left: 40px;
+        }
+        .margin-5 {
+            margin-left: 50px;
+        }
+        .margin-6 {
+            margin-left: 60px;
+        }
+        .margin {
+            padding: 6px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .d {
+            width: 460px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        button {
+            display: block;
+            width: 160px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        span {
+            margin-right: 10px;
+            color: #999;
+            width: 100px;
+            display: inline-block;
+        }
+        .text {
+            width: 300px;
+            height: 30px;
+        }
+
+        h1 {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .wenJian, .t {
+            height: 100px;
+            width: 500px;
+            border: 2px solid #f4f4f4;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 99;
+            background: #fff;
+        }
+
+        .btns {
+            color: #666;
+            height: 30px;
+            line-height: 30px;
+            width: 100px;
+            border: 2px solid #f4f4f4;
+            text-align: center;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+
+    </div>
+    <div class="t">
+        <div class="d">
+            <span>新文件夹地址</span>
+            <input type="text" class="url text">
+        </div>
+        <button class="b2">新建</button>
+    </div>
+    <div class="wenJian">
+        <div class="d">
+            <span>上传文件：</span>
+            <input type="file" class="a">
+        </div>
+        <button class="b1">开始上传</button>
+    </div>
+
+    <script>
+
+        const map = new Map();
+        async function getData() {
+            const d = await fetch("/noteProc/getFilePaths")
+            const data = await d.json();
+            for(let i = 0; i < data.result.length; i ++) {
+                const d = data.result[i];
+                if(d.path === "前端笔记" || d.path === "后端Java笔记") {
+                    map.set(d.path, chuLi(d.childrenPath));
+                }
+            }
+            xuanRan(map);
+        }
+        function sort(data) {
+            for(let i = 0; i < data.length; i ++) {
+                let a = 0;
+                if(data[i].path) a = parseInt(data[i].path);
+                else a = parseInt(data[i]);
+
+                for(let j = i + 1; j < data.length; j ++) {
+                    let b = 0;
+                    if(data[j].path) b = parseInt(data[j].path);
+                    else b = parseInt(data[j]);
+
+                    if(a > b) {
+                        const lin = data[j];
+                        data[j] = data[i];
+                        data[i] = lin;
+                    }
+                } 
+            }
+        }
+        function chuLi(data) {
+            const arr = [];
+            const wenJian = [];
+            for(let i = 0; i < data.length; i ++) {
+                if(data[i].childrenPath && data[i].childrenPath.length > 0) {
+                    const obj = {};
+                    obj["path"] = data[i].path;
+                    obj["childrenPath"] = chuLi(data[i].childrenPath);
+                    wenJian.push(obj);
+                }
+                else {
+                    arr.push(data[i].path);
+                }
+            }
+            sort(wenJian);
+            sort(arr);
+            return [...arr, ...wenJian];
+        }
+
+        getData();
+
+        function xuanRan(data) {
+            const qian = data.get("前端笔记");
+            
+            if(qian) {
+                createDoms(qian, "前端笔记", "前端笔记");
+            }
+            
+            const houJava = data.get("后端Java笔记");
+            if(houJava) {
+                createDoms(houJava, "后端Java笔记", "后端Java笔记");
+            }
+        }
+
+
+        function createDoms(data, url, name) {
+            let str = document.createElement('div');
+            str.style.marginTop = "30px";
+            str.className = "roots";
+
+            let dom = document.createElement('div');
+            dom.className = "margin";
+
+            let doms = document.createElement('div');
+            doms.innerHTML = name;
+
+            dom.appendChild(doms);
+            str.appendChild(dom);
+
+            xinJianWen(dom, url);
+            xinJian(dom, url);
+            shanChuWenJianJia(dom, url);
+
+            str.appendChild(createDome(data, 1, url));
+            document.querySelector(".root").appendChild(str);
+        }
+
+        function createDome(data, h, url) {
+            let str = document.createElement('div');
+            for(let i = 0; i < data.length; i ++) {
+                if(data[i].childrenPath) {
+                    let dom = document.createElement('div');
+                    dom.className = `margin ${"margin-" + h}`;
+                    
+                    let doms = document.createElement('div');
+                    doms.innerHTML = data[i].path;
+
+                    dom.appendChild(doms);
+                    str.appendChild(dom);
+
+                    doms.onclick = () => {
+                        document.querySelector(".root").innerHTML = "";
+                        createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
+                    }
+
+                    xinJianWen(dom, url + "/" + data[i].path);
+                    xinJian(dom, url + "/" + data[i].path);
+                    shanChuWenJianJia(dom, url + "/" + data[i].path);
+
+                    str.appendChild(createDome(data[i].childrenPath, h + 1, url + "/" + data[i].path));
+                }
+                else {
+                    let dom = document.createElement('div');
+                    dom.className = `margin ${"margin-" + h}`;
+                    
+                    let doms = document.createElement('div');
+                    doms.innerHTML = data[i];
+                    doms.onclick = () => {
+                        location.href = "/笔记/" + url + "/" + data[i];
+                    }
+                    dom.appendChild(doms);
+
+
+                    if(data[i].indexOf(".html") === -1 && data[i].indexOf(".pdf") === -1 ) {
+                        xinJianWen(dom, url + "/" + data[i]);
+                        xinJian(dom, url + "/" + data[i]);
+                        shanChuWenJianJia(dom, url + "/" + data[i]);
+                    }
+                    else shanChuWenJian(dom, url + "/" + data[i]);
+
+                    str.appendChild(dom);
+                }
+            }
+            return str;
+        }
+
+        // 创建新建文件按钮
+        function xinJianWen(dom, url) {
+            // 创建上传文件按钮，删除按钮，新建子文件夹按钮
+            let b1 = document.createElement('div');
+            b1.className = "btns";
+            b1.innerHTML = "上传文件";
+            dom.appendChild(b1);
+
+            b1.onclick = () => {
+                document.querySelector(".wenJian").style.display = "block";
+                document.querySelector(".b1").onclick = async () => {
+                    const text = url;
+                    const file = document.querySelector(".a").files[0];
+
+                    const res = new FormData();
+                    // img为服务器约定的键名，传入input标签选中的文件数据
+                    res.append("file", file);
+                    res.append("path", text);
+                    
+                    // 发送请求
+                    const d = await fetch("/noteProc/uploadFile/file", {
+                        method: "POST",
+                        body: res
+                    });
+                    document.querySelector(".wenJian").style.display = "none";
+                }
+            }
+        }
+        // 创建新建文件按钮
+        function xinJian(dom, url) {
+            // 创建上传文件按钮，删除按钮，新建子文件夹按钮
+            let b1 = document.createElement('div');
+            b1.className = "btns";
+            b1.innerHTML = "新建文件夹";
+            dom.appendChild(b1);
+
+            b1.onclick = async () => {
+                document.querySelector(".t").style.display = "block";
+
+                const dom2 = document.querySelector(".b2");
+                dom2.onclick = async () => {
+                    const text = document.querySelector(".url").value;
+                    await fetch("/noteProc/estabFile?path=" + url + "/" + text);
+                    document.querySelector(".t").style.display = "none";
+
+                }
+
+            }
+        }
+        function shanChuWenJianJia(dom, url) {
+            // 创建上传文件按钮，删除按钮，新建子文件夹按钮
+            let b1 = document.createElement('div');
+            b1.className = "btns";
+            b1.innerHTML = "删除";
+            dom.appendChild(b1);
+
+            b1.onclick = async () => {
+                await fetch("/noteProc/removeDir?path=" + url);
+                alert("删除成功");
+            }
+        }
+        function shanChuWenJian(dom, url) {
+            // 创建上传文件按钮，删除按钮，新建子文件夹按钮
+            let b1 = document.createElement('div');
+            b1.className = "btns";
+            b1.innerHTML = "删除";
+            dom.appendChild(b1);
+
+            b1.onclick = async () => {
+                await fetch("/noteProc/removeFile?path=" + url);
+                alert("删除成功");
+            }
+        }
+
+    </script>
+</body>
+</html>
