@@ -46,9 +46,35 @@
             font-size: 22px;
             font-weight: 700;
         }
+
+        .dingji {
+            padding: 20px;
+            border: 2px solid #f4f4f4;
+            margin-top: 20px;
+            display: flex;
+        }
+        .texts {
+            margin-right: 10px;
+            flex: 0 0 auto;
+            line-height: 36px;
+            min-width: 150px;
+        }
+
+        .dingji-2 div,
+        .dingji-1 div {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
+    <div class="dingji">
+        <div class="texts">前端知识点：</div>
+        <div class="dingji-1"></div>
+    </div>
+    <div class="dingji">
+        <div class="texts">后端Java知识点：</div>
+        <div class="dingji-2"></div>
+    </div>
     <div class="root">
 
     </div>
@@ -131,11 +157,19 @@
             dom.className = "cus";
             str.appendChild(dom);
 
-            str.appendChild(createDome(data, 1, url));
+            let doms = null;
+            if(name === "前端笔记") {
+                doms = document.querySelector(".dingji-1");
+            }
+            else if(name === "后端Java笔记") {
+                doms = document.querySelector(".dingji-2");
+            }
+
+            str.appendChild(createDome(data, 1, url, doms));
             document.querySelector(".root").appendChild(str);
         }
 
-        function createDome(data, h, url) {
+        function createDome(data, h, url, doms) {
             let str = document.createElement('div');
             for(let i = 0; i < data.length; i ++) {
                 if(data[i].childrenPath) {
@@ -147,6 +181,19 @@
                     dom.onclick = () => {
                         document.querySelector(".root").innerHTML = "";
                         createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
+                    }
+
+                    if(doms) {
+                        let dom = document.createElement('div');
+                        dom.className = `margin ${"margin-" + h}`;
+                        dom.innerHTML = data[i].path;
+                        if(h === 1) dom.className += " cu";
+                        doms.appendChild(dom);
+
+                        dom.onclick = () => {
+                            document.querySelector(".root").innerHTML = "";
+                            createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
+                        }
                     }
 
                     str.appendChild(createDome(data[i].childrenPath, h + 1, url + "/" + data[i].path));
