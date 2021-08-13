@@ -138,17 +138,17 @@
             const qian = data.get("前端笔记");
             
             if(qian) {
-                createDoms(qian, "前端笔记", "前端笔记");
+                createDoms(qian, "前端笔记", "前端笔记", true);
             }
             
             const houJava = data.get("后端Java笔记");
             if(houJava) {
-                createDoms(houJava, "后端Java笔记", "后端Java笔记");
+                createDoms(houJava, "后端Java笔记", "后端Java笔记", true);
             }
         }
 
 
-        function createDoms(data, url, name) {
+        function createDoms(data, url, name, boo) {
             let str = document.createElement('div');
             str.style.marginTop = "30px";
             str.className = "roots";
@@ -156,6 +156,7 @@
             let dom = document.createElement('div');
             dom.innerHTML = name;
             dom.className = "cus";
+            if(!boo) dom.className = "cu";
             str.appendChild(dom);
 
             let doms = null;
@@ -166,29 +167,30 @@
                 doms = document.querySelector(".dingji-2");
             }
 
-            str.appendChild(createDome(data, 1, url, doms));
+            str.appendChild(createDome(data, 1, url, doms, boo));
             document.querySelector(".root").appendChild(str);
         }
 
-        function createDome(data, h, url, doms) {
+        function createDome(data, h, url, doms, boo) {
             let str = document.createElement('div');
             for(let i = 0; i < data.length; i ++) {
                 if(data[i].childrenPath) {
                     let dom = document.createElement('div');
                     dom.className = `margin ${"margin-" + h}`;
                     dom.innerHTML = data[i].path;
-                    if(h === 1) dom.className += " cu";
+                    if(h === 1 && boo) dom.className += " cu";
                     str.appendChild(dom);
                     dom.onclick = () => {
                         document.querySelector(".root").innerHTML = "";
                         createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
                     }
 
+                    // 顶部导航
                     if(doms) {
                         let dom = document.createElement('div');
                         dom.className = `margin ${"margin-" + h}`;
                         dom.innerHTML = data[i].path;
-                        if(h === 1) dom.className += " cu";
+                        dom.className += " cu";
                         doms.appendChild(dom);
 
                         dom.onclick = () => {
@@ -203,7 +205,7 @@
                     let dom = document.createElement('div');
                     dom.className = `margin ${"margin-" + h}`;
                     dom.innerHTML = data[i];
-                    if(h === 1) dom.className += " cu";
+                    if(h === 1 && boo) dom.className += " cu";
                     dom.onclick = () => {
                         location.href = "/笔记/" + url + "/" + data[i];
                     }
