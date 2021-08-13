@@ -156,7 +156,6 @@
             let dom = document.createElement('div');
             dom.innerHTML = name;
             dom.className = "cus";
-            if(!boo) dom.className = "cu";
             str.appendChild(dom);
 
             let doms = null;
@@ -178,7 +177,7 @@
                     let dom = document.createElement('div');
                     dom.className = `margin ${"margin-" + h}`;
                     dom.innerHTML = data[i].path;
-                    if(h === 1 && boo) dom.className += " cu";
+                    if(h === 1) dom.className += " cu";
                     str.appendChild(dom);
                     dom.onclick = () => {
                         document.querySelector(".root").innerHTML = "";
