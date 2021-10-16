@@ -12,6 +12,7 @@ export class GetFilePathSer {
   }
   private getFilePath(url: string): any {
     const paths: any = [];
+    if(url.indexOf(".DS_Store") > -1) return;
     const arr = fs.readdirSync(url);
     if (arr.length === 0) return;
     for (let i = 0; i < arr.length; i++) {
