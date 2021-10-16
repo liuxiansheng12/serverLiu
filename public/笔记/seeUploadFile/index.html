@@ -170,7 +170,6 @@
 
         function xuanRan(data) {
             const qian = data.get("前端笔记");
-            
             if(qian) {
                 createDoms(qian, "前端笔记", "前端笔记");
             }
@@ -178,6 +177,11 @@
             const houJava = data.get("后端Java笔记");
             if(houJava) {
                 createDoms(houJava, "后端Java笔记", "后端Java笔记");
+            }
+
+            const houPython = data.get("后端python笔记");
+            if(houPython) {
+                createDoms(houPython, "后端python笔记", "后端python笔记", true);
             }
         }
 

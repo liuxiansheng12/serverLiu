@@ -92,7 +92,7 @@
             const data = await d.json();
             for(let i = 0; i < data.result.length; i ++) {
                 const d = data.result[i];
-                if(d.path === "前端笔记" || d.path === "后端Java笔记") {
+                if(d.path === "前端笔记" || d.path === "后端Java笔记" || d.path === "后端python笔记") {
                     map.set(d.path, chuLi(d.childrenPath));
                 }
             }
@@ -141,7 +141,6 @@
 
         function xuanRan(data) {
             const qian = data.get("前端笔记");
-            
             if(qian) {
                 createDoms(qian, "前端笔记", "前端笔记", true);
             }
@@ -149,6 +148,11 @@
             const houJava = data.get("后端Java笔记");
             if(houJava) {
                 createDoms(houJava, "后端Java笔记", "后端Java笔记", true);
+            }
+
+            const houPython = data.get("后端python笔记");
+            if(houPython) {
+                createDoms(houPython, "后端python笔记", "后端python笔记", true);
             }
         }
 
