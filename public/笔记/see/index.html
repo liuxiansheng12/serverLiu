@@ -59,7 +59,8 @@
             line-height: 36px;
             min-width: 150px;
         }
-
+        
+        .dingji-3 div,
         .dingji-2 div,
         .dingji-1 div {
             display: inline-block;
@@ -75,6 +76,10 @@
     <div class="dingji">
         <div class="texts">后端Java知识点：</div>
         <div class="dingji-2"></div>
+    </div>
+    <div class="dingji">
+        <div class="texts">后端python知识点：</div>
+        <div class="dingji-3"></div>
     </div>
     <div class="root">
 
@@ -164,6 +169,9 @@
             }
             else if(name === "后端Java笔记") {
                 doms = document.querySelector(".dingji-2");
+            }
+            else if(name === "后端python笔记") {
+                doms = document.querySelector(".dingji-3");
             }
 
             str.appendChild(createDome(data, 1, url, doms, boo));
