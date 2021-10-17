@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>2.&#x7C7B;&#x578B;&#x8F6C;&#x6362;</title>
+      <title>1.IO&#x4E4B;File&#x7C7B;&#x53CA;&#x5E38;&#x7528;&#x65B9;&#x6CD5;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,93 +261,123 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;</p>
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-</ul>
-</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token comment">// byte b = a;</span>
-  <span class="token comment">// &#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+      <h5 class="mume-header" id="%E4%BB%80%E4%B9%88%E6%98%AFio%E6%B5%81">&#x4EC0;&#x4E48;&#x662F;I/O&#x6D41;</h5>
 
-  <span class="token keyword">byte</span> c <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">int</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;</p>
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-</ul>
-</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">34.2F</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x5730;&#x4F4D;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6210;&#x9AD8;&#x4F4D;</span>
-  <span class="token keyword">double</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+<ol>
+<li>I&#x4E3A;input&#xFF0C;O&#x4E3A;output&#xFF0C;&#x8868;&#x793A;&#x4E3A; &#x8F93;&#x5165;/&#x8F93;&#x51FA;&#xFF0C;&#x6D41;(&#x6570;&#x636E;&#x6D41;&#x52A8;)</li>
+<li>&#x6570;&#x636E;&#x6D41;&#x52A8;&#x7684;&#x65B9;&#x5411;   &#x8BFB;&#x6570;&#x636E;(&#x8F93;&#x5165;Input)   &#x5199;&#x6570;&#x636E;(&#x8F93;&#x51FA;output)</li>
+<li>&#x5E38;&#x89C1;&#x7684;&#x6D41;&#x5305;&#x62EC;&#xFF0C;&#x6587;&#x4EF6;&#x6D41;  &#x5B57;&#x7B26;&#x6D41;  &#x5BF9;&#x8C61;&#x6D41;  &#x7F51;&#x7EDC;&#x6D41;....</li>
+</ol>
+<h5 class="mume-header" id="file%E7%9A%84%E4%BD%9C%E7%94%A8">File&#x7684;&#x4F5C;&#x7528;</h5>
 
-  <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token number">3.45</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token comment">// float d = c;</span>
-  <span class="token comment">// &#x9700;&#x8981;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">float</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span>c<span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x6570;</p>
-<ul>
-<li>&#x5C0F;&#x6570;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">34.2F</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;&#xFF0C;&#x53EA;&#x80FD;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+<ol>
+<li>File&#x662F;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x800C;File&#x662F;&#x8FD0;&#x884C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6587;&#x4EF6;&#x662F;&#x5B58;&#x653E;&#x5728;&#x786C;&#x76D8;&#x4E0A;&#x7684;&#x6587;&#x4EF6;</li>
+<li>&#x6240;&#x4EE5;&#xFF0C;File-----&gt;&#x4E0E;&#x7535;&#x8111;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;&#x4EA7;&#x751F;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;</li>
+<li>File&#x662F;&#x4E00;&#x4E2A;&#x7C7B;
+<ol>
+<li>java.io&#x5305;&#x4E2D;</li>
+<li>&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;&#x540D;&#x7684;&#x62BD;&#x8C61;&#x8868;&#x793A;&#x5F62;&#x5F0F;</li>
+<li>File&#x4E0E;&#x771F;&#x5B9E;&#x786C;&#x76D8;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;  &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x4E1C;&#x897F;
+<ol>
+<li>File&#x662F;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&lt;---&#x6620;&#x5C04;---&gt;&#x786C;&#x76D8;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h5 class="mume-header" id="%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6620;&#x5C04;&#x5173;&#x7CFB;</h5>
 
-  <span class="token comment">// &#x4F4E;&#x4F4D;&#x7684;&#x80FD;&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x5C0F;&#x6570;</span>
-  <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span>
+<ol>
+<li>&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;<code>File</code>&#x8FDB;&#x884C;&#x521B;&#x5EFA;&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x6BD4;&#x5982;&#xFF1A; <code>File f = new File(&#x8DEF;&#x5F84;)</code></li>
+</ol>
+<h5 class="mume-header" id="file%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95">File&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;</h5>
 
-  <span class="token comment">// &#x5373;&#x4F7F;&#x662F;&#x9AD8;&#x4F4D;&#x7684;&#x4E5F;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x529F;</span>
-  <span class="token keyword">long</span> e <span class="token operator">=</span> <span class="token number">3L</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> f <span class="token operator">=</span> e<span class="token punctuation">;</span>
-  <span class="token keyword">double</span> g <span class="token operator">=</span> e<span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#x548C;&#x5C0F;&#x6570;</p>
-<ul>
-<li>&#x5982;&#x679C;&#x5199;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210; <code>byte</code> &#x7684;</li>
-<li>&#x5982;&#x679C;&#x5199;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x6587;&#x7684;&#x5B57;&#x7B26;
-<ul>
-<li>&#x7531;&#x4E8E;&#x4E2D;&#x6587;&#x7684;&#x5B57;&#x7B26;&#x662F;&#x4E24;&#x4E2A;&#x5B57;&#x8282;</li>
-<li>&#x5982;&#x679C;&#x8F6C;&#x6362;&#x6210; <code>byte</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
-<li>&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#xFF0C;&#x65E0;&#x610F;&#x4E2D;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF0C;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x662F;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x5316;&#x6210; <code>byte</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x8F6C;&#x5316;</li>
-</ul>
+<ol>
+<li>&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6587;&#x4EF6;
+<ol>
+<li>&#x9700;&#x8981;&#x901A;&#x8FC7; <code>File</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#xFF0C;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x521B;&#x5EFA;&#x5177;&#x4F53;&#x7684;&#x6587;&#x4EF6;&#xFF0C;<code>boolean b = f.createNewFile();</code></li>
+<li>&#x6587;&#x4EF6;&#x524D;&#x9762;&#x4F4D;&#x4E8E;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x521B;&#x5EFA;&#x6587;&#x4EF6;</li>
+</ol>
 </li>
-<li><code>int</code> &#x548C; <code>float</code> &#x90FD;&#x662F;32 &#x4F4D;&#x7684;&#xFF0C;&#x88C5;&#x5B57;&#x7B26;&#x7EF0;&#x7EF0;&#x6709;&#x4F59;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
-<li><strong>&#x6574;&#x6570;&#x8F6C;&#x6362;&#x6210; char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</strong>
-<ul>
-<li>short &#x8303;&#x56F4;&#x7684;&#x6574;&#x6570;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
-<li>int &#x8303;&#x56F4;&#x7684;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</li>
-<li>&#x8D85;&#x8FC7;int &#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5373;&#x4F7F;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E5F;&#x4E0D;&#x884C;</li>
-</ul>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5939;
+<ol>
+<li>&#x9700;&#x8981;&#x901A;&#x8FC7; <code>File</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#xFF0C;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x521B;&#x5EFA;&#x5177;&#x4F53;&#x7684;&#x6587;&#x4EF6;&#x5939;
+<ol>
+<li><code>boolean b = f.mkdir();</code>  &#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x5939;  &#x5916;&#x5C42;&#x6CA1;&#x6709; &#x4E0D;&#x80FD;&#x521B;&#x5EFA;</li>
+<li><code>boolean b = f.mkdirs();</code>  &#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x5939;  &#x5916;&#x5C42;&#x6CA1;&#x6709; &#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x521B;&#x5EFA;</li>
+</ol>
 </li>
-<li><strong>&#x5C0F;&#x6570;&#x6570;&#x548C;&#x8F6C;&#x6362;&#x6210; char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</strong></li>
-<li>&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</li>
-<li>char&#x7684;&#x7F16;&#x7801;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4ECE;&#x9AD8;&#x7CBE;&#x5EA6;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x7CBE;&#x5EA6;&#xFF08;&#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;&#xFF09;</li>
-<li>&#x5E76;&#x4E14;&#x53EA;&#x80FD;float &#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;</li>
-</ul>
+</ol>
 </li>
-</ul>
+<li>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+<ol>
+<li><code>String path = f.getAbsolutePath()</code></li>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x4F46;&#x662F;&#x53C8;&#x9700;&#x8981;&#x5F97;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x4E2D;&#x5B57;&#x8282;&#x7684;&#x4E2A;&#x6570;
+<ol>
+<li><code>int a = f.length()</code></li>
+<li>&#x82F1;&#x6587;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x4E2D;&#x6587;&#x4E3A;&#x4E24;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x4E5F;&#x5305;&#x62EC;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x7A7A;&#x683C;</li>
+<li>&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x53EA;&#x6709; <code>ab&#x4F60;&#x597D;</code>&#xFF0C;&#x6CA1;&#x6709;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#x7684;&#x5B57;&#x8282;&#x957F;&#x5EA6;&#x4E3A;6</li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;
+<ol>
+<li><code>int t = f.lastModified()</code>&#xFF0C;&#x6BEB;&#x79D2;&#x503C;</li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x5B57;
+<ol>
+<li><code>String name = f.getName()</code>&#xFF0C;&#x5305;&#x62EC;&#x540E;&#x7F00;&#x540D;</li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x5F53;&#x524D;file&#x5BF9;&#x8C61;&#x7684;&#x7236;&#x7C7B;file&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x540D;&#x5B57;
+<ol>
+<li><code>String pname = f.getParent()</code></li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x8BE5;&#x6587;&#x4EF6;&#x5939;
+<ol>
+<li><code>File file = f.getParentFile()</code></li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x5B50;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#xFF08;&#x6587;&#x4EF6;&#x5939;&#x548C;&#x6587;&#x4EF6;&#xFF09;
+<ol>
+<li><code>String[] names = f.list()</code></li>
+<li>&#x5982;&#x679C;&#x662F;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x83B7;&#x53D6;null</li>
+<li>&#x5982;&#x679C;&#x662F;&#x7A7A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x662F;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x4E3A;0</li>
+<li>&#x5982;&#x679C;File&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#x662F;null</li>
+</ol>
+</li>
+<li>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5B50;&#x6587;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x6587;&#x4EF6;&#x5939;&#x548C;&#x6587;&#x4EF6;&#xFF09;
+<ol>
+<li><code>File[] files = f.listFiles();</code></li>
+</ol>
+</li>
+<li>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x6216;&#x8005;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6CE8;&#x610F;&#x6587;&#x4EF6;&#x5939;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x6587;&#x4EF6;&#x5939;&#x624D;&#x80FD;&#x5220;&#x9664;
+<ol>
+<li>&#x8981;&#x60F3;&#x5220;&#x9664;&#x975E;&#x7A7A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5220;&#x9664;&#x5B50;&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x5220;&#x9664;&#x8BE5;&#x6587;&#x4EF6;&#x5939;</li>
+<li><code>boolean b = f.delete()</code></li>
+</ol>
+</li>
+<li>&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;
+<ol>
+<li>canRead()   canWrite()   isHidden()   isFile()   isDirectory()</li>
+</ol>
+</li>
+</ol>
+<h5 class="mume-header" id="%E4%BB%80%E4%B9%88%E5%8F%AB%E6%96%87%E4%BB%B6%E6%B5%81%E5%81%9A%E4%BB%80%E4%B9%88">&#x4EC0;&#x4E48;&#x53EB;&#x6587;&#x4EF6;&#x6D41;&#xFF0C;&#x505A;&#x4EC0;&#x4E48;</h5>
+
+<ol>
+<li>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5411;&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x5185;&#x5BB9;</li>
+<li>&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x6587;&#x4EF6;&#x8F93;&#x51FA;&#x6D41;</li>
+<li>&#x5B57;&#x8282;&#x578B;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x5B57;&#x8282;&#x578B;&#x6587;&#x4EF6;&#x8F93;&#x51FA;&#x6D41;</li>
+<li>&#x5B57;&#x7B26;&#x578B;&#x6587;&#x4EF6;&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x5B57;&#x7B26;&#x578B;&#x6587;&#x4EF6;&#x8F93;&#x51FA;&#x6D41;</li>
+</ol>
 
       </div>
       

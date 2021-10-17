@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>2.&#x7C7B;&#x578B;&#x8F6C;&#x6362;</title>
+      <title>2.&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x83B7;&#x53D6;&#x7C7B;(Class)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,93 +261,73 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;</p>
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-</ul>
-</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token comment">// byte b = a;</span>
-  <span class="token comment">// &#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+      <blockquote>
+<p>&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#xFF0C;&#x83B7;&#x53D6;&#x7C7B;&#xFF0C;&#x4E00;&#x5171;&#x6709;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> str<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#x7C7B;_&#x65B9;&#x5F0F;&#x4E00;</span>
+    <span class="token class-name">Class</span> clazz_1 <span class="token operator">=</span> <span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">&quot;Ceshi&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#x7C7B;_&#x65B9;&#x5F0F;&#x4E8C;</span>
+    <span class="token class-name">Class</span> clazz_2 <span class="token operator">=</span> <span class="token class-name">Ceshi</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#x7C7B;_&#x65B9;&#x5F0F;&#x4E09;</span>
+    <span class="token class-name">Class</span> clazz_3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Ceshi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token keyword">byte</span> c <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">int</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;</p>
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-</ul>
-</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">34.2F</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x5730;&#x4F4D;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6210;&#x9AD8;&#x4F4D;</span>
-  <span class="token keyword">double</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
-
-  <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token number">3.45</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token comment">// float d = c;</span>
-  <span class="token comment">// &#x9700;&#x8981;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">float</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span>c<span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x6570;</p>
-<ul>
-<li>&#x5C0F;&#x6570;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">34.2F</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;&#xFF0C;&#x53EA;&#x80FD;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
-
-  <span class="token comment">// &#x4F4E;&#x4F4D;&#x7684;&#x80FD;&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x5C0F;&#x6570;</span>
-  <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span>
-
-  <span class="token comment">// &#x5373;&#x4F7F;&#x662F;&#x9AD8;&#x4F4D;&#x7684;&#x4E5F;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x529F;</span>
-  <span class="token keyword">long</span> e <span class="token operator">=</span> <span class="token number">3L</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> f <span class="token operator">=</span> e<span class="token punctuation">;</span>
-  <span class="token keyword">double</span> g <span class="token operator">=</span> e<span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#x548C;&#x5C0F;&#x6570;</p>
-<ul>
-<li>&#x5982;&#x679C;&#x5199;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210; <code>byte</code> &#x7684;</li>
-<li>&#x5982;&#x679C;&#x5199;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x6587;&#x7684;&#x5B57;&#x7B26;
-<ul>
-<li>&#x7531;&#x4E8E;&#x4E2D;&#x6587;&#x7684;&#x5B57;&#x7B26;&#x662F;&#x4E24;&#x4E2A;&#x5B57;&#x8282;</li>
-<li>&#x5982;&#x679C;&#x8F6C;&#x6362;&#x6210; <code>byte</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
-<li>&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#xFF0C;&#x65E0;&#x610F;&#x4E2D;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF0C;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x662F;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x5316;&#x6210; <code>byte</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x8F6C;&#x5316;</li>
-</ul>
-</li>
-<li><code>int</code> &#x548C; <code>float</code> &#x90FD;&#x662F;32 &#x4F4D;&#x7684;&#xFF0C;&#x88C5;&#x5B57;&#x7B26;&#x7EF0;&#x7EF0;&#x6709;&#x4F59;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
-<li><strong>&#x6574;&#x6570;&#x8F6C;&#x6362;&#x6210; char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</strong>
-<ul>
-<li>short &#x8303;&#x56F4;&#x7684;&#x6574;&#x6570;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
-<li>int &#x8303;&#x56F4;&#x7684;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</li>
-<li>&#x8D85;&#x8FC7;int &#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5373;&#x4F7F;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E5F;&#x4E0D;&#x884C;</li>
-</ul>
-</li>
-<li><strong>&#x5C0F;&#x6570;&#x6570;&#x548C;&#x8F6C;&#x6362;&#x6210; char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</strong></li>
-<li>&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</li>
-<li>char&#x7684;&#x7F16;&#x7801;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4ECE;&#x9AD8;&#x7CBE;&#x5EA6;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x7CBE;&#x5EA6;&#xFF08;&#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;&#xFF09;</li>
-<li>&#x5E76;&#x4E14;&#x53EA;&#x80FD;float &#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;</li>
-</ul>
-</li>
-</ul>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>clazz_1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>clazz_2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>clazz_3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><blockquote>
+<p>&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x7684;&#x533A;&#x522B;</p>
+<ol>
+<li>Class.forName(&quot;&#x5305;&#x540D;.&#x7C7B;&#x540D;&quot;)</li>
+</ol>
+<blockquote>
+<ol>
+<li>&#x4F1A;&#x52A0;&#x8F7D;&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x5143;&#x7D20;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x7C7B;(&#x52A0;&#x8F7D;&#x9759;&#x6001;&#x5143;&#x7D20;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F7F;&#x7528;)&#xFF0C;&#x6BD4;&#x5982;<code>Driver</code></li>
+</ol>
+</blockquote>
+<ol start="2">
+<li>&#x7C7B;&#x540D;.class</li>
+</ol>
+<blockquote>
+<ol>
+<li>&#x4E0D;&#x4F1A;&#x52A0;&#x8F7D;&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x5143;&#x7D20;</li>
+</ol>
+</blockquote>
+<ol start="3">
+<li>&#x5BF9;&#x8C61;.getClass()</li>
+</ol>
+<blockquote>
+<ol>
+<li>&#x8FD9;&#x662F;Object&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Class&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;</p>
+<blockquote>
+<ol>
+<li><code>int result = clazz.getModifiers();</code> &#x83B7;&#x53D6;&#x7C7B;&#x7684;&#x4FEE;&#x9970;&#x7B26;(&#x6743;&#x9650; &#x7279;&#x5F81;)</li>
+</ol>
+<blockquote>
+<ol>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x4FEE;&#x9970;&#x7B26; &#x7528;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x6765;&#x8FDB;&#x884C;&#x8868;&#x793A;</li>
+<li>0&#x5F00;&#x59CB;---0 1 2 4 8 16 32 64 128 256 512</li>
+<li>0--&#x9ED8;&#x8BA4;&#x4E0D;&#x5199;  1--public  2--private  4--protected</li>
+<li>8--static   16--final  32--synchronized  64volatile</li>
+<li>128--transient  256--native  512--interface  1024--abstract</li>
+</ol>
+</blockquote>
+<ol start="2">
+<li><code>String name = clazz.getName();</code>&#x83B7;&#x53D6;&#x540D;&#x5B57;</li>
+<li><code>String simpleName = clazz.getSimpleName();</code>&#x7B80;&#x5355;&#x540D;</li>
+<li><code>Object obj = clazz.newInstance();</code>  &#x9ED8;&#x8BA4;&#x8C03;&#x7528;&#x65E0;&#x53C2;&#x6570;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</li>
+<li><code>Class sclazz = clazz.getSuperClass();</code>  &#x83B7;&#x53D6;&#x8D85;&#x7C7B;(&#x7236;&#x7C7B;)</li>
+<li><code>Class[] classes = clazz.getInterface();</code> &#x83B7;&#x53D6;&#x63A5;&#x53E3;</li>
+</ol>
+</blockquote>
+</blockquote>
 
       </div>
       

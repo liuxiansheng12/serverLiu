@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>2.&#x7C7B;&#x578B;&#x8F6C;&#x6362;</title>
+      <title>7.Java&#x96C6;&#x5408;&#x4E4B;-Queue&#x63A5;&#x53E3;(&#x961F;&#x5217;)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,93 +261,45 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;</p>
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-</ul>
-</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token comment">// byte b = a;</span>
-  <span class="token comment">// &#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">byte</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+      <h5 class="mume-header" id="queue%E5%8F%AA%E6%98%AF%E4%B8%80%E4%B8%AA%E9%98%9F%E5%88%97%E7%9A%84%E5%80%9F%E5%8F%A3%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97">Queue&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x7684;&#x501F;&#x53E3;&#xFF0C;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x961F;&#x5217;</h5>
 
-  <span class="token keyword">byte</span> c <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">int</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;</p>
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8F6C;&#x6362;
-<ul>
-<li>&#x9AD8;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x4F4D;&#x7684;&#x6D6E;&#x70B9;&#x578B;&#xFF08;&#x5C0F;&#x6570;&#xFF09;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5B8C;&#x6210;</li>
-</ul>
-</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">34.2F</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x5730;&#x4F4D;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6210;&#x9AD8;&#x4F4D;</span>
-  <span class="token keyword">double</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+<ol>
+<li><strong>&#x4F46;&#x662F;&#x5B9E;&#x73B0;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x961F;&#x5217;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x901A;&#x8FC7;&#x7C7B;&#x5B9E;&#x73B0;&#x7684;Queue&#x501F;&#x53E3;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x961F;&#x5217;&#x7684;&#x529F;&#x80FD;</strong></li>
+<li>&#x5B9E;&#x73B0;&#x7684;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#xFF0C;<code>LinkedList</code></li>
+</ol>
+<h5 class="mume-header" id="queue%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BB%8B%E7%BB%8D">Queue&#x63A5;&#x53E3;&#x7684;&#x4ECB;&#x7ECD;</h5>
 
-  <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token number">3.45</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</span>
-  <span class="token comment">// float d = c;</span>
-  <span class="token comment">// &#x9700;&#x8981;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">float</span> d <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span>c<span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x6574;&#x6570;&#xFF0C;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x6570;</p>
-<ul>
-<li>&#x5C0F;&#x6570;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</li>
-<li>&#x6BD4;&#x5982;</li>
-</ul>
-<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">34.2F</span><span class="token punctuation">;</span>
-  <span class="token comment">// &#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;&#xFF0C;&#x53EA;&#x80FD;&#x5F3A;&#x5236;&#x8F6C;&#x6362;</span>
-  <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+<ol>
+<li>java.util</li>
+<li>&#x901A;&#x5E38;&#x65E0;&#x53C2;&#x6570;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#xFF08;&#x6BD4;&#x5982;&#xFF1A; <code>new LinkedList()</code> &#xFF09;</li>
+</ol>
+<h5 class="mume-header" id="%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95">&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;</h5>
 
-  <span class="token comment">// &#x4F4E;&#x4F4D;&#x7684;&#x80FD;&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x5C0F;&#x6570;</span>
-  <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> d <span class="token operator">=</span> c<span class="token punctuation">;</span>
+<ol>
+<li>&#x5F80;&#x961F;&#x5217;&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF1A;<code>boolean = add(E d)</code></li>
+<li>&#x67E5;&#x770B;&#x961F;&#x5217;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;(&#x5934;)&#xFF0C;<code>E a = element()</code></li>
+<li>&#x67E5;&#x770B;&#x961F;&#x5217;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;(&#x5934;)&#xFF0C;<code>E a = peek()</code>
+<ol>
+<li>&#x4E0E;<code>element</code>&#x7684;&#x533A;&#x522B;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x961F;&#x5217;&#xFF0C;<code>peek</code>&#x5F97;&#x5230;null&#xFF0C;&#x800C;<code>element</code>&#x629B;&#x51FA;&#x5F02;&#x5E38;</li>
+</ol>
+</li>
+<li>&#x6BCF;&#x6B21;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x53D6;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x5220;&#x9664;&#x961F;&#x5217;&#x7684;&#x5934;&#xFF09;&#xFF1A;<code>E a = remove()</code></li>
+<li>&#x6BCF;&#x6B21;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x53D6;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x5220;&#x9664;&#x961F;&#x5217;&#x7684;&#x5934;&#xFF09;&#xFF1A;<code>E a = poll()</code>
+<ol>
+<li>&#x4E0E;<code>remove</code>&#x7684;&#x533A;&#x522B;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x961F;&#x5217;&#xFF0C;<code>poll</code>&#x5F97;&#x5230;null&#xFF0C;&#x800C;<code>remove</code>&#x629B;&#x51FA;&#x5F02;&#x5E38;</li>
+</ol>
+</li>
+<li>&#x5F80;&#x961F;&#x5217;&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x7D20;: <code>boolean = offer(E e);</code></li>
+</ol>
+<h5 class="mume-header" id="%E6%AF%94%E5%A6%82">&#x6BD4;&#x5982;</h5>
 
-  <span class="token comment">// &#x5373;&#x4F7F;&#x662F;&#x9AD8;&#x4F4D;&#x7684;&#x4E5F;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x529F;</span>
-  <span class="token keyword">long</span> e <span class="token operator">=</span> <span class="token number">3L</span><span class="token punctuation">;</span>
-  <span class="token keyword">float</span> f <span class="token operator">=</span> e<span class="token punctuation">;</span>
-  <span class="token keyword">double</span> g <span class="token operator">=</span> e<span class="token punctuation">;</span>
-</pre></li>
-<li>
-<p>char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#x548C;&#x5C0F;&#x6570;</p>
-<ul>
-<li>&#x5982;&#x679C;&#x5199;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210; <code>byte</code> &#x7684;</li>
-<li>&#x5982;&#x679C;&#x5199;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x6587;&#x7684;&#x5B57;&#x7B26;
-<ul>
-<li>&#x7531;&#x4E8E;&#x4E2D;&#x6587;&#x7684;&#x5B57;&#x7B26;&#x662F;&#x4E24;&#x4E2A;&#x5B57;&#x8282;</li>
-<li>&#x5982;&#x679C;&#x8F6C;&#x6362;&#x6210; <code>byte</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x6570;&#x636E;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
-<li>&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#xFF0C;&#x65E0;&#x610F;&#x4E2D;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF0C;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x662F;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8F6C;&#x5316;&#x6210; <code>byte</code> &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x8F6C;&#x5316;</li>
-</ul>
+<ol>
+<li>&#x53CC;&#x5341;&#x4E00;&#x96F6;&#x70B9;&#x79D2;&#x6740;
+<ol>
+<li>&#x6240;&#x6709;&#x8FDB;&#x5165;&#x79D2;&#x6740;&#x7CFB;&#x7EDF;&#x7684;&#x4EBA;&#x5B58;&#x5165;&#x961F;&#x5217;</li>
+</ol>
 </li>
-<li><code>int</code> &#x548C; <code>float</code> &#x90FD;&#x662F;32 &#x4F4D;&#x7684;&#xFF0C;&#x88C5;&#x5B57;&#x7B26;&#x7EF0;&#x7EF0;&#x6709;&#x4F59;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
-<li><strong>&#x6574;&#x6570;&#x8F6C;&#x6362;&#x6210; char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</strong>
-<ul>
-<li>short &#x8303;&#x56F4;&#x7684;&#x6574;&#x6570;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F6C;&#x6362;</li>
-<li>int &#x8303;&#x56F4;&#x7684;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</li>
-<li>&#x8D85;&#x8FC7;int &#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5373;&#x4F7F;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x4E5F;&#x4E0D;&#x884C;</li>
-</ul>
-</li>
-<li><strong>&#x5C0F;&#x6570;&#x6570;&#x548C;&#x8F6C;&#x6362;&#x6210; char&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</strong></li>
-<li>&#x5FC5;&#x987B;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</li>
-<li>char&#x7684;&#x7F16;&#x7801;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4ECE;&#x9AD8;&#x7CBE;&#x5EA6;&#x8F6C;&#x6362;&#x6210;&#x4F4E;&#x7CBE;&#x5EA6;&#xFF08;&#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;&#xFF09;</li>
-<li>&#x5E76;&#x4E14;&#x53EA;&#x80FD;float &#x8303;&#x56F4;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;</li>
-</ul>
-</li>
-</ul>
+</ol>
 
       </div>
       
