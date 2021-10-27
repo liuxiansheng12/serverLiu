@@ -7,96 +7,92 @@
     <title>笔记列表</title>
 
     <style>
-        .roots {
-            width: 1200px;
-            margin: 0 auto;
-            border: 2px solid #f4f4f4;
-            margin-top: 40px;
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-bottom: 10px;
+        html, body {
+            margin: 0;
+            padding: 0;
         }
-        .margin-1 {
-            margin-left: 10px;
+        body {
+            position: relative;
+            height: 100vh;
+            box-sizing: border-box;
         }
-        .margin-2 {
-            margin-left: 20px;
+        .root {
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
+            right: 40px;
+            top: 40px;
+            border: 2px solid #666;
+            overflow-x: auto;
         }
-        .margin-3 {
-            margin-left: 30px;
+        .root::-webkit-scrollbar-thumb  {
+            background: rgba(23, 25, 30, 0.25);
+            border-radius: 8px;
         }
-        .margin-4 {
-            margin-left: 40px;
-        }
-        .margin-5 {
-            margin-left: 50px;
-        }
-        .margin-6 {
-            margin-left: 60px;
-        }
-        .margin {
-            padding: 6px 0;
-            cursor: pointer;
-        }
-        .cu {
-            font-size: 18px;
-            font-weight: 700;
-        }
-        .cus {
-            font-size: 22px;
-            font-weight: 700;
+        .root::-webkit-scrollbar{
+            background: transparent;
+            height: 8px;
+            padding-right: 10px;
         }
 
-        .dingji {
-            padding: 20px;
-            border: 2px solid #f4f4f4;
-            margin-top: 20px;
+        .lists, .list {
             display: flex;
+            height: 100%;
+            box-sizing: border-box;
         }
-        .texts {
-            margin-right: 10px;
+
+        .list-1 {
             flex: 0 0 auto;
-            line-height: 36px;
-            min-width: 150px;
+            border-right: 1px solid #000;
+            overflow-y: auto;
         }
-        
-        .dingji-3 div,
-        .dingji-2 div,
-        .dingji-1 div {
-            display: inline-block;
-            margin-left: 20px;
+        .list-1::-webkit-scrollbar-thumb  {
+            background: rgba(23, 25, 30, 0.25);
+            border-radius: 8px;
+        }
+        .list-1::-webkit-scrollbar{
+            background: transparent;
+            width: 8px;
+            padding-right: 10px;
+        }
+
+        .title {
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            box-shadow: 0 0 3px #666;
+            padding: 0 20px;
+        }
+
+        .active {
+            color: rgb(183, 0, 255) !important;
+        }
+
+        .html {
+            color: rgb(127, 195, 255);
         }
     </style>
 </head>
 <body>
-    <div class="dingji">
-        <div class="texts">前端知识点：</div>
-        <div class="dingji-1"></div>
-    </div>
-    <div class="dingji">
-        <div class="texts">后端Java知识点：</div>
-        <div class="dingji-2"></div>
-    </div>
-    <div class="dingji">
-        <div class="texts">后端python知识点：</div>
-        <div class="dingji-3"></div>
-    </div>
     <div class="root">
-
+        <div class="lists"></div>
     </div>
-    <script>
 
-        const map = new Map();
+    <script>
+        const map = [];
         async function getData() {
             const d = await fetch("/noteProc/getFilePaths")
             const data = await d.json();
             for(let i = 0; i < data.result.length; i ++) {
                 const d = data.result[i];
                 if(d.path === "前端笔记" || d.path === "后端Java笔记" || d.path === "后端python笔记") {
-                    map.set(d.path, chuLi(d.childrenPath));
+                    map.push({
+                        ...d,
+                        childrenPath: chuLi(d.childrenPath)
+                    })
                 }
             }
-            xuanRan(map);
+            xuanRan(map, document.querySelector(".lists"), "a" + new Date().getTime(), "/笔记/");
         }
         function sort(data) {
             for(let i = 0; i < data.length; i ++) {
@@ -136,96 +132,50 @@
             sort(arr);
             return [...arr, ...wenJian];
         }
-
         getData();
 
-        function xuanRan(data) {
-            const qian = data.get("前端笔记");
-            if(qian) {
-                createDoms(qian, "前端笔记", "前端笔记", true);
-            }
-            
-            const houJava = data.get("后端Java笔记");
-            if(houJava) {
-                createDoms(houJava, "后端Java笔记", "后端Java笔记", true);
-            }
-
-            const houPython = data.get("后端python笔记");
-            if(houPython) {
-                createDoms(houPython, "后端python笔记", "后端python笔记", true);
-            }
-        }
-
-
-        function createDoms(data, url, name, boo) {
+        function xuanRan(data, dom, id, url) {
             let str = document.createElement('div');
-            str.style.marginTop = "30px";
-            str.className = "roots";
+            str.className = "list-1";
+            dom.appendChild(str);
 
-            let dom = document.createElement('div');
-            dom.innerHTML = name;
-            dom.className = "cus";
-            str.appendChild(dom);
-
-            let doms = null;
-            if(name === "前端笔记") {
-                doms = document.querySelector(".dingji-1");
-            }
-            else if(name === "后端Java笔记") {
-                doms = document.querySelector(".dingji-2");
-            }
-            else if(name === "后端python笔记") {
-                doms = document.querySelector(".dingji-3");
-            }
-
-            str.appendChild(createDome(data, 1, url, doms, boo));
-            document.querySelector(".root").appendChild(str);
-        }
-
-        function createDome(data, h, url, doms, boo) {
-            let str = document.createElement('div');
+            const dom2 = document.createElement('div');
+            dom2.className = "list list-2";
+            dom.appendChild(dom2);
             for(let i = 0; i < data.length; i ++) {
-                if(data[i].childrenPath) {
-                    let dom = document.createElement('div');
-                    dom.className = `margin ${"margin-" + h}`;
-                    dom.innerHTML = data[i].path;
-                    if(h === 1) dom.className += " cu";
-                    str.appendChild(dom);
-                    dom.onclick = () => {
-                        document.querySelector(".root").innerHTML = "";
-                        createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
-                    }
-
-                    // 顶部导航
-                    if(doms) {
-                        let dom = document.createElement('div');
-                        dom.className = `margin ${"margin-" + h}`;
-                        dom.innerHTML = data[i].path;
-                        dom.className += " cu";
-                        doms.appendChild(dom);
-
-                        dom.onclick = () => {
-                            document.querySelector(".root").innerHTML = "";
-                            createDoms(data[i].childrenPath, url + "/" + data[i].path, data[i].path);
-                        }
-                    }
-
-                    str.appendChild(createDome(data[i].childrenPath, h + 1, url + "/" + data[i].path));
+                if(data[i].path === ".DS_Store" || data[i] === ".DS_Store") continue;
+                let s = document.createElement('div');
+                s.className = "title";
+                str.appendChild(s);
+                if(data[i].path) {
+                    s.innerHTML = data[i].path
                 }
                 else {
-                    let dom = document.createElement('div');
-                    dom.className = `margin ${"margin-" + h}`;
-                    dom.innerHTML = data[i];
-                    if(h === 1 && boo) dom.className += " cu";
-                    dom.onclick = () => {
-                        location.href = "/笔记/" + url + "/" + data[i];
+                    s.innerHTML = data[i];
+                    s.classList.add("html");
+                }
+                s.onclick = () => {
+                    const ds = document.querySelector("." + id);
+                    if(ds) {
+                        ds.classList.remove("active");
+                        ds.classList.remove(id);
                     }
-                    str.appendChild(dom);
+                    s.classList.add(id);
+                    s.classList.add("active");
+                    dom2.innerHTML = "";
+
+                    let _url = url + (data[i].path || data[i]);
+                    if(data[i].path) {
+                        xuanRan(data[i].childrenPath, dom2, "a" + new Date().getTime(), _url + "/");
+                    }
+                    else {
+                        setTimeout(() => {
+                            window.open(_url);
+                        }, 500)
+                    }
                 }
             }
-            return str;
         }
-
     </script>
 </body>
 </html>
