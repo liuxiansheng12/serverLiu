@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x5B89;&#x88C5;&#x73AF;&#x5883;</title>
+      <title>1.Django&#x7684;&#x5B89;&#x88C5;&#x4EE5;&#x53CA;&#x9879;&#x76EE;&#x521B;&#x5EFA;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,26 +262,69 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
+<li>&#x4E2D;&#x6587;&#x6587;&#x6863;&#xFF1A;<a href="https://www.runoob.com/django/django-tutorial.html">https://www.runoob.com/django/django-tutorial.html</a></li>
+</ul>
+<h4 class="mume-header" id="%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B">&#x5B89;&#x88C5;&#x6D41;&#x7A0B;</h4>
+
+<ul>
+<li>&#x8981;&#x5148;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF08;&#x8981;&#x4F7F;&#x7528;pip&#x5B89;&#x88C5;&#xFF09;</li>
+<li>&#x7136;&#x540E;&#x8FD0;&#x884C; <strong>pip install django</strong>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6307;&#x5B9A;&#x7248;&#x672C;&#xFF1A;pip install django==2.2</li>
+</ul>
+</li>
+<li>&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;
+<ul>
+<li>&#x5728;&#x8BE5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x6267;&#x884C;&#x4E0B;&#x65B9;&#x4EE3;&#x7801;&#xFF0C;&#x4F1A;&#x6253;&#x5370;&#x51FA;&#x7248;&#x672C;&#x53F7;</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python">  <span class="token keyword keyword-import">import</span> django
+  <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>django<span class="token punctuation">.</span>get_version<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; py&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x7F16;&#x8F91;&#x5668;&#x6267;&#x884C;</li>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF08;&#x51FA;&#x73B0; &gt;&gt;&gt; &#x624D;&#x53EF;&#x4EE5;&#x8F93;&#x5165; python &#x4EE3;&#x7801;&#xFF09;<br>
+<img src="../../imgs/img4.png"></li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%9A%84%E5%88%9B%E5%BB%BA">&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x521B;&#x5EFA;</h4>
+
+<ul>
+<li>&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#xFF08;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#xFF0C;&#x770B;&#x4E4B;&#x524D;&#x7684;&#x8BF4;&#x660E;&#xFF09;</li>
+<li>&#x4F7F;&#x7528; PC&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x7684;&#x642D;&#x5EFA;&#x51FA;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF08;even&#xFF09;</li>
+</ul>
+<h4 class="mume-header" id="%E4%BD%BF%E7%94%A8-django-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE">&#x4F7F;&#x7528; django &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;</h4>
+
+<ul>
 <li>
-<p>&#x641C;&#x7D22; python&#xFF0C;&#x8FDB;&#x5165;&#x5B98;&#x7F51;&#xFF0C;&#x70B9;&#x51FB; downloads &#x8FDB;&#x884C;&#x4E0B;&#x8F7D;</p>
+<p>&#x5728;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;<strong>django-admin startproject &#x9879;&#x76EE;&#x540D;&#x79F0;</strong></p>
 <ul>
-<li>mac&#x7535;&#x8111;&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5F88;&#x7B80;&#x5355;</li>
-<li>&#x70B9;&#x51FB; Download Python 3.10.0&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</li>
-<li>&#x7136;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x884C;&#x4E86;</li>
+<li>&#x8981;&#x5728; django &#x6240;&#x5904;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x624D;&#x80FD;&#x627E;&#x5230; Django&#xFF0C;&#x4ECE;&#x800C;&#x521B;&#x5EFA;&#x9879;&#x76EE;</li>
 </ul>
 </li>
 <li>
-<p>mac&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x542F;&#x52A8;&#x53F0;&#x4E2D;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E2A;&#x4E1C;&#x897F; <code>IDLE</code></p>
+<p>&#x865A;&#x62DF;&#x73AF;&#x5883;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x6837;&#x5F0F;&#x5982;&#x4E0B;&#xFF08; &#x524D;&#x9762;&#x6709;&#x4E00;&#x4E2A; &#xFF08;&#xFF09; &#xFF09;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token punctuation">(</span>venv<span class="token punctuation">)</span> liushanzhuang@<span class="token number">192</span> demo2 <span class="token operator">%</span> 
+</pre><ul>
+<li><strong>&#x9879;&#x76EE;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6700;&#x597D;&#x5355;&#x72EC;&#x7528;&#x7F16;&#x8F91;&#x5668;&#x6253;&#x5F00;&#x8BE5;&#x9879;&#x76EE;&#xFF0C;&#x7136;&#x540E;&#x914D;&#x7F6E;&#x73AF;&#x5883;</strong>
 <ul>
-<li>&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6846;</li>
-<li>&#x5728;&#x547D;&#x4EE4;&#x6846;&#x4E2D;&#x8F93;&#x5165; python &#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;
-<ul>
-<li>&#x6BD4;&#x5982; <code>print(123)</code>&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;</li>
+<li>&#x5426;&#x5219;&#xFF0C;&#x81EA;&#x52A8;&#x5F15;&#x5305;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5E26;&#x4E0A;&#x9879;&#x76EE;&#x540D;&#x5B57;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x62A5;&#x9519;</li>
 </ul>
 </li>
 </ul>
+<h4 class="mume-header" id="django-%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%90%AF%E5%8A%A8">django &#x9879;&#x76EE;&#x7684;&#x542F;&#x52A8;</h4>
+
+<ul>
+<li>&#x5728;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;<strong>cd &#x9879;&#x76EE;&#x540D;&#x79F0;</strong>&#xFF0C;&#x8FDB;&#x5165;&#x5230;&#x9879;&#x76EE;&#x4E2D;</li>
+<li>&#x7136;&#x540E;&#x5728;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;<strong>python <a href="http://manage.py">manage.py</a> runserver</strong>&#xFF0C;&#x542F;&#x52A8;&#x9879;&#x76EE;</li>
+<li>&#x6700;&#x7EC8;&#xFF0C;&#x4F1A;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x8BBF;&#x95EE;&#xFF1A;<a href="http://127.0.0.1:8000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E4%B8%80%E4%B8%AA%E9%BB%98%E8%AE%A4%E9%A1%B5%E9%9D%A2">http://127.0.0.1:8000/&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x9875;&#x9762;</a>
+<ul>
+<li>&#x4E0A;&#x9762;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#xFF0C;&#x542F;&#x52A8;&#x9879;&#x76EE;&#x540E;&#xFF0C;&#x4F1A;&#x8FDB;&#x884C;&#x663E;&#x793A;</li>
+</ul>
 </li>
 </ul>
+<p><strong>PC&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x4E0B;&#x9762;&#x6709;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x5165;&#x8BE5;&#x9879;&#x76EE;&#x5BF9;&#x5E94;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;</strong></p>
 
       </div>
       

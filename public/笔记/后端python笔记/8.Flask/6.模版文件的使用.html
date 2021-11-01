@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x5B89;&#x88C5;&#x73AF;&#x5883;</title>
+      <title>6.&#x6A21;&#x7248;&#x6587;&#x4EF6;&#x7684;&#x4F7F;&#x7528;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -263,26 +263,44 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <ul>
 <li>
-<p>&#x641C;&#x7D22; python&#xFF0C;&#x8FDB;&#x5165;&#x5B98;&#x7F51;&#xFF0C;&#x70B9;&#x51FB; downloads &#x8FDB;&#x884C;&#x4E0B;&#x8F7D;</p>
+<p>flask&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x7248;&#x89E3;&#x6790;&#xFF0C;&#x5C31;&#x662F; jinja2</p>
 <ul>
-<li>mac&#x7535;&#x8111;&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5F88;&#x7B80;&#x5355;</li>
-<li>&#x70B9;&#x51FB; Download Python 3.10.0&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</li>
-<li>&#x7136;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x884C;&#x4E86;</li>
+<li>&#x6240;&#x4EE5;&#x5177;&#x4F53;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; jinja2</li>
+<li>jinja2&#x7F51;&#x5740;&#xFF1A;<a href="http://www.ainoob.cn/docs/jinja2/templates.html">http://www.ainoob.cn/docs/jinja2/templates.html</a></li>
 </ul>
 </li>
 <li>
-<p>mac&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x542F;&#x52A8;&#x53F0;&#x4E2D;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E2A;&#x4E1C;&#x897F; <code>IDLE</code></p>
-<ul>
-<li>&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6846;</li>
-<li>&#x5728;&#x547D;&#x4EE4;&#x6846;&#x4E2D;&#x8F93;&#x5165; python &#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;
-<ul>
-<li>&#x6BD4;&#x5982; <code>print(123)</code>&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;</li>
-</ul>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
 </li>
 </ul>
-</li>
-</ul>
+<pre data-role="codeBlock" data-info="html" class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    {{ name }}
+    {{ ages }}
+    {{ ds.a }}
 
+    {% for item in arrs %}
+        {{ item }}
+    {% endfor %}
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</pre><ul>
+<li><strong>&#x6570;&#x636E;&#x7684;&#x6CE8;&#x5165;</strong></li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/ds/&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">&quot;demo.html&quot;</span><span class="token punctuation">,</span> 
+        <span class="token comment"># &#x6570;&#x636E;&#x7684;&#x6CE8;&#x5165;</span>
+        name<span class="token operator">=</span><span class="token string">&quot;dst&quot;</span><span class="token punctuation">,</span> ages<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">,</span> 
+        ds<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">}</span><span class="token punctuation">,</span> arrs<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;ds&apos;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+</pre>
       </div>
       
       

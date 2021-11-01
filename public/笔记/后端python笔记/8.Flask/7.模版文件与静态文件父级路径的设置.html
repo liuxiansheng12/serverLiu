@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x5B89;&#x88C5;&#x73AF;&#x5883;</title>
+      <title>7.&#x6A21;&#x7248;&#x6587;&#x4EF6;&#x4E0E;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x7236;&#x7EA7;&#x8DEF;&#x5F84;&#x7684;&#x8BBE;&#x7F6E;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,24 +261,67 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x641C;&#x7D22; python&#xFF0C;&#x8FDB;&#x5165;&#x5B98;&#x7F51;&#xFF0C;&#x70B9;&#x51FB; downloads &#x8FDB;&#x884C;&#x4E0B;&#x8F7D;</p>
+      <h4 class="mume-header" id="%E9%85%8D%E7%BD%AE%E7%88%B6%E7%BA%A7%E8%B7%AF%E5%BE%84">&#x914D;&#x7F6E;&#x7236;&#x7EA7;&#x8DEF;&#x5F84;</h4>
+
 <ul>
-<li>mac&#x7535;&#x8111;&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5F88;&#x7B80;&#x5355;</li>
-<li>&#x70B9;&#x51FB; Download Python 3.10.0&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</li>
-<li>&#x7136;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x884C;&#x4E86;</li>
+<li>&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x54CD;&#x5E94;&#x65F6;&#xFF0C;&#x4E66;&#x5199;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;
+<ul>
+<li>&#x6BD4;&#x5982;&#xFF1A;&#x90FD;&#x5728;&#x4E00;&#x4E2A;&#x7236;&#x7EA7;&#x6587;&#x4EF6;&#x4E0B;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x7236;&#x7EA7;&#x8DEF;&#x5F84;</li>
+<li>&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x54CD;&#x5E94;&#x65F6;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x5728;&#x4E66;&#x5199;&#x7236;&#x7EA7;&#x8DEF;&#x5F84;&#x4E86;</li>
+</ul>
+</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>&#x54CD;&#x5E94;&#x7684;&#x6A21;&#x7248;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;&#x7236;&#x7EA7;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x53BB;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;templates&#x4E2D;&#x67E5;&#x627E;</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword keyword-from">from</span> flask <span class="token keyword keyword-import">import</span> Blueprint<span class="token punctuation">,</span> render_template<span class="token punctuation">;</span>
+rou_s <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">&apos;dems&apos;</span><span class="token punctuation">,</span> __name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/ds/&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">&quot;abc/demo.html&quot;</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>&#x529F;&#x80FD;&#x6A21;&#x5757;&#xFF08;Blueprint&#xFF09;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x914D;&#x7F6E;&#x4E86;&#x7236;&#x7EA7;&#xFF0C;&#x5219;&#x4F1A;&#x62FC;&#x63A5;&#x7236;&#x7EA7;&#x8FDB;&#x884C;&#x67E5;&#x627E;
+<ul>
+<li>&#x5E76;&#x4E14;&#x7236;&#x7EA7;&#x8DEF;&#x5F84;&#xFF0C;&#x8981;&#x901A;&#x8FC7;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5B9A;&#x4F4D;&#x5230; templates</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword keyword-from">from</span> flask <span class="token keyword keyword-import">import</span> Blueprint<span class="token punctuation">,</span> render_template<span class="token punctuation">;</span>
+<span class="token comment"># &#x901A;&#x8FC7;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5B9A;&#x4F4D;&#x5230; abc&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x54CD;&#x5E94;&#x6A21;&#x7248;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x662F;&#x4ECE; abc &#x4E0B;&#x5F00;&#x59CB;&#x67E5;&#x627E;&#x4E86;</span>
+<span class="token comment">#    &#x548C;&#x4E0A;&#x9762;&#x7684;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x7B80;&#x5316;&#x4E86; abc &#x7684;&#x4E66;&#x5199;</span>
+rou_s <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">&apos;dems&apos;</span><span class="token punctuation">,</span> __name__<span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">&quot;../../templates/abc&quot;</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/ds/&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> render_template<span class="token punctuation">(</span><span class="token string">&quot;demo.html&quot;</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>&#x6839;&#x8DEF;&#x7531;&#xFF08;Flask&#xFF09;&#x4E2D;&#x4F7F;&#x7528;</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token comment"># &#x901A;&#x8FC7;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5B9A;&#x4F4D;&#x5230; abc&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x54CD;&#x5E94;&#x6A21;&#x7248;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x662F;&#x4ECE; abc &#x4E0B;&#x5F00;&#x59CB;&#x67E5;&#x627E;&#x4E86;</span>
+<span class="token comment">#    &#x548C;&#x4E0A;&#x9762;&#x7684;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x7B80;&#x5316;&#x4E86; abc &#x7684;&#x4E66;&#x5199;</span>
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">&quot;./templates/abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span>register_blueprint<span class="token punctuation">(</span>rou_s<span class="token punctuation">,</span> url_prefix<span class="token operator">=</span><span class="token string">&apos;/user&apos;</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-if">if</span> __name__ <span class="token operator">==</span> <span class="token string">&apos;__main__&apos;</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</pre><ul>
+<li>
+<p>&#x5982;&#x679C; Flask &#x548C; Blueprint &#x540C;&#x65F6;&#x914D;&#x7F6E;&#x4E86; template_folder</p>
+<ul>
+<li>&#x5219;&#x4F7F;&#x7528; Blueprint &#x4E2D;&#x914D;&#x7F6E;&#x7684;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x5C31;&#x62A5; 404</li>
 </ul>
 </li>
 <li>
-<p>mac&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x542F;&#x52A8;&#x53F0;&#x4E2D;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E2A;&#x4E1C;&#x897F; <code>IDLE</code></p>
+<p><strong>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x4E5F;&#x80FD;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x914D;&#x7F6E;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x662F; static_folder&#xFF0C;&#x4E24;&#x8005;&#x7684;&#x7528;&#x6CD5;&#x548C;&#x4F5C;&#x7528;&#x5B8C;&#x5168;&#x4E00;&#x6837;</strong></p>
 <ul>
-<li>&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6846;</li>
-<li>&#x5728;&#x547D;&#x4EE4;&#x6846;&#x4E2D;&#x8F93;&#x5165; python &#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;
-<ul>
-<li>&#x6BD4;&#x5982; <code>print(123)</code>&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;</li>
+<li>&#x6BD4;&#x5982;:</li>
 </ul>
-</li>
+<pre data-role="codeBlock" data-info="py" class="language-python">app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">,</span> template_folder<span class="token operator">=</span><span class="token string">&quot;./templates&quot;</span><span class="token punctuation">,</span> static_folder<span class="token operator">=</span><span class="token string">&quot;./static&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ul>
+<li>&#x9759;&#x6001;&#x6587;&#x4EF6;&#x662F;&#x653E;&#x5728; static &#x4E0B;&#x7684;</li>
 </ul>
 </li>
 </ul>

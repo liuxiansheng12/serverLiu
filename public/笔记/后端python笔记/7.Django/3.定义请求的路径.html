@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x5B89;&#x88C5;&#x73AF;&#x5883;</title>
+      <title>3.&#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#x7684;&#x8DEF;&#x5F84;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,27 +262,61 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>
-<p>&#x641C;&#x7D22; python&#xFF0C;&#x8FDB;&#x5165;&#x5B98;&#x7F51;&#xFF0C;&#x70B9;&#x51FB; downloads &#x8FDB;&#x884C;&#x4E0B;&#x8F7D;</p>
+<li>&#x914D;&#x7F6E;&#x8DEF;&#x5F84;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;
 <ul>
-<li>mac&#x7535;&#x8111;&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5F88;&#x7B80;&#x5355;</li>
-<li>&#x70B9;&#x51FB; Download Python 3.10.0&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</li>
-<li>&#x7136;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x884C;&#x4E86;</li>
-</ul>
-</li>
-<li>
-<p>mac&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x542F;&#x52A8;&#x53F0;&#x4E2D;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E2A;&#x4E1C;&#x897F; <code>IDLE</code></p>
-<ul>
-<li>&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6846;</li>
-<li>&#x5728;&#x547D;&#x4EE4;&#x6846;&#x4E2D;&#x8F93;&#x5165; python &#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;
-<ul>
-<li>&#x6BD4;&#x5982; <code>print(123)</code>&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;</li>
+<li>&#x4E00;&#x79CD;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x7684; <a href="http://urls.py">urls.py</a> &#x6587;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF08;&#x6839;&#x8DEF;&#x7531;&#xFF09;</li>
+<li>&#x4E00;&#x79CD;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x7684; <a href="http://urls.py">urls.py</a> &#x6587;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF08;&#x5B50;&#x8DEF;&#x7531;&#xFF09;</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<h4 class="mume-header" id="%E5%9C%A8%E6%A0%B9%E8%B7%AF%E7%94%B1%E4%B8%AD%E9%85%8D%E7%BD%AE">&#x5728;&#x6839;&#x8DEF;&#x7531;&#x4E2D;&#x914D;&#x7F6E;</h4>
 
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token comment"># &#x5F15;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF08;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#xFF09;</span>
+<span class="token comment">#    &#x5E94;&#x7528;&#x5C31;&#x662F;&#x9879;&#x76EE;&#x7684;&#x5B50;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6700;&#x7EC8;&#x8FD0;&#x884C;&#x7684;&#x662F;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x90FD;&#x80FD;&#x627E;&#x5230;</span>
+<span class="token keyword keyword-from">from</span> App_01 <span class="token keyword keyword-import">import</span> demo
+
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token comment"># &#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x7531;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x662F;&#x8DEF;&#x7531;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF08;controller&#xFF09;</span>
+    <span class="token comment">#    demo.home &#x8868;&#x793A; demo.py &#x4E0B;&#x7684; home &#x51FD;&#x6570;</span>
+    path<span class="token punctuation">(</span><span class="token string">&apos;abc/&apos;</span><span class="token punctuation">,</span> demo<span class="token punctuation">.</span>home<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+</pre><ul>
+<li>&#x5F53;&#x8BBF;&#x95EE; <a href="http://127.0.0.1:8000/abc/%EF%BC%8C%E5%B0%B1%E4%BC%9A%E6%89%A7%E8%A1%8C">http://127.0.0.1:8000/abc/&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;</a> demo.home &#x65B9;&#x6CD5;&#xFF0C;&#x8FDB;&#x884C;&#x8BF7;&#x6C42;&#x7684;&#x5904;&#x7406;&#x548C;&#x54CD;&#x5E94;&#x6570;&#x636E;</li>
+</ul>
+<h4 class="mume-header" id="%E5%9C%A8%E5%AD%90%E8%B7%AF%E7%94%B1%E4%B8%AD%E9%85%8D%E7%BD%AE">&#x5728;&#x5B50;&#x8DEF;&#x7531;&#x4E2D;&#x914D;&#x7F6E;</h4>
+
+<ul>
+<li>&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A; <a href="http://urls.py">urls.py</a> &#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x6765;&#x653E;&#x7F6E;&#x5B50;&#x8DEF;&#x7531;&#x4FE1;&#x606F;</li>
+<li>&#x7136;&#x540E;&#x5728;&#x6839;&#x8DEF;&#x7531;&#x4E2D;&#xFF0C;&#x5F15;&#x5165;&#x914D;&#x7F6E;&#x597D;&#x7684;&#x5B50;&#x8DEF;&#x7531;&#xFF0C;&#x8FD9;&#x6837;&#x914D;&#x7F6E;&#x7684;&#x5B50;&#x8DEF;&#x7531;&#x5C31;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x63D0;&#x4F9B;&#x670D;&#x52A1;</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token comment"># &#x5B50;&#x8DEF;&#x7531;&#x4EE3;&#x7801;</span>
+<span class="token keyword keyword-from">from</span> App_01 <span class="token keyword keyword-import">import</span> demo
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token comment"># demo.home &#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x8868;&#x793A; demo.py &#x4E0B;&#x7684; home &#x51FD;&#x6570;</span>
+    path<span class="token punctuation">(</span><span class="token string">&apos;demo/&apos;</span><span class="token punctuation">,</span> demo<span class="token punctuation">.</span>home<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">&apos;demo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</pre><pre data-role="codeBlock" data-info="py" class="language-python"><span class="token comment"># &#x6839;&#x8DEF;&#x7531;&#x4EE3;&#x7801;</span>
+<span class="token keyword keyword-from">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword keyword-import">import</span> path<span class="token punctuation">,</span> include
+
+<span class="token keyword keyword-from">from</span> App_01 <span class="token keyword keyword-import">import</span> demo
+
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token comment"># ab/&#x8868;&#x793A;&#x4E00;&#x7EA7;&#x8DEF;&#x7531;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;demo/&#x5C31;&#x662F;&#x4E00;&#x7EA7;&#x8DEF;&#x7531;&#xFF08;&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;&#xFF09;</span>
+    <span class="token comment"># App_01.urls &#x5C31;&#x662F;&#x5BF9;&#x5E94;&#x5B50;&#x8DEF;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x5F84;</span>
+    path<span class="token punctuation">(</span><span class="token string">&apos;ab/&apos;</span><span class="token punctuation">,</span> include<span class="token punctuation">(</span><span class="token string">&quot;App_01.urls&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+</pre><ul>
+<li>&#x5F53;&#x8BBF;&#x95EE; <a href="http://127.0.0.1:8000/ab/demo%EF%BC%8C%E5%B0%B1%E4%BC%9A%E6%89%A7%E8%A1%8C">http://127.0.0.1:8000/ab/demo&#xFF0C;&#x5C31;&#x4F1A;&#x6267;&#x884C;</a> demo.home &#x65B9;&#x6CD5;&#xFF0C;&#x8FDB;&#x884C;&#x8BF7;&#x6C42;&#x7684;&#x5904;&#x7406;&#x548C;&#x54CD;&#x5E94;&#x6570;&#x636E;</li>
+</ul>
+<h4 class="mume-header" id="%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0demopy">&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF08;<a href="http://demo.py">demo.py</a>&#xFF09;</h4>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword keyword-from">from</span> django<span class="token punctuation">.</span>http <span class="token keyword keyword-import">import</span> HttpResponse
+
+<span class="token keyword keyword-def">def</span> <span class="token function">home</span><span class="token punctuation">(</span>request <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">&quot;oks&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment"># &#x54CD;&#x5E94;&#x7684;&#x6570;&#x636E;</span>
+    <span class="token keyword keyword-return">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">&quot;ok&quot;</span><span class="token punctuation">)</span>
+</pre>
       </div>
       
       

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x5B89;&#x88C5;&#x73AF;&#x5883;</title>
+      <title>8.&#x91CD;&#x5B9A;&#x5411;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,24 +261,62 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x641C;&#x7D22; python&#xFF0C;&#x8FDB;&#x5165;&#x5B98;&#x7F51;&#xFF0C;&#x70B9;&#x51FB; downloads &#x8FDB;&#x884C;&#x4E0B;&#x8F7D;</p>
+      <h4 class="mume-header" id="redirect%E7%9A%84%E4%BD%BF%E7%94%A8">redirect&#x7684;&#x4F7F;&#x7528;</h4>
+
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword keyword-from">from</span> flask <span class="token keyword keyword-import">import</span> Blueprint<span class="token punctuation">;</span>
+<span class="token keyword keyword-from">from</span> werkzeug<span class="token punctuation">.</span>utils <span class="token keyword keyword-import">import</span> redirect
+rou_s <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">&apos;dems&apos;</span><span class="token punctuation">,</span> __name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/ds/&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">&quot;ok&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment"># &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x84DD;&#x56FE;&#xFF0C;&#x6839;&#x8DEF;&#x5F84;&#x662F; /user/&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5E26;&#x4E0A;</span>
+    <span class="token keyword keyword-return">return</span> redirect<span class="token punctuation">(</span><span class="token string">&quot;/user/redi&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment"># &#x4F7F;&#x7528; flask.redirect &#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x91CD;&#x5B9A;&#x5411;&#x7684;</span>
+    <span class="token comment"># return flask.redirect(&quot;/user/redi&quot;)</span>
+
+<span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/redi&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> <span class="token string">&quot;&#x91CD;&#x5B9A;&#x5411;&quot;</span>
+</pre><h4 class="mume-header" id="url_for%E7%9A%84%E4%BD%BF%E7%94%A8">url_for&#x7684;&#x4F7F;&#x7528;</h4>
+
 <ul>
-<li>mac&#x7535;&#x8111;&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5F88;&#x7B80;&#x5355;</li>
-<li>&#x70B9;&#x51FB; Download Python 3.10.0&#xFF0C;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</li>
-<li>&#x7136;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x4E0B;&#x4E00;&#x6B65;&#x5C31;&#x884C;&#x4E86;</li>
+<li>&#x5982;&#x679C;&#x91CD;&#x5B9A;&#x5411;&#x7684;&#x8DEF;&#x5F84;&#x8FC7;&#x957F;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; url_for &#x81EA;&#x52A8;&#x83B7;&#x53D6;&#xFF0C;&#x7B80;&#x5316;&#x4E66;&#x5199;&#x91CF;
+<ul>
+<li>&#x91CD;&#x5B9A;&#x5411;&#x540E;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x8DEF;&#x5F84;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#x8DEF;&#x5F84;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x79F0;</li>
+<li>url_for &#x4F20;&#x5165;&#x8BE5;&#x540D;&#x79F0;&#xFF0C;&#x5C31;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x8FDB;&#x884C;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x7B80;&#x5316;&#x4E86;&#x4E66;&#x5199;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x540D;&#x79F0;&#xFF0C;&#x5219;&#x6839;&#x636E;&#x51FD;&#x6570;&#x540D;&#x6765;&#x83B7;&#x53D6;
+<ul>
+<li>&#x7F3A;&#x9677;&#x5728;&#x4E8E;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x51FD;&#x6570;&#x540D;&#x4E00;&#x6837;&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x6DF7;&#x4E71;</li>
 </ul>
 </li>
-<li>
-<p>mac&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x542F;&#x52A8;&#x53F0;&#x4E2D;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E2A;&#x4E1C;&#x897F; <code>IDLE</code></p>
-<ul>
-<li>&#x70B9;&#x51FB;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6846;</li>
-<li>&#x5728;&#x547D;&#x4EE4;&#x6846;&#x4E2D;&#x8F93;&#x5165; python &#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;
-<ul>
-<li>&#x6BD4;&#x5982; <code>print(123)</code>&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;</li>
 </ul>
 </li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python"><span class="token keyword keyword-from">from</span> flask <span class="token keyword keyword-import">import</span> Blueprint<span class="token punctuation">,</span> url_for<span class="token punctuation">;</span>
+<span class="token keyword keyword-from">from</span> werkzeug<span class="token punctuation">.</span>utils <span class="token keyword keyword-import">import</span> redirect
+rou_s <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">&apos;dems&apos;</span><span class="token punctuation">,</span> __name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/ds/&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">&quot;ok&quot;</span><span class="token punctuation">)</span>
+    <span class="token comment"># &#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x5F84;&#x540D;&#xFF0C;&#x8FDB;&#x884C;&#x91CD;&#x5B9A;&#x5411;</span>
+    url <span class="token operator">=</span> url_for<span class="token punctuation">(</span><span class="token string">&apos;dems.demo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment"># &#x6216;&#x8005;&#x6839;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x6765;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5B58;&#x5728;&#x7F3A;&#x9677;</span>
+    <span class="token comment"># url = url_for(&apos;dems.demds&apos;);</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> redirect<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+
+
+<span class="token comment"># &#x8D85;&#x7EA7;&#x590D;&#x6742;&#x7684;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x8BE5;&#x8DEF;&#x5F84;&#xFF0C;&#x4E66;&#x5199;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; url_for &#x81EA;&#x52A8;&#x83B7;&#x53D6;</span>
+<span class="token comment">#    endpoint &#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x5B57;</span>
+<span class="token decorator annotation punctuation">@rou_s<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">&quot;/a/b/c/d/e/f/g&quot;</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token string">&quot;demo&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">demds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> <span class="token string">&quot;&#x91CD;&#x5B9A;&#x5411;&quot;</span>
+</pre><ul>
+<li><strong>&#x5982;&#x679C;&#x8F6C;&#x53D1;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;&#x67D0;&#x4E2A;&#x5E94;&#x7528;&#x4E0B;&#xFF0C;&#x8981;&#x5E26;&#x4E0A;&#x5BF9;&#x5E94;&#x7684;&#x5E94;&#x7528;&#x540D;&#x5B57;</strong>
+<ul>
+<li>&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#x7684; <a href="http://demos.xxx">demos.xxx</a></li>
 </ul>
 </li>
 </ul>
