@@ -18,7 +18,7 @@ export class GetFilePathSer {
     for (let i = 0; i < arr.length; i++) {
       const obj = {};
       obj['path'] = arr[i];
-      if (arr[i].indexOf('.html') == -1 && arr[i].indexOf('.pdf') == -1) {
+      if (arr[i].indexOf('.png') == -1 && arr[i].indexOf('.jpg') == -1 && arr[i].indexOf('.jpeg') == -1 && arr[i].indexOf('.html') == -1 && arr[i].indexOf('.pdf') == -1) {
         obj['childrenPath'] = this.getFilePath(url + '/' + arr[i]);
       }
       paths.push(obj);
