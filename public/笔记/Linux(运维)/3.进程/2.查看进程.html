@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>2.&#x67E5;&#x770B;&#x8FDB;&#x7A0B;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,21 +262,70 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
+<li>
+<p>&#x67E5;&#x770B;&#x6240;&#x6709;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF1A;ps aux</p>
+</li>
+<li>
+<p>&#x67E5;&#x770B;&#x5934;&#x51E0;&#x884C;&#x4FE1;&#x606F;&#xFF08;&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x5934;&#x4E09;&#x884C;&#xFF09;&#xFF1A;ps aux | head -3</p>
+<ul>
+<li>&#x5305;&#x542B;&#x5934;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x5B9E;&#x662F;&#x5934;&#x4E24;&#x884C;</li>
+</ul>
+</li>
+<li>
+<p>&#x641C;&#x7D22;</p>
+<ul>
+<li>ps aux | grep java</li>
+<li>&#x7531;&#x4E8E;&#x641C;&#x7D22;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x91CC;&#x4F1A;&#x591A;&#x4E00;&#x4E2A;grep&#x8FDB;&#x7A0B;</li>
+<li>&#x6839;&#x636E; COMMAND &#x641C;&#x7D22;&#xFF0C;&#x91C7;&#x7528;&#x6A21;&#x7CCA;&#x5339;&#x914D;</li>
+</ul>
+</li>
+<li>
+<p>&#x6392;&#x5E8F;</p>
+<ul>
+<li>ps aux --sort %cpu &#x5347;&#x5E8F;</li>
+<li>ps aux --sort -%cpu &#x964D;&#x5E8F;</li>
+<li>ps aux --sort -%cpu | head -3 &#x5373;&#x964D;&#x5E8F;&#x53C8;&#x53EA;&#x663E;&#x793A;&#x5934;&#x51E0;&#x884C;</li>
+</ul>
+</li>
+<li>
+<p>&#x5C55;&#x793A;&#x51FA;&#x7236;&#x8FDB;&#x7A0B;</p>
+<ul>
+<li>ps -ef</li>
+<li>PPID&#x8FD9;&#x4E00;&#x5217;&#x5C31;&#x662F;&#x7236;&#x8FDB;&#x7A0B;ID&#xFF0C;&#x5982;&#x679C;&#x4E3A;0&#xFF0C;&#x5219;&#x6CA1;&#x6709;&#x7236;&#x8FDB;&#x7A0B;&#xFF08;&#x8001;&#x5927;&#xFF09;</li>
+</ul>
+</li>
+<li>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x5C55;&#x793A;&#x7684;&#x5217;</p>
+<ul>
+<li>ps axo  user,pid,ppid</li>
+<li>&#x4E2D;&#x95F4;&#x7528;<code>,(&#x9017;&#x53F7;)</code>&#x9694;&#x5F00;</li>
+</ul>
+</li>
+<li>
+<p>&#x52A8;&#x6001;&#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x5217;&#x8868;&#xFF08;&#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x53D8;&#x5316;&#xFF09;</p>
+<ul>
+<li>&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;top</li>
+<li>&#x67E5;&#x8BE2;&#x4E0D;&#x4F1A;&#x9000;&#x51FA;&#xFF0C;&#x4F1A;&#x5B9E;&#x65F6;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#xFF0C;&#x548C;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x7684;&#x6548;&#x679C;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FDB;&#x7A0B;&#x7684;&#x53D8;&#x5316;</li>
+<li>&#x5C55;&#x793A;&#x7684;&#x5185;&#x5BB9;&#x6709;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E0A;&#x9762;&#x662F;&#x6027;&#x80FD;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x8FDB;&#x7A0B;&#x5217;&#x8868;</li>
+<li>&#x6309;&#x4E0B; q &#x9000;&#x51FA;</li>
+<li>&#x5E38;&#x7528;&#x53C2;&#x6570;
+<ul>
+<li>top -d 3
+<ul>
+<li>&#x6BCF;&#x9694;&#x591A;&#x5C11;&#x79D2;&#x5237;&#x65B0;&#x4E00;&#x6B21;&#xFF0C;&#x6BD4;&#x5982; 3 &#x79D2;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F; 1s</li>
+</ul>
+</li>
+<li>top -d 3 -p 2160,46
+<ul>
+<li>&#x53EA;&#x5C55;&#x793A;&#x6307;&#x5B9A;&#x7684; PID &#x8FDB;&#x7A0B;&#xFF0C;&#x6BD4;&#x5982; &#x53EA;&#x5C55;&#x793A;PID&#x4E3A;2160&#x548C;46&#x7684;&#x8FDB;&#x7A0B;</li>
+<li>&#x53EF;&#x4EE5;&#x548C; -d &#x8054;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x4F7F;&#x7528;</li>
+<li>&#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053; &#x67D0;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;PID&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981; ps &#x5229;&#x7528; grep &#x5148;&#x8FC7;&#x6EE4;&#x67E5;&#x8BE2;&#x4E00;&#x4E0B;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       </div>

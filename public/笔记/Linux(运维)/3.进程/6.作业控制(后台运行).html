@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>6.&#x4F5C;&#x4E1A;&#x63A7;&#x5236;(&#x540E;&#x53F0;&#x8FD0;&#x884C;)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,21 +262,63 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
+<li>
+<p>&#x4E0D;&#x963B;&#x585E;&#x540E;&#x7EED;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x5728;&#x540E;&#x53F0;&#x6267;&#x884C;</p>
+<ul>
+<li>&#x5728;&#x547D;&#x4EE4;&#x7684;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#xFF1A;<strong>&amp;</strong>
+<ul>
+<li>&#x6BD4;&#x5982;&#xFF1A;sleep 7000 &amp;
+<ul>
+<li>&#x7761;&#x7720; 7000s&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0; &amp;&#xFF0C;&#x547D;&#x4EE4;&#x884C;&#x5C31;&#x4F1A;&#x9677;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x540E;&#x7EED;&#x547D;&#x4EE4;&#x65E0;&#x6CD5;&#x8F93;&#x5165;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x7A97;&#x53E3;&#x5173;&#x95ED;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x505C;&#x6B62;</li>
+</ul>
+</li>
+<li>
+<p>&#x67E5;&#x770B;&#x540E;&#x53F0;&#x547D;&#x4EE4;&#x7684;&#x6307;&#x4EE4;</p>
+<ul>
+<li>jobs</li>
+</ul>
+</li>
+<li>
+<p>&#x628A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x4ECE;&#x540E;&#x53F0;&#x8C03;&#x56DE;&#x524D;&#x53F0;</p>
+<ul>
+<li>fg 1
+<ul>
+<li>&#x8FD9;&#x91CC;&#x7684; 1&#xFF0C;&#x5C31;&#x662F;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#x7684;&#x7F16;&#x53F7;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; jobs &#x67E5;&#x770B;&#x5F97;&#x77E5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6700;&#x5F00;&#x59CB;&#x7684; []&#x4E2D;&#x7684;&#x6570;&#x5B57;</li>
+</ul>
+</li>
+<li>&#x547D;&#x4EE4;&#x884C;&#x5C31;&#x6709;&#x4F1A;&#x9677;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x540E;&#x7EED;&#x6307;&#x4EE4;&#x65E0;&#x6CD5;&#x8F93;&#x5165;</li>
+</ul>
+</li>
+<li>
+<p>&#x628A;&#x4E00;&#x4E2A;&#x524D;&#x53F0;&#x7B49;&#x5F85;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E22;&#x5230;&#x540E;&#x53F0;</p>
+<ul>
+<li>&#x6309;&#x4F4F; <strong>ctrl + z</strong>&#xFF0C;&#x5C31;&#x4F1A;&#x628A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E22;&#x5230;&#x540E;&#x53F0;&#x3002;&#x4F46;&#x662F;&#x8BE5;&#x8FDB;&#x7A0B;&#x4F1A;&#x6682;&#x505C;&#x6267;&#x884C;</li>
+<li>&#x4F7F;&#x7528; jobs &#x67E5;&#x770B;&#xFF0C;&#x663E;&#x793A;&#x5DF2;&#x505C;&#x6B62;</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>bg 1</strong>&#xFF0C;&#x628A;&#x4E00;&#x4E2A;&#x6682;&#x505C;&#x7684;&#x540E;&#x53F0;&#x7A0B;&#x5E8F;&#x91CD;&#x65B0;&#x542F;&#x52A8;
+<ul>
+<li>&#x4F7F;&#x7528; jobs &#x67E5;&#x770B;&#xFF0C;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x8FD0;&#x884C;&#x4E2D;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&#x6740;&#x6B7B;&#x540E;&#x53F0;&#x7B49;&#x5F85;&#x7684;&#x8FDB;&#x7A0B;</p>
+<ul>
+<li>kill %1
+<ul>
+<li>&#x8FD9;&#x91CC;&#x7684; 1&#xFF0C;&#x4E5F;&#x662F;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#x7684;&#x7F16;&#x53F7;</li>
+<li>&#x4F7F;&#x7528; jobs &#x67E5;&#x770B;&#xFF0C;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#xFF0C;&#x5DF2;&#x7EC8;&#x6B62;&#x72B6;&#x6001;</li>
+<li>&#x4F46;&#x662F;&#x518D;&#x6B21;&#x67E5;&#x770B;&#xFF0C;&#x5C31;&#x67E5;&#x4E0D;&#x5230;&#x4E86;&#xFF0C;&#x8868;&#x793A;&#x6210;&#x529F;&#x7EC8;&#x7ED3;</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       </div>

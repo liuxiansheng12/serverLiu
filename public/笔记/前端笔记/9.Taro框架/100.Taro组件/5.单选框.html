@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>5.&#x5355;&#x9009;&#x6846;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,24 +261,37 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
-</ul>
+      <ol>
+<li>
+<p>&#x4E00;&#x4E2A; <code>RadioGroup</code> &#x4E0B;&#x9762;&#x7684;&#xFF0C;&#x6240;&#x6709;&#x7684; <code>Radio</code> &#x4E3A;&#x4E00;&#x7EC4;</p>
+</li>
+<li>
+<p>&#x5F53; <code>RadioGroup</code> &#x4E0B;&#x9762;&#x7684; <code>Radio</code> &#x7684;&#x9009;&#x4E2D;&#x72B6;&#x6001;&#xFF0C;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x5C31;&#x4F1A;&#x89E6;&#x53D1; <code>RadioGroup</code>&#x4E0A;&#x9762;&#x7ED1;&#x5B9A;&#x7684; <code>change</code> &#x4E8B;&#x4EF6;</p>
+<ol>
+<li>&#x5E76;&#x4E14;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x4E0B;&#x9762;&#xFF0C;&#x6240;&#x6709;&#x7684;&#xFF0C;&#x5DF2;&#x9009;&#x4E2D;&#x7684; <code>Radio</code> &#x7684; <code>value</code> &#x503C;</li>
+<li>&#x901A;&#x8FC7; <code>event.detail.value</code> &#x83B7;&#x53D6;&#xFF0C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5373;&#x9009;&#x4E2D;&#x7684;&#x5185;&#x5BB9;</li>
+</ol>
+</li>
+<li>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token operator">&lt;</span><span class="token maybe-class-name">View</span> className<span class="token operator">=</span><span class="token string">&apos;container&apos;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token maybe-class-name">RadioGroup</span> onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">s</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token maybe-class-name">Radio</span> value<span class="token operator">=</span><span class="token string">&apos;&#x9009;&#x4E2D;&apos;</span> checked<span class="token operator">&gt;</span>&#x9009;&#x4E2D;<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">Radio</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token maybe-class-name">Radio</span> style<span class="token operator">=</span><span class="token string">&apos;margin-left: 20rpx&apos;</span> value<span class="token operator">=</span><span class="token string">&apos;&#x672A;&#x9009;&#x4E2D;&apos;</span><span class="token operator">&gt;</span>&#x672A;&#x9009;&#x4E2D;<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">Radio</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">RadioGroup</span><span class="token operator">&gt;</span>
 
+    <span class="token operator">&lt;</span><span class="token maybe-class-name">RadioGroup</span> onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">s</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token maybe-class-name">Label</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token maybe-class-name">Radio</span> value<span class="token operator">=</span><span class="token string">&apos;&#x9009;&#x4E2D;&apos;</span> checked<span class="token operator">&gt;</span>&#x9009;&#x4E2D;<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">Radio</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">Label</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token maybe-class-name">Label</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token maybe-class-name">Radio</span> style<span class="token operator">=</span><span class="token string">&apos;margin-left: 20rpx&apos;</span> value<span class="token operator">=</span><span class="token string">&apos;&#x672A;&#x9009;&#x4E2D;&apos;</span><span class="token operator">&gt;</span>&#x672A;&#x9009;&#x4E2D;<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">Radio</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">Label</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">RadioGroup</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token maybe-class-name">View</span><span class="token operator">&gt;</span>
+</pre>
       </div>
       
       

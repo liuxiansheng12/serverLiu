@@ -1,9 +1,9 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>5.loader&#x914D;&#x7F6E;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:////Users/liushanzhuang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
       
       
       
@@ -262,23 +262,62 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
+<li>&#x5728;&#x9879;&#x76EE;&#x7684; build.json &#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</li>
 </ul>
-
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token comment">// &#x914D;&#x7F6E;loader</span>
+  <span class="token string">&quot;webpackLoaders&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x6587;&#x4EF6;&#x540E;&#x7F00;</span>
+    <span class="token string">&quot;css&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x8FDB;&#x884C;&#x6B63;&#x5219;&#x5339;&#x914D;</span>
+      <span class="token string">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;.css$&quot;</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x7528;&#x5230;&#x7684;loader</span>
+      <span class="token string">&quot;loaders&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// loader &#x63D2;&#x4EF6;&#x540D;</span>
+        <span class="token string">&quot;style-loader&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// &#x53C2;&#x6570;</span>
+          <span class="token string">&quot;options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;loaderoption&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment">// &#x524D;&#x7F6E;&#x6307;&#x5B9A;&#xFF0C;&#x5148;&#x7528;less-loader&#x89E3;&#x6790;</span>
+          <span class="token string">&quot;before&quot;</span><span class="token operator">:</span> <span class="token string">&quot;less-loader&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><ul>
+<li>&#x517C;&#x5BB9; node &#x73AF;&#x5883;&#xFF0C;webpack5&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#xFF0C;&#x4E0D;&#x518D;&#x517C;&#x5BB9;node&#x73AF;&#x5883;
+<ul>
+<li>&#x5982;&#x679C;&#x6D89;&#x53CA;&#x5230;&#x4E86; Buffer&#xFF0C;&#x4F1A;&#x51FA;&#x73B0; Buffer is not defined &#x9519;&#x8BEF;</li>
+<li>&#x89E3;&#x51B3;&#x8BE5;&#x95EE;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;loader</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token property">&quot;webpackLoaders&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;js&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;wkx.*.js?$&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;loaders&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;babel-loader&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;unambiguous&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;compact&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> 
+            <span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">[</span>
+                <span class="token string">&quot;babel-plugin-import-globals&quot;</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                  <span class="token property">&quot;process&quot;</span><span class="token operator">:</span> <span class="token string">&quot;process&quot;</span><span class="token punctuation">,</span>
+                  <span class="token property">&quot;Buffer&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">&quot;moduleName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;buffer&quot;</span><span class="token punctuation">,</span> <span class="token property">&quot;exportName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Buffer&quot;</span><span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">]</span>
+            <span class="token punctuation">]</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;before&quot;</span><span class="token operator">:</span> <span class="token string">&quot;less-loader&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</pre>
       </div>
       
       

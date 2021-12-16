@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>22.&#x4FEE;&#x6539;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x8BFB;&#x53D6;&#x7684;&#x8DEF;&#x5F84;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,21 +262,32 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
+<li>&#x9ED8;&#x8BA4;&#x8BFB;&#x53D6;&#x7684;&#x662F; resources &#x4E0B;&#x7684; static &#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;&#x5185;&#x5BB9;</li>
+<li>&#x8981;&#x60F3;&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x8BFB;&#x53D6;&#x4F4D;&#x7F6E;&#xFF0C;&#x6362;&#x6210;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x9700;&#x8981;&#x501F;&#x52A9;&#x4E0B;&#x9762;&#x7684;&#x7C7B;</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-import">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">ResourceHandlerRegistry</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>config<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">WebMvcConfigurerAdapter</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">FileStaticConfig</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">WebMvcConfigurerAdapter</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">addResourceHandlers</span><span class="token punctuation">(</span><span class="token class-name">ResourceHandlerRegistry</span> registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token doc-comment comment">/**
+         *  /statics/xxx   &#x6307;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;  &#x5982;&#xFF1A;localhost:8080/statics/demo
+         *  file:/root/java_demo/statics/  &#x6307;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;
+         */</span>
+        registry<span class="token punctuation">.</span><span class="token function">addResourceHandler</span><span class="token punctuation">(</span><span class="token string">&quot;/imgs/**&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addResourceLocations</span><span class="token punctuation">(</span><span class="token string">&quot;file:&quot;</span><span class="token operator">+</span><span class="token string">&quot;/root/java_demo/images/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        registry<span class="token punctuation">.</span><span class="token function">addResourceHandler</span><span class="token punctuation">(</span><span class="token string">&quot;/statics/**&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addResourceLocations</span><span class="token punctuation">(</span><span class="token string">&quot;file:&quot;</span><span class="token operator">+</span><span class="token string">&quot;/root/java_demo/statics/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><ul>
+<li>&#x6B64;&#x65F6;
+<ul>
+<li>&#x5E26;&#x6709; statics/ &#x7684;&#x9759;&#x6001;&#x8BF7;&#x6C42;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE; /root/java_demo/statics/ &#x4E2D;&#x8BFB;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;</li>
+<li>&#x5E26;&#x6709; imgs/ &#x7684;&#x9759;&#x6001;&#x8BF7;&#x6C42;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE; /root/java_demo/images/ &#x4E2D;&#x8BFB;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;</li>
+</ul>
+</li>
 </ul>
 
       </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>1.&#x57FA;&#x672C;&#x4F7F;&#x7528;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,21 +262,35 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
+<li>
+<p>commonjs&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x53EA;&#x80FD;&#x5728; node &#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x6216;&#x8005;&#x6253;&#x5305;&#x5DE5;&#x5177;&#x4E2D;&#x4F7F;&#x7528;</p>
+</li>
+<li>
+<p>&#x6570;&#x636E;&#x5BFC;&#x5165;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> data <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./demo.js&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ul>
+<li>&#x6570;&#x636E;&#x5BFC;&#x51FA;</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">module<span class="token punctuation">.</span><span class="token property-access">exports</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+   name<span class="token operator">:</span> <span class="token string">&apos;&#x5F20;&#x4E09;&apos;</span><span class="token punctuation">,</span>
+   age<span class="token operator">:</span> <span class="token number">18</span>
+<span class="token punctuation">}</span>
+</pre><ul>
+<li>&#x5E76;&#x4E14;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#xFF0C;&#x53EA;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5BFC;&#x5165;&#xFF0C;&#x5C31;&#x4F1A;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x5BFC;&#x5165;
+<ul>
+<li>require &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5E95;&#x5C42;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;:
+<ul>
+<li>&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5148;&#x53BB;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#x67E5;&#x770B;&#x6709;&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x76F4;&#x63A5;return</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x7136;&#x540E;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x4EE3;&#x7801;&#xFF0C;&#x8FDB;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x628A; module.exports &#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7F13;&#x5B58;&#x5230;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#x4E2D;</li>
+<li>&#x8FD9;&#x6837;&#xFF0C;&#x4E0B;&#x6B21;&#xFF0C;&#x5728;&#x4F7F;&#x7528; require &#x5BFC;&#x5165;&#x8BE5;&#x6A21;&#x5757;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x5DF2;&#x7ECF;&#x6709;&#x7F13;&#x5B58;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;return&#x7F13;&#x5B58;&#xFF0C;&#x6A21;&#x5757;&#x4EE3;&#x7801;&#x4E0D;&#x4F1A;&#x5728;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x4E86;</li>
+</ul>
+</li>
+<li>&#x6240;&#x4EE5;&#xFF0C;&#x6A21;&#x5757;&#x4EE3;&#x7801;&#x53EA;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;&#xFF08;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF09;</li>
+</ul>
+</li>
 </ul>
 
       </div>

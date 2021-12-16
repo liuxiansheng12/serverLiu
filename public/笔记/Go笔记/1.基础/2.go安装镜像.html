@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3.xAxis&#x5C5E;&#x6027;(&#x914D;&#x7F6E;X&#x8F74;)</title>
+      <title>2.go&#x5B89;&#x88C5;&#x955C;&#x50CF;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,23 +262,28 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>&#x8BBE;&#x7F6E; x &#x8F74;&#xFF0C;&#x5750;&#x6807;&#x6587;&#x5B57;&#x7684;&#x503E;&#x659C;&#x5C55;&#x793A;<pre data-role="codeBlock" data-info="js" class="language-javascript">  option <span class="token operator">=</span> <span class="token punctuation">{</span>   
-      xAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-          <span class="token comment">// &#x8BBE;&#x7F6E;&#x6587;&#x5B57;&#x503E;&#x659C;</span>
-          axisLabel<span class="token operator">:</span> <span class="token punctuation">{</span>  
-              fontSize<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-              <span class="token comment">// &#x53EA;&#x8981;&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x95F4;&#x9694;&#x51E0;&#x4E2A;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x5F3A;&#x5236;&#x663E;&#x793A;</span>
-              <span class="token comment">// 0 &#x7684;&#x8BDD;&#x5C31;&#x662F;&#x663E;&#x793A;&#x6240;&#x6709;</span>
-              interval<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-              rotate<span class="token operator">:</span> <span class="token number">60</span>  <span class="token comment">//&#x503E;&#x659C;&#x7684;&#x7A0B;&#x5EA6;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      yAxis<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      series<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</pre></li>
+<li>
+<p>&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7B2C;&#x4E09;&#x65B9;&#x63D2;&#x4EF6;&#x7684;&#x4E0B;&#x8F7D;&#x901F;&#x5EA6;</p>
+</li>
+<li>
+<p>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#xFF0C;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x4E94;&#x6761;&#x547D;&#x4EE4;</p>
+</li>
 </ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">go env <span class="token operator">-</span>w <span class="token constant">GO111MODULE</span><span class="token operator">=</span>on
+go env <span class="token operator">-</span>w <span class="token constant">GOPROXY</span><span class="token operator">=</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span><span class="token property-access">aliyun</span><span class="token punctuation">.</span><span class="token property-access">com</span><span class="token operator">/</span>goproxy<span class="token operator">/</span><span class="token punctuation">,</span>direct
+echo <span class="token string">&quot;export GO111MODULE=on&quot;</span> <span class="token operator">&gt;&gt;</span> <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span><span class="token property-access">profile</span>
+echo <span class="token string">&quot;export GOPROXY=https://goproxy.cn&quot;</span> <span class="token operator">&gt;&gt;</span> <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span><span class="token property-access">profile</span>
+source <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span><span class="token property-access">profile</span>
+</pre><ul>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x6267;&#x884C;</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x8FD9;&#x4E24;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x5728;&#x65B0;&#x7248;&#x4E2D;&#x53EF;&#x4EE5;&#x5408;&#x5E76;</span>
+echo <span class="token string">&quot;export GO111MODULE=on&quot;</span> <span class="token operator">&gt;&gt;</span> <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span><span class="token property-access">profile</span>
+echo <span class="token string">&quot;export GOPROXY=https://goproxy.cn&quot;</span> <span class="token operator">&gt;&gt;</span> <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span><span class="token property-access">profile</span>
 
+<span class="token comment">// &#x5408;&#x5E76;&#x6210;&#x4E0B;&#x9762;&#x4E00;&#x6761;&#x547D;&#x4EE4;</span>
+go env <span class="token operator">-</span>w <span class="token constant">GOPROXY</span><span class="token operator">=</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>goproxy<span class="token punctuation">.</span><span class="token property-access">cn</span><span class="token punctuation">,</span>direct
+</pre>
       </div>
       
       
