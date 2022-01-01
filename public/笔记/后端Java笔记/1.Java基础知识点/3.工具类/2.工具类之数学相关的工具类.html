@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>2.&#x5DE5;&#x5177;&#x7C7B;&#x4E4B;&#x6570;&#x5B66;&#x76F8;&#x5173;&#x7684;&#x5DE5;&#x5177;&#x7C7B;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,21 +261,127 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
-</ul>
+      <h4 class="mume-header" id="math%E7%B1%BB">Math&#x7C7B;</h4>
+
+<ol>
+<li>&#x6240;&#x5C5E;&#x7684;&#x5305;java.lang&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5F15;&#x5305;&#x5C31;&#x80FD;&#x4F7F;&#x7528;</li>
+<li>Math&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x662F;&#x79C1;&#x6709;&#x7684;  &#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</li>
+<li>&#x7531;&#x4E8E;Math&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x5C5E;&#x6027;&#x53CA;&#x65B9;&#x6CD5;&#x90FD;&#x662F;static  &#x4E0D;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</li>
+<li>&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;
+<ol>
+<li><code>abs()</code> &#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x6570;&#x5B57;&#x7684;&#x7EDD;&#x5BF9;&#x503C;    (&#x53C2;&#x6570; int long float double)</li>
+<li><code>double = ceil()</code> &#x5411;&#x4E0A;&#x53D6;&#x6574;</li>
+<li><code>double = floor()</code> &#x5411;&#x4E0B;&#x53D6;&#x6574;</li>
+<li><code>double = rint()</code>  &#x4E34;&#x8FD1;&#x7684;&#x6574;&#x6570; &#x5982;&#x679C;&#x4E24;&#x8FB9;&#x8DDD;&#x79BB;&#x4E00;&#x6837; &#x5219;&#x8FD4;&#x56DE;&#x5076;&#x6570;</li>
+<li><code>int = round()</code>  &#x56DB;&#x820D;&#x4E94;&#x5165;&#x7684;&#x6574;&#x6570;<br>
+max(a,b)  min(a,b)    (&#x53C2;&#x6570;int  long  float  double)<br>
+pow(a,b)  a&#x7684;b&#x6B21;&#x65B9;  (&#x53C2;&#x6570;double &#x8FD4;&#x56DE;&#x503C;double)<br>
+sqrt(double a)  &#x83B7;&#x53D6;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x5E73;&#x65B9;&#x6839;<br>
+double = random();	  &#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;     [0.0--1.0)<br>
+5.Math.random()&#x8BA1;&#x7B97;&#x5C0F;&#x6570;&#x7684;&#x65F6;&#x5019;&#x7CBE;&#x786E;&#x7A0B;&#x5EA6;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x635F;&#x5931;<br>
+0-9&#x4E4B;&#x95F4;&#x7684;&#x968F;&#x673A;&#x6574;&#x6570;<br>
+int value = (int)(Math.random()*10);<br>
+5.0---10.9&#x4E4B;&#x95F4;&#x7684;&#x5C0F;&#x6570;<br>
+(Math.random()*6)+5<br>
+0.0---0.99999 * 6<br>
+(0.0---5.49999)+5</li>
+</ol>
 </li>
-<li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
-<ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
-</ul>
+</ol>
+<h4 class="mume-header" id="random%E7%B1%BB">Random&#x7C7B;</h4>
+
+<pre class="language-text">1.&#x5728;java.util&#x5305;&#x4E2D;&#x7684;&#x7C7B;   &#x9700;&#x8981;import&#x5BFC;&#x5165;
+2.&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7EE7;&#x627F;&#x5173;&#x7CFB;  &#x9ED8;&#x8BA4;&#x7EE7;&#x627F;Object&#x7C7B;
+3.&#x67E5;&#x627E;&#x6784;&#x9020;&#x65B9;&#x6CD5;---&gt;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;
+	Random r = new Random();
+4.&#x7C7B;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;
+	r.nextInt();   &#x968F;&#x673A;&#x4EA7;&#x751F; int&#x53D6;&#x503C;&#x8303;&#x56F4;&#x7684;&#x6574;&#x6570; &#x6709;&#x6B63;&#x6709;&#x8D1F;
+	r.nextInt(int bound);   &#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;  [0--bound)  &#x6574;&#x6570;  
+		&#x6CE8;&#x610F;bound&#x5FC5;&#x987B;&#x4E3A;&#x6B63;&#x6570;  &#x5426;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x5F02;&#x5E38;
+		IllegalArgumentException
+	r.nextFloat()  &#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; [0.0---1.0)
+	r.nextBoolean()   &#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;boolean&#x503C;   true  false
+</pre>
+<h4 class="mume-header" id="uuid%E7%B1%BB">UUID&#x7C7B;</h4>
+
+<pre class="language-text">1.&#x6240;&#x5C5E;&#x7684;&#x5305;  java.util    &#x9700;&#x8981;import&#x5BFC;&#x5165;
+2.&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7EE7;&#x627F;&#x5173;&#x7CFB;  &#x9ED8;&#x8BA4;&#x7EE7;&#x627F;Object&#x7C7B;
+3.&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x6709;  &#x6CA1;&#x6709;&#x65E0;&#x53C2;&#x6570;&#x7684;  &#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;
+	UUID uuid = UUID.randomUUID();
+    		System.out.println(uuid.toString());//&#x6570;&#x636E;&#x5E93;&#x8868;&#x683C;&#x4E3B;&#x952E; primary key
+	&#x4EA7;&#x751F;&#x4E00;&#x4E2A;32&#x4F4D;&#x7684;&#x968F;&#x673A;&#x5143;&#x7D20; &#x6BCF;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x662F;&#x4E00;&#x4E2A;16&#x8FDB;&#x5236;&#x7684;&#x6570;&#x5B57;
+</pre>
+<h4 class="mume-header" id="biginteger%E7%B1%BB%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E4%B8%80%E4%BA%9B%E5%A4%A7%E6%95%B4%E6%95%B0%E6%AF%94double%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BF%98%E5%A4%A7%E4%BD%86%E6%98%AF%E5%B7%B2%E7%BB%8F%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BA%86">BigInteger&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B58;&#x653E;&#x4E00;&#x4E9B;&#x5927;&#x6574;&#x6570;&#xFF0C;&#x6BD4;double&#x7C7B;&#x578B;&#x7684;&#x8FD8;&#x5927;&#xFF0C;&#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x4E86;</h4>
+
+<ol>
+<li>&#x6240;&#x5C5E;&#x7684;&#x5305;java.math  &#x9700;&#x8981;import&#x5BFC;&#x5165;&#xFF0C;&#x5BFC;&#x5165;&#x65B9;&#x5F0F; <code>import java.math.BigInteger</code></li>
+<li>&#x81EA;&#x52A8;&#x7EE7;&#x627F; <code>Number</code> &#x7C7B;</li>
+<li>&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x5168;&#x90E8;&#x90FD;&#x662F;&#x5E26;&#x53C2;&#x6570;&#x7684;
+<ol>
+<li>&#x901A;&#x5E38;&#x5229;&#x7528;&#x5E26; <code>String</code> &#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>&#x6BD4;&#x5982;: <code>BigInteger bi = new BigInteger(&quot;123&quot;)</code>
+<ol>
+<li>&#x6253;&#x5370;&#x4E00;&#x4E0B;&#xFF0C;&#x53D1;&#x73B0;&#x6253;&#x5370;&#x51FA;&#x7684;&#x5C31;&#x662F; <code>123</code> &#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x7D22;&#x5F15;</li>
+</ol>
 </li>
-</ul>
+</ol>
+</li>
+<li>&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;
+<ol>
+<li>&#x505A;&#x56DB;&#x5219;&#x8FD0;&#x7B97;(&#x52A0;&#x51CF;&#x4E58;&#x9664;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x90FD;&#x662F;BigInteger&#x7C7B;&#x578B;&#x7684;)</li>
+<li>add()</li>
+<li>subtract()</li>
+<li>multiply()</li>
+<li>divide()</li>
+</ol>
+</li>
+<li>&#x5C0F;&#x4F8B;&#x5B50;
+<ol>
+<li>&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; &#x7528;&#x6765;&#x8BA1;&#x7B97;&#x7ED9;&#x5B9A;&#x6570;&#x5B57;&#x7684;&#x9636;&#x4E58;</li>
+<li>&#x6BD4;&#x5982;: 1<em>2</em>3<em>4</em>5==120</li>
+<li>&#x4EE3;&#x7801;</li>
+</ol>
+<pre data-role="codeBlock" data-info="java" class="language-java"> <span class="token keyword keyword-public">public</span> <span class="token class-name">BigInteger</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> num<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ 	<span class="token class-name">BigInteger</span> result <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">BigInteger</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 	<span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>num<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ 		result <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">multiply</span><span class="token punctuation">(</span><span class="token keyword keyword-new">new</span> <span class="token class-name">BigInteger</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 	<span class="token punctuation">}</span>
+ 	<span class="token keyword keyword-return">return</span> result<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+</pre></li>
+</ol>
+<h4 class="mume-header" id="bigdecima%E7%B1%BB%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E5%AD%98%E6%94%BE%E4%B8%80%E4%B8%8B%E5%A4%A7%E5%B0%8F%E6%95%B0-%E8%B6%85%E8%BF%87%E4%BA%86double%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4">BigDecima&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B58;&#x653E;&#x4E00;&#x4E0B;&#x5927;&#x5C0F;&#x6570;    &#x8D85;&#x8FC7;&#x4E86;double&#x53D6;&#x503C;&#x8303;&#x56F4;</h4>
+
+<pre class="language-text">1.&#x6240;&#x5C5E;&#x7684;&#x5305;  java.math&#x5305;
+2.&#x7EE7;&#x627F;Number&#x7C7B;
+3.&#x901A;&#x5E38;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; &#x5E26;String&#x53C2;&#x6570; &#x6784;&#x5EFA;&#x5BF9;&#x8C61;
+4.&#x7C7B;&#x4E2D;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;
+	&#x505A;&#x56DB;&#x5219;&#x8FD0;&#x7B97; 
+	add()   subtract()   multiply()   divide()
+	&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x524D;&#x9762;&#x662F;&#x4FDD;&#x7559;&#x5C0F;&#x6570;&#x70B9;&#x4E4B;&#x540E;&#x7684;&#x4F4D;&#x6570;  &#x540E;&#x9762;&#x53C2;&#x6570;&#x662F;&#x8BBE;&#x7F6E;&#x7684;&#x6A21;&#x5F0F;
+	&#x5BF9;&#x8C61;.setScale(2,BigDecimal.ROUND_DOWN);
+</pre>
+<h4 class="mume-header" id="decimalformat%E7%B1%BB-%E5%B0%86%E5%B0%8F%E6%95%B0%E7%82%B9%E4%B9%8B%E5%89%8D%E5%92%8C%E4%B9%8B%E5%90%8E%E7%9A%84%E4%BD%8D%E6%95%B0%E9%83%BD%E8%83%BD%E5%A4%84%E7%90%86%E7%9A%84%E7%B1%BB-%E6%A0%BC%E5%BC%8F%E5%8C%96">DecimalFormat&#x7C7B;   &#x5C06;&#x5C0F;&#x6570;&#x70B9;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x7684;&#x4F4D;&#x6570;&#x90FD;&#x80FD;&#x5904;&#x7406;&#x7684;&#x7C7B;----&gt;&#x683C;&#x5F0F;&#x5316;</h4>
+
+<ol>
+<li>&#x6240;&#x5C5E;&#x7684;&#x5305; java.text</li>
+<li>import&#x5BFC;&#x5165;&#x624D;&#x80FD;&#x4F7F;&#x7528;</li>
+<li>&#x901A;&#x8FC7;&#x5E26;String&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x5316;&#x5BF9;&#x8C61;</li>
+<li>&#x8C03;&#x7528;format&#x65B9;&#x6CD5;&#x5C06;&#x4E00;&#x4E2A;&#x5C0F;&#x6570;&#x683C;&#x5F0F;&#x5316;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</li>
+</ol>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">DecimalFormat</span> df <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">DecimalFormat</span><span class="token punctuation">(</span><span class="token string">&quot;000.###&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 0 #</span>
+<span class="token class-name">String</span> value <span class="token operator">=</span> df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token number">12.45</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ol start="5">
+<li><code>#</code>&#x4E0E;<code>0</code>&#x7684;&#x533A;&#x522B;
+<ol>
+<li><code>#</code>: &#x4E0D;&#x9650;&#x5236;&#x957F;&#x5EA6;&#xFF0C;&#x4E0D;&#x6EE1;&#x8DB3;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x8865;0</li>
+<li><code>0</code>: &#x9650;&#x5236;&#x957F;&#x5EA6;&#xFF0C;&#x4E0D;&#x6EE1;&#x8DB3;&#x81EA;&#x52A8;&#x8865;0</li>
+<li>&#x5C0F;&#x6570;&#x4F4D;&#xFF0C;&#x8D85;&#x51FA;&#x7684;&#x90E8;&#x5206;&#x56DB;&#x820D;&#x4E94;&#x5165;</li>
+<li>&#x6574;&#x6570;&#x4F4D;&#xFF0C;&#x8D85;&#x51FA;&#x90E8;&#x5206;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x622A;&#x53D6;</li>
+</ol>
+</li>
+</ol>
 
       </div>
       

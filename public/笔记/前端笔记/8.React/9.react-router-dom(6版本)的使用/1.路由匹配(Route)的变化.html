@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>1.&#x8DEF;&#x7531;&#x5339;&#x914D;(Route)&#x7684;&#x53D8;&#x5316;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,17 +262,35 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
+<li>v6&#x65B0;&#x7248;&#x672C;</li>
 </ul>
-</li>
-<li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx"><span class="token keyword keyword-function">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">HashRouter</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Routes</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/home<span class="token punctuation">&quot;</span></span> <span class="token attr-name">element</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Home</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Routes</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">HashRouter</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">}</span>
+</pre><ul>
+<li>v5&#x65E7;&#x7248;&#x672C;</li>
+</ul>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx"><span class="token keyword keyword-function">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">HashRouter</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">{</span><span class="token comment">/* &#x65B9;&#x5F0F;&#x4E00; */</span><span class="token punctuation">}</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/home<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Home</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">{</span><span class="token comment">/* &#x65B9;&#x5F0F;&#x4E8C; */</span><span class="token punctuation">}</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/home<span class="token punctuation">&quot;</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token maybe-class-name">Home</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Switch</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">HashRouter</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">}</span>
+</pre><ul>
+<li>&#x53D8;&#x5316;
 <ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
+<li>Routes &#x66FF;&#x6362;&#x4E86; Switch</li>
+<li>&#x7EC4;&#x4EF6;&#x7684;&#x4F20;&#x5165;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#xFF0C;&#x5229;&#x7528; element &#x8FDB;&#x884C;&#x884C;&#x95F4;&#x4F20;&#x53C2;</li>
 </ul>
 </li>
 </ul>

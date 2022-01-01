@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>17.&#x51E0;&#x4E2A;&#x7279;&#x6B8A;&#x6307;&#x4EE4;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,21 +261,52 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
+      <ol>
 <li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
-</ul>
+<p><code>in ()</code>&#xFF0C;&#x6EE1;&#x8DB3;&#x67E5;&#x8BE2;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5373;&#x53EF;&#xFF0C;<strong>&#x8FDB;&#x884C;&#x7B49;&#x53F7;&#xFF08;=&#xFF09;&#x6BD4;&#x8F83;</strong></p>
+<ol>
+<li><code>in</code> &#x540E;&#x9762;&#x7684; <code>()</code> &#x5185;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5E38;&#x91CF;&#x56FA;&#x5B9A;&#x503C;</li>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x901A;&#x8FC7;&#x53E6;&#x4E00;&#x6761;sql&#x8BED;&#x53E5;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x7ED3;&#x679C;</li>
+<li><code>in()</code>&#x3001;<code>not in();</code></li>
+</ol>
 </li>
 <li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
-<ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
-</ul>
+<p><code>any&#x3001;some&#x3001;all</code> &#x540E;&#x9762;&#x7684; <code>()</code> &#x5185;&#xFF0C; <strong>&#x53EA;&#x5141;&#x8BB8;&#x5199;sql&#x8BED;&#x53E5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x5D4C;&#x5957;&#x6765;&#x83B7;&#x53D6;&#x5B50;&#x96C6;</strong></p>
+<ol>
+<li><strong>&#x8FD9;&#x4E09;&#x4E2A;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x7B5B;&#x9009;&#xFF0C;&#x4E0E;in&#x4E0D;&#x540C;&#xFF0C;in&#x505A;&#x7684;&#x662F; <code>=</code> &#x53F7;&#x7B5B;&#x9009;</strong></li>
+</ol>
 </li>
-</ul>
+<li>
+<p><code>any ()</code> &#x7684;&#x7528;&#x6CD5;</p>
+<ol>
+<li>&#x5177;&#x4F53;&#x7684;&#x6307;&#x4EE4;&#xFF1A;<code>select * from demo1 where age &gt; any ( select age from demo2 )</code></li>
+<li>&#x5982;&#x679C;&#xFF1A;() &#x4E2D;&#x7684; sql&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E3A; <code>3, 4, 5</code></li>
+<li><code>age &gt; any (3, 4, 5)</code>(&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5199;3, 4, 5&#xFF0C;&#x5FC5;&#x987B;&#x5199;sql&#x8BED;&#x53E5;)&#x3002;&#x5C31;&#x76F8;&#x5F53;&#x4E8E; <code>arg &gt; 3 or arg&gt;4 or arg&gt;5</code></li>
+<li><strong>&#x6EE1;&#x8DB3;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5C31;&#x53EF;&#x4EE5;</strong></li>
+<li><strong>&#x5982;&#x679C;&#x505A; <code>=</code> &#x7B5B;&#x9009;&#xFF0C;&#x5C31;&#x76F8;&#x5F53;&#x4E8E; <code>in</code></strong>
+<ol>
+<li>&#x6BD4;&#x5982;: <code>age = any( select age from demo2 )</code> &#x76F8;&#x5F53;&#x4E8E; <code>age in( select age from demo2 )</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><code>some</code> &#x7684;&#x7528;&#x6CD5;&#x4E0E;&#xFF0C;<code>any</code>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x540D;&#x79F0;&#x4E0D;&#x540C;&#x3002;</p>
+</li>
+<li>
+<p><code>all ()</code> &#x7684;&#x7528;&#x6CD5;</p>
+<ol>
+<li><strong>&#x4E0E;any&#x76F8;&#x53CD;&#xFF0C;&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x6EE1;&#x8DB3;&#x624D;&#x53EF;&#x4EE5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;and</strong></li>
+<li>&#x8FD8;&#x662F;&#xFF0C;&#x6BD4;&#x5982;: <code>select * from demo1 where age &gt; all ( select age from demo2 )</code></li>
+<li>&#x5982;&#x679C;&#xFF1A;() &#x4E2D;&#x7684; sql&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E3A; <code>3, 4, 5</code></li>
+<li><code>age &gt; all (3, 4, 5)</code>(&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5199;3, 4, 5&#xFF0C;&#x5FC5;&#x987B;&#x5199;sql&#x8BED;&#x53E5;)&#x3002;&#x5C31;&#x76F8;&#x5F53;&#x4E8E; <code>arg &gt; 3 and arg&gt;4 and arg&gt;5</code>
+<ol>
+<li>&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x6EE1;&#x8DB3;</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
       </div>
       

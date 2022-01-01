@@ -79,7 +79,7 @@
     </div>
 
     <script>
-        const _lists = ['前端笔记', '后端Java笔记', '后端python笔记', 'Go笔记', 'Linux(运维)'];
+        const _lists = ['前端笔记', '后端Java笔记', '后端python笔记', 'Go笔记', 'Linux(运维)', '网络安全'];
         const map = [];
         async function getData() {
             const d = await fetch("/noteProc/getFilePaths")
@@ -87,10 +87,10 @@
             for(let i = 0; i < data.result.length; i ++) {
                 const d = data.result[i];
                 if(_lists.indexOf(d.path) > -1) {
-                    map.push({
+                    map[_lists.indexOf(d.path)] = {
                         ...d,
                         childrenPath: chuLi(d.childrenPath)
-                    })
+                    }
                 }
             }
             xuanRan(map, document.querySelector(".lists"), "a" + new Date().getTime(), "/笔记/");

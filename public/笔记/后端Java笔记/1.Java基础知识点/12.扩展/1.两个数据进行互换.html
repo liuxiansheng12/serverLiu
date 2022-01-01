@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>1.&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4E92;&#x6362;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,22 +261,37 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
-</ul>
-</li>
-<li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
-<ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
-</ul>
-</li>
-</ul>
+      <h5 class="mume-header" id="%E6%96%B9%E6%B3%951%E9%80%9A%E8%BF%87%E4%B8%AD%E9%97%B4%E5%8F%98%E9%87%8F">&#x65B9;&#x6CD5;1&#xFF0C;&#x901A;&#x8FC7;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;</h5>
 
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-int">int</span> c <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+    b <span class="token operator">=</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h5 class="mume-header" id="%E6%96%B9%E6%B3%952%E9%80%9A%E8%BF%87%E8%BF%90%E7%AE%97%E7%AC%A6">&#x65B9;&#x6CD5;2&#xFF0C;&#x901A;&#x8FC7;&#x8FD0;&#x7B97;&#x7B26;+</h5>
+
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+    a <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    b <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>   <span class="token comment">// &#x76F8;&#x5F53;&#x4E8E; b = a + b - b;</span>
+    a <span class="token operator">=</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>   <span class="token comment">// &#x76F8;&#x5F53;&#x4E8E; a = a + b - a;</span>
+<span class="token punctuation">}</span>
+</pre><h5 class="mume-header" id="%E6%96%B9%E6%B3%953%E9%80%9A%E8%BF%87%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6">&#x65B9;&#x6CD5;3&#xFF0C;&#x901A;&#x8FC7;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;^</h5>
+
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+
+    a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>
+    b <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>   <span class="token comment">// &#x76F8;&#x5F53;&#x4E8E; b = a ^ b ^ b = a;</span>
+    a <span class="token operator">=</span> a <span class="token operator">^</span> b<span class="token punctuation">;</span>   <span class="token comment">// &#x76F8;&#x5F53;&#x4E8E; a = a ^ b ^ a = b;</span>
+<span class="token punctuation">}</span>
+</pre>
       </div>
       
       

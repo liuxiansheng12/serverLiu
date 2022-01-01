@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>3.&#x5DE5;&#x5177;&#x7C7B;&#x4E4B;&#x65E5;&#x671F;&#x76F8;&#x5173;&#x7684;&#x5DE5;&#x5177;&#x7C7B;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,21 +261,45 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
-</ul>
-</li>
-<li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
-<ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
-</ul>
-</li>
-</ul>
+      <pre class="language-text">&#x65E5;&#x671F;&#x76F8;&#x5173;
+Date&#x7C7B;
+1.&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x662F;java.util&#x5305;
+2.&#x5BFC;&#x5305; &#x62FF;&#x6765;&#x4F7F;&#x7528;  &#x6784;&#x5EFA;&#x5BF9;&#x8C61;
+3.&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x65E0;&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;  &#x6216;&#x8005;&#x5E26;long&#x6784;&#x9020;&#x65B9;&#x6CD5;
+4.Date&#x7C7B;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;
+	before();  after();
+	setTime()  getTime();-----&gt;long
+	compareTo();   -1  1  0
+5.&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4E00;&#x4E2A;Date&#x65E5;&#x671F;&#x7684;&#x683C;&#x5F0F;
+
+DateFormat&#x7C7B;
+1.&#x5305;java.text &#x9700;&#x8981;&#x5BFC;&#x5305;&#x4F7F;&#x7528;
+2.&#x6B64;&#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;  &#x4E0D;&#x80FD;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;   &#x5B50;&#x7C7B;&#x6765;&#x4F7F;&#x7528;
+3.SimpleDateFormat&#x7C7B;   &#x662F;DateFormat&#x7684;&#x5B50;&#x7C7B;
+4.&#x8C03;&#x7528;&#x5E26;String&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;format&#x5BF9;&#x8C61;
+	SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+    		String v = sdf.format(date1);//&#x901A;&#x8FC7;sdf&#x5BF9;&#x8C61;&#x5C06;date1&#x683C;&#x5F0F;&#x5316;&#x6210;&#x4F60;&#x63CF;&#x8FF0;&#x7684;&#x6837;&#x5B50;
+
+Calendar&#x7C7B;   1.1&#x7248;&#x672C;
+1.&#x6240;&#x5C5E;&#x7684;&#x5305;java.util  &#x9700;&#x8981;&#x5BFC;&#x5305;
+2.&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5;  &#x7528;protected&#x4FEE;&#x9970;&#x7684;  &#x901A;&#x5E38;&#x8BBF;&#x95EE;&#x4E0D;&#x5230;   &#x901A;&#x5E38;&#x4F1A;&#x8C03;&#x7528;&#x9ED8;&#x8BA4;&#x7684;getInstance();
+3.&#x5E38;&#x7528;&#x65B9;&#x6CD5;
+	after()  before()
+	setTime()  getTime()----&gt;Date
+	getTimeInMillis()----time
+	getTimeZone()---TimeZone
+	Calendar&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E00;&#x4E2A;date&#x5C5E;&#x6027;  &#x53EF;&#x4EE5;&#x64CD;&#x4F5C;date&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x4FE1;&#x606F;
+	set   get
+	calendar.set(Calendar.YEAR,2015);
+    		int year = calendar.get(Calendar.YEAR);
+
+TimeZone
+1.java.util&#x5305;
+2.&#x53EF;&#x4EE5;&#x901A;&#x8FC7;calendar&#x5BF9;&#x8C61;.getTimeZone()&#x83B7;&#x53D6;  &#x6216;   TimeZone.getDefault();
+3.&#x5E38;&#x7528;&#x65B9;&#x6CD5;
+	tz.getID()	   ----&gt;    Asia/Shanghai
+    		tz.getDisplayName()   &#x4E2D;&#x56FD;&#x6807;&#x51C6;&#x65F6;&#x95F4;
+</pre>
 
       </div>
       

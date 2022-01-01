@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>26.&#x521B;&#x5EFA;&#x5220;&#x9664;&#x5B50;&#x8D26;&#x53F7;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,21 +261,116 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
+      <h4 class="mume-header" id="%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7">&#x521B;&#x5EFA;&#x7528;&#x6237;</h4>
+
+<ol>
+<li>&#x6307;&#x4EE4;&#x4E3A;: <code>create user &apos;&#x7528;&#x6237;&#x540D;&apos;@&apos;IP&apos; identified by &apos;&#x5BC6;&#x7801;&apos;;</code>
+<ol>
+<li><code>IP</code>&#xFF0C;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8BE5;&#x7528;&#x6237;&#x7684;ip&#xFF0C;&#x5982;&#x679C;&#x5199; <code>*</code> &#x5219;&#x6240;&#x6709;&#x7684;&#x90FD;&#x53EF;&#x4EE5;&#xFF0C;&#x672C;&#x673A;&#x901A;&#x5E38;&#x8BBE;&#x7F6E;&#x6210; <code>localhost</code></li>
+</ol>
+</li>
+<li>&#x6BD4;&#x5982;: <code>create user &apos;zzt&apos;@&apos;localhost&apos; identified by &apos;123456&apos;;</code>
+<ol>
+<li>&#x8FD9;&#x6837;&#xFF0C;&#x5C31;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x6237;</li>
+</ol>
+</li>
+</ol>
+<h4 class="mume-header" id="%E7%BB%99%E5%88%9B%E5%BB%BA%E7%9A%84%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E6%9D%83%E9%99%90">&#x7ED9;&#x521B;&#x5EFA;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x8BBE;&#x7F6E;&#x6743;&#x9650;</h4>
+
+<ol>
+<li>&#x5982;&#x679C;&#xFF0C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#xFF0C;&#x5219;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;&#x9ED8;&#x8BA4;&#x4E3A;&#x662F;&#xFF0C;<code>Usage</code>&#xFF0C;&#x5373;&#x53EA;&#x5141;&#x8BB8;&#x767B;&#x9646;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x67E5;&#x8BE2;&#x548C;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5565;&#x90FD;&#x5E72;&#x4E0D;&#x4E86;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>show grants for &apos;&#x7528;&#x6237;&#x540D;&apos;@&apos;IP&apos;;</code> &#x8FD9;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;</li>
+<li>&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;
+<ol>
+<li><code>grant &#x6743;&#x9650; on &#x6570;&#x636E;&#x5E93;&#x540D;.&#x8868; to &apos;&#x7528;&#x6237;&#x540D;&apos;@&apos;IP&apos;;</code>
+<ol>
+<li><code>&#x6570;&#x636E;&#x5E93;&#x540D;.&#x8868;</code>&#xFF0C;&#x8868;&#x793A;&#xFF0C;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x7684;&#x67D0;&#x4E2A;&#x8868;&#xFF0C;&#x628A; <code>&#x8BBE;&#x7F6E;&#x7684;&#x6743;&#x9650;</code> &#x8D4B;&#x4E88; <code>&#x6307;&#x5B9A;&#x7684;&#x7528;&#x6237;</code></li>
+<li>&#x6BD4;&#x5982;&#xFF1A; <code>all</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x6743;&#x9650;&#x975E;&#x5E38;&#x5927;&#xFF0C;&#x5565;&#x90FD;&#x80FD;&#x5E72;(&#x521B;&#x5EFA;&#xFF0C;&#x67E5;&#x8BE2;&#xFF0C;&#x4FEE;&#x6539;&#xFF0C;&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;)&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; <code>root</code> &#x7684;&#x6743;&#x9650;</li>
+<li><code>*</code> &#x8868;&#x793A;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6216;&#x8005;&#x6240;&#x6709;&#x8868;&#x683C;</li>
+</ol>
+</li>
+<li>&#x6BD4;&#x5982;: <code>grant all on *.* to &apos;zzt&apos;@&apos;localhost&apos;;</code>&#xFF0C;&#x8FD9;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;root&#x7684;&#x6743;&#x9650;&#x4E86;&#xFF0C;&#x5565;&#x90FD;&#x80FD;&#x5E72;</li>
+<li>&#x8D4B;&#x4E88;&#x6743;&#x9650;&#x4E4B;&#x540E;&#x6700;&#x597D;&#x505A;&#x4E00;&#x4E2A;&#x5237;&#x65B0;&#xFF0C;&#x6307;&#x4EE4;&#x4E3A; <code>flush privileges;</code></li>
+</ol>
+</li>
+</ol>
+<h4 class="mume-header" id="%E5%9B%9E%E6%94%B6%E7%94%A8%E6%88%B7%E7%9A%84%E6%9D%83%E9%99%90">&#x56DE;&#x6536;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;</h4>
+
+<ol>
+<li>&#x5177;&#x4F53;&#x6307;&#x4EE4;&#xFF0C;<code>revoke &#x6743;&#x9650; on &#x6570;&#x636E;&#x5E93;&#x540D;.&#x8868;&#x540D; from &apos;&#x7528;&#x6237;&#x540D;&apos;@&apos;IP&apos;;</code></li>
+<li>&#x5176;&#x5B9E;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x7684;&#x56DE;&#x6536;&#x4E86;&#xFF0C;&#x800C;&#x662F;&#xFF0C;&#x53C8;&#x53D8;&#x6210;&#x4E86;<code>Usage</code>&#xFF0C;&#x5565;&#x90FD;&#x4E0D;&#x80FD;&#x5E72;&#xFF0C;&#x53EA;&#x80FD;&#x767B;&#x9646;</li>
+<li>&#x5982;&#x679C;&#x60F3;&#x8981;&#x4FEE;&#x6539;&#x6743;&#x9650;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6743;&#x9650;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x6743;&#x9650;&#x3002;</li>
+</ol>
+<h4 class="mume-header" id="%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E7%9A%84%E5%AF%86%E7%A0%81">&#x4FEE;&#x6539;&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;</h4>
+
+<ol>
+<li>&#x5177;&#x4F53;&#x7684;&#x6307;&#x4EE4;&#xFF0C;<code>update user set authentication_string = password(&apos;123&apos;) where user = &apos;zzt&apos;;</code></li>
+<li>&#x5176;&#x5B9E;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x90FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A; <code>mysql</code>&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x7684;&#x4E00;&#x4E2A; <code>user</code> &#x8868;&#x4E2D;&#xFF0C;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#xFF0C;&#x5C31;&#x662F;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x8868;&#x4E2D;&#xFF0C;&#x5BF9;&#x5E94;&#x8D26;&#x53F7;&#x7684;&#x5BC6;&#x7801;&#x6570;&#x636E;
+<ol>
+<li>&#x5BC6;&#x7801;&#x662F; <code>authentication_string</code> &#x8FD9;&#x4E00;&#x4E2A;&#x5217;&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8D26;&#x53F7;&#x540D;&#xFF0C;&#x662F; <code>user</code> &#x8FD9;&#x4E00;&#x4E2A;&#x5217;&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x6240;&#x4EE5;&#xFF0C;&#x4E0A;&#x9762;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x7684;&#x539F;&#x7406;&#xFF0C;&#x5C31;&#x662F;&#xFF0C;&#x901A;&#x8FC7; <code>user = &apos;zzt&apos;</code>&#xFF0C;&#x5BF9;&#x5E94;&#x7684;<code>authentication_string</code></li>
+<li>&#x4FEE;&#x6539;&#x4ED6;&#x7684;&#x503C;&#xFF0C;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x4FEE;&#x6539;&#x4E86;&#x5BC6;&#x7801;</li>
+<li><code>authentication_string</code>&#xFF0C;&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x90FD;&#x662F;&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x501F;&#x52A9;&#x4E00;&#x4E2A;password&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x5BC6;&#x7801;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;&#x5B58;&#x5165;</li>
+</ol>
+</li>
+<li>&#x5E76;&#x4E14;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x5165;&#x5230; mysql &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#xFF0C;&#x901A;&#x8FC7; <code>use mysql;</code> &#x8FDB;&#x5165;
+<ol>
+<li>&#x539F;&#x56E0;&#xFF1A;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#xFF0C;&#x4FEE;&#x6539;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x7684; <code>user</code> &#x8868;&#x683C;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x8FDB;&#x5165;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x624D;&#x80FD;&#x64CD;&#x4F5C;&#x8FD9;&#x4E2A;&#x8868;&#x683C;</li>
+<li><strong>&#x6216;&#x8005;&#xFF0C;&#x901A;&#x8FC7; <code>mysql.user</code> &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x80FD;&#x64CD;&#x4F5C;&#x8FD9;&#x4E2A;&#x8868;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x4E0D;&#x7528;&#x8FDB;&#x5165; mysql &#x7684;&#x4E0B;&#x9762;&#x4E86;</strong></li>
+</ol>
+</li>
+<li><strong><code>mysql.user</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x8868;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x5B57;&#x6BB5;</strong>
+<ol>
+<li>&#x8FD9;&#x4E2A;&#x8868;&#x7684;&#x5B57;&#x6BB5;&#x91CF;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x8FDB;&#x884C;&#x5C55;&#x793A;&#xFF0C;&#x662F;&#x770B;&#x4E0D;&#x6E05;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x901A;&#x5E38;&#x53EA;&#x67E5;&#x770B;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x7684;&#x5B57;&#x6BB5;</li>
+<li>&#x5E38;&#x7528;&#x7684;&#x6709; <code>user&#x5217; host&#x5217; authentication_string&#x5217;</code></li>
+<li>&#x6709;&#x7684;&#x53EF;&#x80FD;&#xFF0C;&#x8FD8;&#x6709; <code>password&#x5217;</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x5217;&#xFF0C;&#x5B58;&#x653E;&#x7684;&#x4E5F;&#x662F;&#x5BC6;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x65B0;&#x7248;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5220;&#x9664;&#x4E86;</li>
+</ol>
+</li>
+</ol>
+<h4 class="mume-header" id="%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7">&#x5220;&#x9664;&#x7528;&#x6237;</h4>
+
+<ol>
+<li>&#x5177;&#x4F53;&#x6307;&#x4EE4;: <code>drop user &apos;&#x7528;&#x6237;&#x540D;&apos;@&apos;IP&apos;;</code></li>
+<li>&#x6BD4;&#x5982;: <code>drop user &apos;zzt&apos;@&apos;localhost&apos;;</code></li>
+</ol>
+<h4 class="mume-header" id="%E5%B8%B8%E7%94%A8%E7%9A%84mysql%E6%9D%83%E9%99%90%E5%A6%82%E4%B8%8B">&#x5E38;&#x7528;&#x7684;mysql&#x6743;&#x9650;&#x5982;&#x4E0B;&#xFF1A;</h4>
+
+<ol>
 <li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
-</ul>
+<p>&#x6570;&#x636E;&#x5E93;/&#x6570;&#x636E;&#x8868;/&#x6570;&#x636E;&#x5217;&#x6743;&#x9650;&#xFF1A;<br>
+Create		&#x5EFA;&#x7ACB;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6216;&#x6570;&#x636E;&#x8868;<br>
+Alter		&#x4FEE;&#x6539;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#x8868;(&#x4F8B;&#x5982;&#x589E;&#x52A0;/&#x5220;&#x9664;&#x5217;)<br>
+Drop		&#x5220;&#x9664;&#x6570;&#x636E;&#x8868;&#x6216;&#x6570;&#x636E;&#x5E93;<br>
+Insert		&#x589E;&#x52A0;&#x8868;&#x7684;&#x8BB0;&#x5F55;<br>
+Delete		&#x5220;&#x9664;&#x8868;&#x7684;&#x8BB0;&#x5F55;<br>
+Update		&#x4FEE;&#x6539;&#x8868;&#x4E2D;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x8BB0;&#x5F55;<br>
+Select		&#x663E;&#x793A;/&#x641C;&#x7D22;&#x8868;&#x7684;&#x8BB0;&#x5F55;<br>
+-----------------------------------<br>
+References	&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x5916;&#x952E;<br>
+Index		&#x5EFA;&#x7ACB;&#x6216;&#x5220;&#x9664;&#x7D22;&#x5F15;<br>
+Create View	&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x89C6;&#x56FE;<br>
+Create Routine	&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x548C;&#x5305;<br>
+Execute		&#x5141;&#x8BB8;&#x6267;&#x884C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x548C;&#x5305;<br>
+Trigger		&#x5141;&#x8BB8;&#x64CD;&#x4F5C;&#x89E6;&#x53D1;&#x5668;<br>
+Create User	&#x5141;&#x8BB8;&#x66F4;&#x6539;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x5220;&#x9664;&#x3001;&#x91CD;&#x547D;&#x540D;&#x7528;&#x6237;&#x548C;&#x6536;&#x56DE;&#x6240;&#x6709;&#x6743;&#x9650;</p>
 </li>
 <li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
-<ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
-</ul>
+<p>&#x5168;&#x5C40;&#x7BA1;&#x7406;MySQL&#x7528;&#x6237;&#x6743;&#x9650;&#xFF1A;<br>
+Grant Option	&#x5141;&#x8BB8;&#x5411;&#x5176;&#x4ED6;&#x7528;&#x6237;&#x6388;&#x4E88;&#x6216;&#x79FB;&#x9664;&#x6743;&#x9650;<br>
+Show View	&#x5141;&#x8BB8;&#x6267;&#x884C;SHOW CREATE VIEW&#x8BED;&#x53E5;<br>
+Show Databases	&#x5141;&#x8BB8;&#x8D26;&#x6237;&#x6267;&#x884C;SHOW DATABASE&#x8BED;&#x53E5;&#x6765;&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;<br>
+Lock Table	&#x5141;&#x8BB8;&#x6267;&#x884C;LOCK TABLES&#x8BED;&#x53E5;&#x6765;&#x9501;&#x5B9A;&#x8868;<br>
+File		&#x5728;MySQL&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8BFB;&#x5199;&#x6587;&#x4EF6;<br>
+Process		&#x663E;&#x793A;&#x6216;&#x6740;&#x6B7B;&#x5C5E;&#x4E8E;&#x5176;&#x5B83;&#x7528;&#x6237;&#x7684;&#x670D;&#x52A1;&#x7EBF;&#x7A0B;<br>
+Reload		&#x91CD;&#x8F7D;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x8868;&#xFF0C;&#x5237;&#x65B0;&#x65E5;&#x5FD7;&#x7B49;<br>
+ShutDown	&#x5173;&#x95ED;MySQL&#x670D;&#x52A1;</p>
 </li>
-</ul>
+<li>
+<p>&#x7279;&#x522B;&#x7684;&#x6743;&#x9650;&#xFF1A;<br>
+All		&#x5141;&#x8BB8;&#x505A;&#x4EFB;&#x4F55;&#x4E8B;(&#x548C;root&#x4E00;&#x6837;)<br>
+Usage		&#x53EA;&#x5141;&#x8BB8;&#x767B;&#x5F55;&#xFF0C;&#x5176;&#x5B83;&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x5141;&#x8BB8;&#x505A;</p>
+</li>
+</ol>
 
       </div>
       

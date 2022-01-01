@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>3.&#x6279;&#x5904;&#x7406;(&#x811A;&#x672C;&#x6267;&#x884C;&#x547D;&#x4EE4;)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,19 +261,152 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
-<li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
+      <h4 class="mume-header" id="sh%E8%84%9A%E6%9C%AClinux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%84%9A%E6%9C%AC">sh&#x811A;&#x672C;&#xFF08;Linux&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x811A;&#x672C;&#xFF09;</h4>
+
 <ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
+<li>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540E;&#x7F00;&#x540D;&#x4E3A; sh &#x7684;&#x6587;&#x4EF6;</p>
+<ul>
+<li>&#x5185;&#x90E8;&#x4E66;&#x5199;&#x8981;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;</li>
 </ul>
 </li>
 <li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
+<p>&#x7136;&#x540E;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8F93;&#x5165; source ./xxx.sh&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x547D;&#x4EE4;</p>
+</li>
+<li>
+<p>&#x6BD4;&#x5982;&#xFF1A;demo.sh&#x4E2D;&#x7684;&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token function">git</span> clone xx
+<span class="token builtin class-name">cd</span> xx
+<span class="token builtin class-name">cd</span> xx
+</pre></li>
+<li>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x4E0A;&#x9762;&#x7684; cd &#x8DEF;&#x5F84;&#x5207;&#x6362;&#xFF0C;&#x53EF;&#x80FD;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x770B;&#x4E0D;&#x5230;&#x6548;&#x679C;&#xFF0C;&#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86; cd &#x7684;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x8DEF;&#x5F84;&#x4E5F;&#x5DF2;&#x7ECF;&#x8FDB;&#x884C;&#x4E86;&#x5207;&#x6362;</p>
+</li>
+<li>
+<p>&#x7528; <code>sh ./xxx.sh</code> &#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x662F;&#x5B8C;&#x6210;&#x4E0D;&#x4E86;&#x8DEF;&#x5F84;&#x5207;&#x6362;&#x7684;</p>
 <ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
+<li>&#x539F;&#x56E0;: &#x7EC8;&#x7AEF;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5B50;shell&#xFF0C;&#x5B50;shell&#x53BB;&#x6267;&#x884C;&#x6211;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x5728;&#x5B50;shell&#x4E2D;&#x5DF2;&#x7ECF;&#x5207;&#x6362;&#x4E86;&#x76EE;&#x5F55;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5B50;shell&#x4E00;&#x65E6;&#x6267;&#x884C;&#x5B8C;&#xFF0C;&#x9A6C;&#x4E0A;&#x9000;&#x51FA;&#xFF0C;&#x5B50;shell&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x64CD;&#x4F5C;&#x5168;&#x90E8;&#x90FD;&#x6536;&#x56DE;&#x3002;&#x56DE;&#x5230;&#x7EC8;&#x7AEF;&#x8FD8;&#x662F;&#x4E4B;&#x524D;&#x7684;&#x8DEF;&#x5F84;</li>
+<li><strong>&#x867D;&#x7136;&#x6700;&#x7EC8;&#x8DEF;&#x5F84;&#x6CA1;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x6307;&#x4EE4;&#x6548;&#x679C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;</strong></li>
 </ul>
+</li>
+<li>
+<p>&#x5728;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token comment"># &lt;&lt; &#x540E;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x95ED;&#x5408;&#x533A;&#x95F4;&#xFF0C;&#x8981;&#x4E00;&#x5BF9;&#x540D;&#x79F0;&#x968F;&#x4FBF;&#xFF0C;&#x5185;&#x90E8;&#x7684;&#x547D;&#x4EE4;&#x662F;&#x653E;&#x5728;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;</span>
+<span class="token function">ssh</span> -tt root@116.62.144.1<span class="token operator"><span class="token file-descriptor important">8</span>&lt;</span><span class="token operator">&lt;</span><span class="token string">EOF
+cd java_demo
+cd statics
+rm -rf <span class="token variable">${fileName}</span>
+unzip ./<span class="token variable">${fileName}</span>.zip
+rm -rf <span class="token variable">${fileName}</span>.zip
+EOF</span>
+</pre><h4 class="mume-header" id="bat%E8%84%9A%E6%9C%ACwindows%E7%B3%BB%E7%BB%9F">bat&#x811A;&#x672C;&#xFF08;windows&#x7CFB;&#x7EDF;&#xFF09;</h4>
+
+<ul>
+<li>&#x628A;&#x547D;&#x4EE4;&#x5199;&#x5728;&#x5185;&#x90E8;&#xFF0C;&#x53CC;&#x51FB;&#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;</li>
+<li>&#x53CC;&#x51FB;&#x540E;&#xFF0C;cmd&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x6253;&#x5F00;&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#x7ACB;&#x9A6C;&#x5173;&#x95ED;
+<ul>
+<li>&#x53EF;&#x4EE5;&#x5728;&#x811A;&#x672C;&#x7684;&#x6700;&#x540E;&#x52A0;&#x5165; <code>pause</code> &#x963B;&#x6B62;&#x7A97;&#x53E3;&#x7684;&#x5173;&#x95ED;</li>
+</ul>
+</li>
+<li><strong>windows&#x4E0B;&#x751F;&#x6548;&#x7684;&#x547D;&#x4EE4;</strong>
+<ul>
+<li><code>@echo off</code> &#x5173;&#x95ED;&#x56DE;&#x663E;&#xFF08;&#x5173;&#x95ED;&#x6307;&#x4EE4;&#x7684;&#x64CD;&#x7EB5;&#xFF0C;&#x53EA;&#x663E;&#x793A;&#x51FA;&#x7ED3;&#x679C;&#xFF09;</li>
+<li><code>color 0a</code> &#x8BBE;&#x7F6E;&#x547D;&#x4EE4;&#x884C;&#x5B57;&#x4F53;&#x989C;&#x8272;&#xFF0C;0a&#x8868;&#x793A;&#x7EFF;&#x8272;</li>
+<li><code>cls</code> &#x8868;&#x793A;&#x6E05;&#x5C4F;</li>
+<li><strong>&#x547D;&#x4EE4;&#x5206;&#x6BB5;</strong>
+<ul>
+<li><code>:&#x53F7;</code>&#x540E;&#x9762;&#x662F;&#x6BB5;&#x540D;</li>
+<li>goto &#x6BB5;&#x540D;&#xFF0C;&#x8868;&#x793A;&#x8DF3;&#x5230;&#x90A3;&#x4E00;&#x6BB5;</li>
+</ul>
+<pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token comment"># &#x8DF3;&#x5230;ds</span>
+goto ds
+
+<span class="token comment"># &#x8FD9;&#x662F;&#x4E00;&#x6BB5;</span>
+:a
+<span class="token builtin class-name">echo</span> &#x8FD9;&#x662F;&#x4E00;&#x6BB5;
+
+<span class="token comment"># &#x8FD9;&#x662F;&#x4E00;&#x6BB5;</span>
+:ds
+<span class="token builtin class-name">echo</span> &#x8FD9;&#x662F;&#x4E00;&#x6BB5;
+
+<span class="token comment"># &#x8FD9;&#x662F;&#x4E00;&#x6BB5;</span>
+:0
+<span class="token builtin class-name">echo</span> &#x8FD9;&#x662F;&#x4E00;&#x6BB5;
+
+<span class="token comment"># &#x8DF3;&#x5230;a</span>
+goto a
+</pre><ul>
+<li>&#x5206;&#x6790;
+<ul>
+<li>goto ds&#x3002;&#x6267;&#x884C;&#x5230;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x8DF3;&#x5230;ds&#xFF0C;&#x7EE7;&#x7EED;&#x5F80;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; a&#x4F1A;&#x8DF3;&#x8FC7;</li>
+<li><strong>&#x5F53;&#x67D0;&#x4E00;&#x6BB5;&#x6267;&#x884C;&#x5B8C;&#xFF0C;&#x4F1A;&#x5FFD;&#x7565;&#x540E;&#x9762;&#x7684;&#x6BB5;&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;</strong>
+<ul>
+<li>&#x4E5F;&#x5C31;&#x662F; ds &#x6267;&#x884C;&#x5B8C;&#xFF0C;0&#x4F1A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x4EE5;&#x53CA;&#x540E;&#x7EED;&#x7684;&#x547D;&#x4EE4;&#x4E5F;&#x4F1A;&#x6267;&#x884C;</li>
+</ul>
+</li>
+<li>goto a&#xFF0C;&#x8DF3;&#x5230;a&#x6267;&#x884C;&#xFF08;&#x53EF;&#x4EE5;&#x5F80;&#x524D;&#x8DF3;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x540E;&#x7EED;&#x6307;&#x4EE4;&#x6B63;&#x5E38;&#x6267;&#x884C;&#xFF08;a&#x3001;ds&#x3001;0&#xFF09;
+<ul>
+<li>0&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#xFF0C;&#x7EE7;&#x7EED;&#x5F80;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x53C8;&#x8D70;&#x5230;&#x4E86; goto a&#x3002;</li>
+<li><strong>&#x7136;&#x540E;&#x53C8;&#x8DF3;&#x5230;&#x4E0A;&#x9762;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x9677;&#x5165;&#x4E86;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x7535;&#x8111;&#x5361;&#x673A;</strong>
+<ul>
+<li>&#x81EA;&#x5DF1;&#x8DF3;&#x81EA;&#x5DF1;&#x4E5F;&#x4F1A;&#x9020;&#x6210;&#x5361;&#x673A;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x7528;&#x6237;&#x8F93;&#x5165;<pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token comment"># = &#x540E;&#x9762;&#x7684;&#x6587;&#x5B57;&#x662F;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x8D4B;&#x7ED9; num</span>
+<span class="token builtin class-name">set</span> /p <span class="token assign-left variable">num</span><span class="token operator">=</span>&#x8BF7;&#x8F93;&#x5165;&#x6570;&#x5B57;
+<span class="token comment"># &#x4F7F;&#x7528;num</span>
+<span class="token builtin class-name">echo</span> %num%
+<span class="token comment"># &#x4F7F;&#x7528; num &#x6709;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x52A0;&#x4E0A; &#x201C;&#x201D;&#x53CC;&#x5F15;&#x53F7;&#x3002;&#x6BD4;&#x5982; if &#x4F7F;&#x7528;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;%num%&quot;</span>
+</pre></li>
+<li>&#x6761;&#x4EF6;&#x5224;&#x65AD;<pre data-role="codeBlock" data-info="sh" class="language-bash"><span class="token builtin class-name">set</span> /p <span class="token assign-left variable">num</span><span class="token operator">=</span>&#x8BF7;&#x8F93;&#x5165;&#x6570;&#x5B57;
+<span class="token comment"># &#x4F7F;&#x7528; num &#x6709;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x52A0;&#x4E0A; &#x201C;&#x201D;&#x53CC;&#x5F15;&#x53F7;&#x3002;&#x6BD4;&#x5982; if &#x4F7F;&#x7528;</span>
+<span class="token keyword keyword-if">if</span> <span class="token string">&quot;%num%&quot;</span> <span class="token operator">==</span> &#x201C;1&#x201D; <span class="token builtin class-name">echo</span> &#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#x6267;&#x884C;&#x7684;&#x6307;&#x4EE4;
+</pre></li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="command%E8%84%9A%E6%9C%AClinux%E7%B3%BB%E7%BB%9F">command&#x811A;&#x672C;&#xFF08;Linux&#x7CFB;&#x7EDF;&#xFF09;</h4>
+
+<ul>
+<li>
+<p>&#x628A;&#x547D;&#x4EE4;&#x5199;&#x5728;&#x5185;&#x90E8;&#xFF0C;&#x53CC;&#x51FB;&#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;</p>
+</li>
+<li>
+<p><strong>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x8981;&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x6743;&#x9650;&#xFF0C;&#x5426;&#x5219;&#x53CC;&#x51FB;&#x540E;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#xFF0C;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x8B66;&#x544A;</strong></p>
+<ul>
+<li>&#x8BBE;&#x7F6E;&#x53EF;&#x6267;&#x884C;&#x7684;&#x6743;&#x9650;</li>
+<li>&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;chmod +x Desktop/demo.command
+<ul>
+<li>Desktop/demo.command &#x4E3A;&#x5177;&#x4F53;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
+<li>&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x4E0B;&#xFF0C;&#x987A;&#x7740;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x80FD;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;</li>
+<li>&#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#xFF1A; <code>No such file or directory</code>(&#x627E;&#x4E0D;&#x5230;&#x8BE5;&#x6587;&#x4EF6;)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&#x6267;&#x884C;&#x540E;&#xFF0C;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5173;&#x95ED;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x5728;&#x6700;&#x540E;&#x52A0;&#x5165;&#x4E24;&#x884C;&#x547D;&#x4EE4;&#xFF1A;
+<ul>
+<li><code>osascript -e &apos;tell application&quot;Terminal&quot; to close (every window whose name contains&quot;.command&quot;)&apos; &amp;</code></li>
+<li><code>exit</code></li>
+</ul>
+</li>
+<li>&#x8FD9;&#x6837;&#x6307;&#x4EE4;&#x8FD0;&#x884C;&#x5B8C;&#xFF0C;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x95ED;</li>
+</ul>
+</li>
+<li>
+<p>Linux&#x547D;&#x4EE4;&#x5927;&#x5168;&#xFF1A;<a href="https://www.runoob.com/linux/linux-command-manual.html">https://www.runoob.com/linux/linux-command-manual.html</a></p>
 </li>
 </ul>
 

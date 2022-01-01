@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>7.&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -262,17 +262,109 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <ul>
-<li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
+<li>&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x6709;&#x5F88;&#x591A;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5BF9;&#x8FD9;&#x4E9B;&#x5B58;&#x50A8;&#x5355;&#x5143;&#x8FDB;&#x884C;&#x5212;&#x5206;&#x7BA1;&#x7406;&#xFF0C;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x5199;&#x5C31;&#x4F1A;&#x5F88;&#x9EBB;&#x70E6;</li>
+<li>&#x4E3A;&#x4E86;&#x5FEB;&#x901F;&#x7684;&#x5B58;&#x50A8;&#x548C;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x5206;&#x533A;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C31;&#x8981;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;(&#x5E38;&#x7528;&#x7684;&#x662F;ext4)</li>
+</ul>
+<h4 class="mume-header" id="%E6%A6%82%E5%BF%B5">&#x6982;&#x5FF5;</h4>
+
 <ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
+<li>
+<p>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x6709;&#x4E09;&#x4E2A;&#x6982;&#x5FF5;</p>
+</li>
+<li>
+<p>block</p>
+<ul>
+<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x628A;&#x5206;&#x533A;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x5212;&#x5206;&#x4E86;&#x4E00;&#x5757;&#x4E00;&#x5757;&#x7684;&#x3002;&#x6BCF;&#x4E00;&#x5757;&#x88AB;&#x79F0;&#x4E3A;&#x4E00;&#x4E2A; <code>block</code>&#xFF0C;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;</li>
+<li>&#x6BCF;&#x4E00;&#x4E2A; block &#x4E3A; 4k</li>
+<li>&#x6BCF;&#x4E2A; block &#x53EA;&#x4F1A;&#x5B58;&#x5165;&#x4E00;&#x6B21;&#x6570;&#x636E;&#xFF0C;&#x6BD4;&#x5982;
+<ul>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E3A; 2k&#xFF0C;&#x5C31;&#x4F1A;&#x5360;&#x7528;&#x4E00;&#x4E2A; block</li>
+<li>&#x5982;&#x679C;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E3A; 2k&#xFF0C;&#x4F1A;&#x5360;&#x7528;&#x4E00;&#x4E2A;&#x65B0;&#x7684; block</li>
+<li>&#x5E76;&#x4E0D;&#x4F1A;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x5171;&#x7528;&#x4E00;&#x4E2A;block&#x3002;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4FBF;&#x4E8E;&#x7BA1;&#x7406;</li>
+</ul>
+</li>
+<li><strong>&#x7A7A;&#x95F4;&#x788E;&#x7247;</strong>
+<ul>
+<li>&#x5982;&#x679C;&#xFF0C;&#x5148;&#x5B58;&#x4E86;&#x4E00;&#x4E2A; 10k &#x7684;&#x6587;&#x4EF6;&#x3002;&#x5360;&#x7528;&#x4E09;&#x4E2A; block</li>
+<li>&#x968F;&#x540E;&#xFF0C;&#x53C8;&#x5B58;&#x4E86;&#x4E00;&#x4E2A; 3k &#x7684;&#x6587;&#x4EF6;&#x3002;&#x5360;&#x7528;&#x4E00;&#x4E2A; block</li>
+<li>&#x7136;&#x540E;&#xFF0C;&#x5220;&#x9664;&#x4E86;&#x4E4B;&#x524D;&#x5B58;&#x7684; 10k &#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x7A7A;&#x4E86;&#x4E09;&#x4E2A; block</li>
+<li>&#x5982;&#x679C;&#xFF0C;&#x53C8;&#x5B58;&#x4E86;&#x4E00;&#x4E2A; 13k &#x7684;&#x6587;&#x4EF6;&#x3002;&#x5B83;&#x9700;&#x8981;&#x5360;&#x7528; 4&#x4E2A; block
+<ul>
+<li>&#x4F46;&#x662F;&#xFF0C;&#x4E4B;&#x524D;&#x53EA;&#x7A7A;&#x4E86;&#x4E09;&#x4E2A; block&#xFF0C;&#x540E;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x88AB; 3k &#x7684;&#x6587;&#x4EF6;&#x7ED9;&#x5360;&#x4E86;</li>
+<li>&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4E2A; 13k &#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x4F1A;<strong>&#x5360;&#x7528;&#x4E4B;&#x524D;&#x4E09;&#x4E2A; block &#xFF0C;&#x7136;&#x540E;&#x5728;&#x540E;&#x9762;&#x5728;&#x7528;&#x4E00;&#x4E2A; block</strong></li>
+<li>&#x8FD9;&#x6837;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x5C31;&#x4F1A;&#x88AB;&#x9694;&#x5F00;</li>
+<li><strong>&#x50CF;&#x8FD9;&#x4E9B;&#x96F6;&#x788E;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x7A7A;&#x95F4;&#x788E;&#x7247;</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x7531;&#x4E8E;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x77E5;&#x9053;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x6570;&#x636E;&#x5230;&#x5E95;&#x5B58;&#x5230;&#x4E86;&#x90A3;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684; block&#x3002;&#x53EF;&#x80FD;&#x4E1C;&#x4E00;&#x4E2A;&#x897F;&#x4E00;&#x4E2A;&#xFF0C;&#x5B58;&#x7684;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x3002;
+<ul>
+<li><strong>&#x6240;&#x4EE5;&#xFF0C;&#x4E3A;&#x4E86;&#x5FEB;&#x901F;&#x7684;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6240;&#x5360;&#x7528;&#x7684;block,&#x4FBF;&#x4E8E;&#x8BFB;&#x53D6;&#xFF0C;&#x5C31;&#x4F1A;&#x628A;&#x8FD9;&#x4E9B; block &#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x8FD9;&#x5C31;&#x662F; inode</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
+<p>inode</p>
 <ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
+<li>&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;inode</li>
+<li>&#x4F46;&#x662F; block &#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x591A;&#x4E2A;
+<ul>
+<li>&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;2k&#x3002;&#x5C31;&#x4F1A;&#x5360;&#x7528;&#x4E00;&#x4E2A; block</li>
+<li>&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;7k&#x3002;&#x5C31;&#x4F1A;&#x5360;&#x7528;&#x4E24;&#x4E2A; block</li>
+</ul>
+</li>
+<li>&#x4E00;&#x4E2A; inode&#xFF0C;&#x6240;&#x5360;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E3A; 128b</li>
+<li>&#x5E76;&#x4E14;&#xFF0C;<strong>&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF08;&#x5206;&#x533A;&#xFF09;&#x7684; inode &#x7684;&#x6570;&#x91CF;&#x662F;&#x6709;&#x9650;&#x7684;</strong>&#x3002;
+<ul>
+<li>&#x6240;&#x4EE5;&#xFF0C;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x5B58;&#x50A8;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x6570;&#x91CF;&#x662F;&#x6709;&#x9650;&#x7684;</li>
+<li>&#x56E0;&#x4E3A;&#xFF0C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A; inode &#x5BF9;&#x5E94;&#x3002;&#x5982;&#x679C; inode &#x7528;&#x5B8C;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x6587;&#x4EF6;&#x5C31;&#x5B58;&#x4E0D;&#x4E86;&#x4E86;&#x3002;</li>
+<li><strong>&#x5373;&#x4F7F;&#x6709;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E5F;&#x4E0D;&#x884C;</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%9A%84%E9%99%90%E5%88%B6">&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x7684;&#x9650;&#x5236;</h4>
+
+<ul>
+<li>&#x53D7;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x5982;&#x679C;block&#x7528;&#x5B8C;&#x4E86;&#xFF0C;&#x6587;&#x4EF6;&#x81EA;&#x7136;&#x5B58;&#x50A8;&#x4E0D;&#x4E86;</li>
+<li>&#x53D7;inode&#x9650;&#x5236;&#xFF0C;&#x5982;&#x679C;inode&#x7528;&#x5B8C;&#x4E86;&#xFF0C;&#x6587;&#x4EF6;&#x4E5F;&#x5B58;&#x50A8;&#x4E0D;&#x4E86;
+<ul>
+<li>&#x5F88;&#x591A;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x5B58;&#x7684;&#x5168;&#x662F;&#x5C0F;&#x6587;&#x4EF6;&#xFF0C;&#x4F53;&#x79EF;&#x5F88;&#x5C0F;&#xFF0C;&#x4F46;&#x662F;&#x6587;&#x4EF6;&#x6570;&#x591A;</li>
+<li>&#x5B58;&#x7740;&#x5B58;&#x7740;&#x53D1;&#x73B0;&#x5B58;&#x4E0D;&#x4E86;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x7528;&#x6307;&#x4EE4;&#x4E00;&#x67E5;&#x770B;&#xFF0C;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x8FD8;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;</li>
+<li>&#x6B64;&#x65F6;&#x5C31;&#x4F1A;&#x5F88;&#x7EB3;&#x95F7;&#xFF0C;&#x660E;&#x660E;&#x6709;&#x7A7A;&#x95F4;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5B58;&#x4E0D;&#x4E86;&#x4E86;</li>
+<li><strong>&#x5C31;&#x662F;&#x56E0;&#x4E3A; inode &#x7528;&#x5B8C;&#x4E86;</strong></li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="inode-%E6%80%BB%E9%87%8F%E7%9A%84%E6%9F%A5%E8%AF%A2">inode &#x603B;&#x91CF;&#x7684;&#x67E5;&#x8BE2;</h4>
+
+<ul>
+<li>inode&#x7684;&#x6570;&#x91CF;&#x5E76;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x548C;&#x5206;&#x533A;&#x5BB9;&#x91CF;&#x6709;&#x5173;
+<ul>
+<li>&#x5982;&#x679C;&#x5206;&#x533A;&#x5BB9;&#x91CF;&#x591A;&#xFF0C;inode &#x7684;&#x6570;&#x91CF;&#x81EA;&#x7136;&#x4F1A;&#x591A;</li>
+</ul>
+</li>
+<li>&#x67E5;&#x8BE2;&#x65B9;&#x5F0F;&#xFF1A;
+<ul>
+<li>&#x8F93;&#x5165;&#x6307;&#x4EE4;&#xFF1A;<code>df -i</code></li>
+<li>
+<img src="../../imgs/img24.png">
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="%E6%9F%A5%E8%AF%A2%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84-inode-%E7%BC%96%E5%8F%B7">&#x67E5;&#x8BE2;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x7684; inode &#x7F16;&#x53F7;</h4>
+
+<ul>
+<li>&#x8F93;&#x5165;&#x6307;&#x4EE4;&#xFF1A;<code>ls -l -i /demo/a.txt</code>
+<ul>
+<li>/demo/a.txt &#x8868;&#x793A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
+<li>
+<img src="../../imgs/img25.png">
+</li>
 </ul>
 </li>
 </ul>

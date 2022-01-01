@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x4FE1;&#x606F;</title>
+      <title>1.java&#x8FD0;&#x7B97;&#x7B26;&#x4E4B;--&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,21 +261,55 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <ul>
+      <h5 class="mume-header" id="%E8%A6%81%E6%83%B3%E4%BA%86%E8%A7%A3%E4%BD%8D%E8%BF%90%E7%AE%97%E9%9C%80%E8%A6%81%E5%85%88%E4%BA%86%E8%A7%A3java%E7%9A%84%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8">&#x8981;&#x60F3;&#x4E86;&#x89E3;&#x4F4D;&#x8FD0;&#x7B97;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x4E86;&#x89E3;Java&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;</h5>
+
+<ol>
 <li>
-<p>&#x67E5;&#x8BE2;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF1A;<code>df -hT</code></p>
-<ul>
-<li>&#x8FD9;&#x662F;&#x67E5;&#x8BE2;&#x7684;&#x52A8;&#x6001;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76D1;&#x542C;&#x78C1;&#x76D8;&#x72B6;&#x6001;&#x7684;&#x6548;&#x679C;</li>
-<li>&#x6BD4;&#x5982;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8;&#x5BB9;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x53D8;&#x5316;</li>
-</ul>
+<p>&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x5206;&#x4E3A;&#x539F;&#x7801;&#xFF0C;&#x53CD;&#x7801;&#xFF0C;&#x8865;&#x7801;&#x3002;</p>
 </li>
 <li>
-<p>&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x60C5;&#x51B5;&#xFF1A;<code>lsblk</code></p>
-<ul>
-<li>&#x5305;&#x542B;&#x5206;&#x533A;&#x4F7F;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5269;&#x4E0B;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x8FDB;&#x884C;&#x53E6;&#x5916;&#x7684;&#x5206;&#x533A;&#x3002;</li>
-</ul>
+<p>&#x5176;&#x4E2D;&#x6B63;&#x6570;&#x7684;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;&#x76F8;&#x540C;&#xFF0C;&#x6BD4;&#x5982;: 2&#x7684;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;&#x5982;&#x4E0B;(&#x4EE5;byte&#x4E3A;&#x4F8B;)</p>
+<ol>
+<li>&#x539F;&#x7801;: 00000010</li>
+<li>&#x53CD;&#x7801;: 00000010</li>
+<li>&#x8865;&#x7801;: 00000010</li>
+</ol>
 </li>
-</ul>
+<li>
+<p>&#x5176;&#x4E2D;&#x8D1F;&#x6570;&#x7684;&#x539F;&#x7801;&#x662F;&#x663E;&#x793A;&#x7684;&#x6570;&#x636E;&#x3001;&#x53CD;&#x7801;&#x53D6;&#x53CD;(&#x7B2C;&#x4E00;&#x4F4D;&#x662F;&#x7B26;&#x53F7;&#x4F4D;&#xFF0C;0&#x8868;&#x793A;&#x6B63;&#x6570;&#xFF0C;1&#x8868;&#x793A;&#x8D1F;&#x6570;&#xFF0C;&#x662F;&#x4E0D;&#x8FDB;&#x884C;&#x53D6;&#x53CD;&#x7684;)&#x3001;&#x8865;&#x7801;&#x662F;&#x53CD;&#x7801;&#x52A0;&#x4E00;&#xFF0C;&#x6BD4;&#x5982;: -2&#x7684;&#x539F;&#x7801;&#x3001;&#x53CD;&#x7801;&#x3001;&#x8865;&#x7801;&#x5982;&#x4E0B;(&#x4EE5;byte&#x4E3A;&#x4F8B;)</p>
+<ol>
+<li>&#x539F;&#x7801;: 10000010</li>
+<li>&#x53CD;&#x7801;: 11111101</li>
+<li>&#x8865;&#x7801;: 11111110</li>
+</ol>
+</li>
+<li>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x7684;&#x5C31;&#x662F;&#x53CD;&#x7801;&#xFF0C;&#x8FD0;&#x7B97;&#x4F7F;&#x7528;&#x7684;&#x4E5F;&#x662F;&#x53CD;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;</p>
+<ol>
+<li>&#x6B63;&#x6570;&#x4E0D;&#x53D8;&#xFF0C;&#x8D1F;&#x6570;&#x51CF;&#x4E00;&#x53D6;&#x53CD;</li>
+<li>&#x6BD4;&#x5982;&#x4E00;&#x4E0B;&#x7684;&#x793A;&#x8303;&#x4EE3;&#x7801;</li>
+</ol>
+<pre data-role="codeBlock" data-info="java" class="language-java"> <span class="token keyword keyword-byte">byte</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x7684;&#x8865;&#x7801;&#x4E3A;: 0000 0001</span>
+ <span class="token keyword keyword-byte">byte</span> b <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x7684;&#x8865;&#x7801;&#x4E3A;: 1111 1110   (1000 0010 --&gt;  1111 1101 --&gt; 1111 1110)</span>
+ <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> a <span class="token operator">&amp;</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x7ED3;&#x679C;&#x4E3A; 0</span>
+ <span class="token comment">// &#x5E95;&#x5C42;&#x8BA1;&#x7B97;&#x7684;&#x662F;   0000 0001 &amp; 1111 1110  (&#x5168;1&#x4E3A;1)  --&gt; 0000 0000  (&#x8FD9;&#x662F;&#x8865;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x8F6C;&#x6362;)  --&gt; 0</span>
+ <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> a <span class="token operator">|</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x7ED3;&#x679C;&#x4E3A; -1</span>
+ <span class="token comment">// &#x5E95;&#x5C42;&#x8BA1;&#x7B97;&#x7684;&#x662F;   0000 0001 | 1111 1110  (&#x6709;1&#x4E3A;1)  --&gt; 1111 1111 (&#x8FD9;&#x662F;&#x8865;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x8F6C;&#x6362;&#xFF0C;&#x51CF;&#x4E00;&#x53D6;&#x53CD;) --&gt; 1111 1110 --&gt; 1000 0001  --&gt; -1</span>
+ <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> a <span class="token operator">^</span> b <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x7ED3;&#x679C;&#x4E3A; -1</span>
+ <span class="token comment">// &#x5E95;&#x5C42;&#x8BA1;&#x7B97;&#x7684;&#x662F;   0000 0001 ^ 1111 1110  (&#x76F8;&#x540C;&#x4E3A;0&#xFF0C;&#x4E0D;&#x540C;&#x4E3A;1)  --&gt; 1111 1111 (&#x8FD9;&#x662F;&#x8865;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x8F6C;&#x6362;&#xFF0C;&#x51CF;&#x4E00;&#x53D6;&#x53CD;) --&gt; 1111 1110 --&gt; 1000 0001  --&gt; -1</span>
+ <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token operator">~</span>a <span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x7ED3;&#x679C;&#x4E3A; -2</span>
+ <span class="token comment">// &#x5E95;&#x5C42;&#x8BA1;&#x7B97;&#x7684;&#x662F;   ^ 0000 0001 (&#x6BCF;&#x4E00;&#x4F4D;&#x53D6;&#x53CD;)  --&gt; 1111 1110  (&#x8FD9;&#x662F;&#x8865;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x8F6C;&#x6362;&#xFF0C;&#x51CF;&#x4E00;&#x53D6;&#x53CD;) --&gt; 1111 1101 --&gt; 1000 0010  --&gt; -2</span>
+</pre></li>
+</ol>
+<h5 class="mume-header" id="%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6">&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;</h5>
+
+<ol>
+<li>&amp; (&#x4E0E;)&#xFF0C;&#x8FD0;&#x7B97;&#x89C4;&#x5219;&#xFF0C;&#x6709;0&#x4E3A;0&#xFF0C;&#x5168;1&#x4E3A;1</li>
+<li>&#xFF5C; (&#x6216;)&#xFF0C;&#x8FD0;&#x7B97;&#x89C4;&#x5219;&#xFF0C;&#x6709;1&#x4E3A;1&#xFF0C;&#x5168;0&#x4E3A;0</li>
+<li>^ (&#x5F02;&#x6216;)&#xFF0C;&#x8FD0;&#x7B97;&#x89C4;&#x5219;&#xFF0C;&#x76F8;&#x540C;&#x4E3A;0&#xFF0C;&#x4E0D;&#x540C;&#x4E3A;1</li>
+<li>&#xFF5E; (&#x53D6;&#x53CD;)&#xFF0C;&#x8FD0;&#x7B97;&#x89C4;&#x5219;&#xFF0C;&#x6BCF;&#x4E00;&#x4F4D;&#x53D6;&#x53CD;</li>
+<li>&#x6BCF;&#x4E00;&#x4E2A;&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x6B63;&#x5E38;&#x64CD;&#x4F5C;&#x64CD;&#x4F5C;&#x7B26;&#x53F7;&#x4F4D;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0A;</li>
+</ol>
 
       </div>
       
