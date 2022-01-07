@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x8BBE;&#x7F6E;style</title>
+      <title>3.&#x7EC4;&#x4EF6;&#x6216;dom&#x7684;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,53 +261,46 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h4 class="mume-header" id="style%E4%BB%8Evue%E4%B8%AD%E5%8F%96%E5%80%BC%E7%9A%84%E6%96%B9%E5%BC%8F">style&#x4ECE;vue&#x4E2D;&#x53D6;&#x503C;&#x7684;&#x65B9;&#x5F0F;</h4>
-
-<ol>
+      <ol>
 <li>
-<p>css&#x6837;&#x5F0F;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x540D;&#x548C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x3002;</p>
-</li>
-<li>
-<p>&#x83B7;&#x53D6;&#x65B9;&#x5F0F;</p>
+<p>v-if&#x548C;v-else&#x548C;v-else-if&#x63A7;&#x5236;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;</p>
 <ol>
-<li>&#x628A;&#x6240;&#x6709;&#x6837;&#x5F0F;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x83B7;&#x53D6;
+<li><code>v-if</code>&#x548C;<code>v-else-if</code>&#x5FC5;&#x987B;&#x5199;&#x4E0A;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;<code>v-else</code>&#x4E0D;&#x9700;&#x8981;&#x5199;&#x6761;&#x4EF6;&#x5224;&#x65AD;</li>
+<li>&#x8054;&#x5408;&#x4F7F;&#x7528;&#xFF0C;<code>v-if</code>&#x5FC5;&#x987B;&#x5199;&#x5728;&#x524D;&#x9762;&#xFF0C;&#x5176;&#x6B21;&#x540E;&#x9762;&#x8DDF;<code>v-else-if</code>&#xFF0C;&#x6700;&#x540E;&#x5199;&#x4E0A;<code>v-else</code>
 <ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>sty: &quot;color: #f0f; &quot;</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&quot;sty&quot;</code></li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>:style=&quot;a &amp;&amp; sty&quot;</code>
-<ol>
-<li>&#x628A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;style</li>
+<li><code>v-if</code>&#x548C;<code>v-else</code>&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x4E00;&#x6B21;&#xFF0C;<code>v-else-if</code>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x6B21;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x4F7F;&#x7528;</li>
+<li><code>v-else</code>&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#xFF0C;&#x524D;&#x9762;&#x5FC5;&#x987B;&#x5B58;&#x5728;<code>v-if</code>&#x6216;&#x8005;&#x5B58;&#x5728;<code>v-if</code>&#x548C;<code>v-else-if</code></li>
+<li>&#x4E2D;&#x95F4;&#x4E0D;&#x80FD;&#x63D2;&#x5165;&#x5176;&#x5B83;&#x7684;&#x7EC4;&#x4EF6;</li>
 </ol>
 </li>
-</ol>
-</li>
-<li>&#x628A;&#x6837;&#x5F0F;&#x5B9A;&#x4E49;&#x6210;&#x5BF9;&#x8C61;&#x683C;&#x5F0F;(&#x5E38;&#x7528;)&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>sty: {color: &apos;#f0f&apos;, fontSize: &apos;14px&apos; }</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&quot;[ sty, a ]&quot;</code>
-<ol>
-<li>&#x53EF;&#x4EE5;&#x53D6;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6837;&#x5F0F;&#x5BF9;&#x8C61;</li>
-</ol>
-</li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>v-bind:style=&quot;[ a &amp;&amp; sty, b ]&quot;</code></li>
-</ol>
-</li>
-<li>&#x6837;&#x5F0F;&#x53EA;&#x5B9A;&#x4E49;&#x952E;&#x503C;&#x5BF9;&#x4E2D;&#x7684;&#x952E;&#x503C;&#xFF0C;&#x952E;&#x540D;(&#x6837;&#x5F0F;&#x540D;)&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x8BBE;&#x7F6E;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>color: &quot;#f0f&quot;, fontSize: &apos;16px&apos;</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&apos;{color: color, fontSize: fontSize}&apos;</code></li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>:style=&apos;{color: a &amp;&amp; color, fontSize: fontSize}&apos;</code></li>
-</ol>
-</li>
+<li>&#x5C31;&#x76F8;&#x5F53;&#x4E8E;js&#x4E2D;&#x7684;<code>if -&gt; else if -&gt; else</code>&#xFF0C;&#x4F7F;&#x7528;&#x89C4;&#x5219;&#x76F8;&#x540C;&#xFF0C;&#x529F;&#x80FD;&#x4E0D;&#x540C;</li>
 </ol>
 </li>
 <li>
-<p><code>:style</code>&#x53EF;&#x4EE5;&#x4E0E;<code>style</code>&#x5171;&#x5B58;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x8986;&#x76D6;&#x73B0;&#x8C61;&#x3002;&#x4F46;&#x662F;<code>:style</code>&#x4F1A;&#x66FF;&#x6362;<code>style</code>&#x4E2D;&#x76F8;&#x540C;&#x7684;&#x6837;&#x5F0F;</p>
+<p>v-show&#x63A7;&#x5236;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;</p>
+<ol>
+<li>&#x540E;&#x9762;&#x8DDF;&#x4E0A;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;&#x4E86;</li>
+</ol>
 </li>
 <li>
-<p>&#x6BCF;&#x4E00;&#x4E2A;vue&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;style&#x6837;&#x5F0F;&#xFF0C;&#x662F;&#x4F1A;&#x5BF9;&#x5168;&#x5C40;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53EA;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x7684;vue&#x6587;&#x4EF6;</p>
+<p>v-if&#x548C;v-show&#x63A7;&#x5236;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;&#x7684;&#x533A;&#x522B;</p>
 <ol>
-<li>&#x6700;&#x7EC8;&#x6253;&#x5305;&#x5F62;&#x6210;&#x884C;&#x95F4;&#x6807;&#x7B7E;<code>style</code>&#x4E2D;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x4F5C;&#x7528;&#x4E8E;&#x5168;&#x5C40;</li>
+<li>v-if&#x4F1A;&#x5F7B;&#x5E95;&#x7684;&#x9500;&#x6BC1;&#x7EC4;&#x4EF6;&#x6216;&#x8005;dom&#xFF0C;&#x5373;&#x7EC4;&#x4EF6;&#x4F1A;&#x542F;&#x7528;&#x9500;&#x6BC1;&#x5468;&#x671F;
+<ol>
+<li>&#x4E0B;&#x6B21;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x540E;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x91CD;&#x65B0;&#x8D70;&#x751F;&#x547D;&#x5468;&#x671F;</li>
+<li>&#x4E0E;key&#x503C;&#x5B58;&#x5728;&#x5BC6;&#x5207;&#x7684;&#x5173;&#x7CFB;</li>
+<li>&#x5728;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x7EC4;&#x4EF6;&#x662F;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#x7684;&#xFF0C;&#x4E0D;&#x4F1A;&#x88AB;&#x6FC0;&#x6D3B;</li>
+</ol>
+</li>
+<li>v-show&#x53EA;&#x662F;&#x63A7;&#x5236;css&#x6837;&#x5F0F;&#x7684;<code>display</code>&#x4E3A;<code>block</code>&#x8FD8;&#x662F;&#x4E3A;<code>none</code>&#xFF0C;&#x6765;&#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;
+<ol>
+<li>&#x5728;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x4F1A;&#x6FC0;&#x6D3B;&#x58F0;&#x660E;&#x5468;&#x671F;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x4F7F;&#x7EC4;&#x4EF6;&#x9690;&#x85CF;&#xFF0C;&#x4E5F;&#x4F1A;&#x6FC0;&#x6D3B;</li>
+<li>&#x7136;&#x540E;&#x628A;&#x9690;&#x85CF;&#x7684;&#x7EC4;&#x4EF6;&#x7684;<code>display</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>none</code></li>
+<li>&#x65E0;&#x6CD5;&#x4E0E;key&#x5EFA;&#x7ACB;&#x5173;&#x7CFB;&#xFF0C;&#x56E0;&#x4E3A;&#x7EC4;&#x4EF6;&#x5E76;&#x4E0D;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;</li>
+<li>v-show&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x5230;vue&#x63D0;&#x4F9B;&#x7684;&#x8F85;&#x52A9;&#x6807;&#x7B7E;<code>&lt;template&gt;</code>&#x4E0A;</li>
+</ol>
+</li>
+<li>&#x5982;&#x679C;&#x662F;&#x9891;&#x7E41;&#x7684;&#x663E;&#x793A;&#x4E0E;&#x9690;&#x85CF;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>v-show</code>&#xFF0C;&#x6548;&#x7387;&#x8F83;&#x9AD8;</li>
 </ol>
 </li>
 </ol>

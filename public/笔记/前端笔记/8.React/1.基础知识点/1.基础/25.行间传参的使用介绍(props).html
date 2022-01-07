@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x8BBE;&#x7F6E;style</title>
+      <title>25.&#x884C;&#x95F4;&#x4F20;&#x53C2;&#x7684;&#x4F7F;&#x7528;&#x4ECB;&#x7ECD;(props)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,56 +261,11 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h4 class="mume-header" id="style%E4%BB%8Evue%E4%B8%AD%E5%8F%96%E5%80%BC%E7%9A%84%E6%96%B9%E5%BC%8F">style&#x4ECE;vue&#x4E2D;&#x53D6;&#x503C;&#x7684;&#x65B9;&#x5F0F;</h4>
+      <h1 class="mume-header" id="%E8%A1%8C%E9%97%B4%E4%BC%A0%E5%8F%82%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8Dprops">&#x884C;&#x95F4;&#x4F20;&#x53C2;&#x7684;&#x4F7F;&#x7528;&#x4ECB;&#x7ECD;(props)</h1>
 
-<ol>
-<li>
-<p>css&#x6837;&#x5F0F;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x540D;&#x548C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x3002;</p>
-</li>
-<li>
-<p>&#x83B7;&#x53D6;&#x65B9;&#x5F0F;</p>
-<ol>
-<li>&#x628A;&#x6240;&#x6709;&#x6837;&#x5F0F;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x83B7;&#x53D6;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>sty: &quot;color: #f0f; &quot;</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&quot;sty&quot;</code></li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>:style=&quot;a &amp;&amp; sty&quot;</code>
-<ol>
-<li>&#x628A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;style</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>&#x628A;&#x6837;&#x5F0F;&#x5B9A;&#x4E49;&#x6210;&#x5BF9;&#x8C61;&#x683C;&#x5F0F;(&#x5E38;&#x7528;)&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>sty: {color: &apos;#f0f&apos;, fontSize: &apos;14px&apos; }</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&quot;[ sty, a ]&quot;</code>
-<ol>
-<li>&#x53EF;&#x4EE5;&#x53D6;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6837;&#x5F0F;&#x5BF9;&#x8C61;</li>
-</ol>
-</li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>v-bind:style=&quot;[ a &amp;&amp; sty, b ]&quot;</code></li>
-</ol>
-</li>
-<li>&#x6837;&#x5F0F;&#x53EA;&#x5B9A;&#x4E49;&#x952E;&#x503C;&#x5BF9;&#x4E2D;&#x7684;&#x952E;&#x503C;&#xFF0C;&#x952E;&#x540D;(&#x6837;&#x5F0F;&#x540D;)&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x8BBE;&#x7F6E;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>color: &quot;#f0f&quot;, fontSize: &apos;16px&apos;</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&apos;{color: color, fontSize: fontSize}&apos;</code></li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>:style=&apos;{color: a &amp;&amp; color, fontSize: fontSize}&apos;</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><code>:style</code>&#x53EF;&#x4EE5;&#x4E0E;<code>style</code>&#x5171;&#x5B58;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x8986;&#x76D6;&#x73B0;&#x8C61;&#x3002;&#x4F46;&#x662F;<code>:style</code>&#x4F1A;&#x66FF;&#x6362;<code>style</code>&#x4E2D;&#x76F8;&#x540C;&#x7684;&#x6837;&#x5F0F;</p>
-</li>
-<li>
-<p>&#x6BCF;&#x4E00;&#x4E2A;vue&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;style&#x6837;&#x5F0F;&#xFF0C;&#x662F;&#x4F1A;&#x5BF9;&#x5168;&#x5C40;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53EA;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x7684;vue&#x6587;&#x4EF6;</p>
-<ol>
-<li>&#x6700;&#x7EC8;&#x6253;&#x5305;&#x5F62;&#x6210;&#x884C;&#x95F4;&#x6807;&#x7B7E;<code>style</code>&#x4E2D;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x4F5C;&#x7528;&#x4E8E;&#x5168;&#x5C40;</li>
-</ol>
-</li>
-</ol>
+<p>&#x4ECE;props&#x4E2D;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90FD;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5728;state&#x4E2D;&#x5728;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5BF9;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#xFF0C;&#x4FEE;&#x6539;&#x548C;&#x4F7F;&#x7528;&#x90FD;&#x7528;state&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x3002;<br>
+&#x5982;&#x679C;&#x884C;&#x95F4;&#x4F20;&#x8FDB;&#x6765;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6570;&#x7EC4;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x5BF9;&#x5185;&#x90E8;&#x7684;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>React&#x5F00;&#x53D1;&#x7684;&#x94C1;&#x89C4;&#x5F8B;: &#x5B50;&#x7EC4;&#x4EF6;&#x4E0D;&#x80FD;&#x64CD;&#x4F5C;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5B9E;&#x73B0;&#x60F3;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x80FD;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8C03;&#x7528;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
 
       </div>
       

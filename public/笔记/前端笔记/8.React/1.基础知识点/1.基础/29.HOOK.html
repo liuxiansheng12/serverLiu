@@ -1,0 +1,1383 @@
+<!DOCTYPE html><html><head>
+      <title>29.HOOK</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/liushanzhuang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="hook%E7%AE%80%E4%BB%8B">HOOK&#x7B80;&#x4ECB;</h1>
+
+<p>HOOK&#x662F;React&#x65B0;&#x63D0;&#x51FA;&#x7684;&#x4E00;&#x79CD;&#x5F00;&#x53D1;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>HOOK&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x589E;&#x5F3A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x4E4B;&#x53EF;&#x4EE5;&#x6210;&#x4E3A;&#x7C7B;&#x7EC4;&#x4EF6;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#x3002;</p>
+<p>&#x5E76;&#x4E14;React&#x5B98;&#x65B9;&#x9F13;&#x52B1;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x5F00;&#x53D1;&#x4EE3;&#x7801;&#x3002;</p>
+<p>HOOK&#x65E0;&#x6CD5;&#x4F5C;&#x7528;&#x4E8E;&#x7C7B;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>HOOK&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x6302;&#x8F7D;&#x4EFB;&#x4F55;&#x529F;&#x80FD;&#x3002;</p>
+<h1 class="mume-header" id="state-hook">State HOOK</h1>
+
+<p>State HOOk&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x540D;&#x79F0;&#x4E3A;<code>useState</code>&#x3002;<br>
+&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;: &#x8BA9;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x72B6;&#x6001;(&#x5B9A;&#x4E49;&#x6570;&#x636E;)&#x3002;</p>
+<ol>
+<li>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;
+<ol>
+<li>
+<p>&#x51FD;&#x6570;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x503C;&#x8868;&#x793A;&#x72B6;&#x6001;&#x7684;&#x9ED8;&#x8BA4;&#x503C;</p>
+</li>
+<li>
+<p>&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x8BE5;&#x6570;&#x7EC4;&#x4E00;&#x5B9A;&#x5305;&#x542B;&#x4E24;&#x9879;&#x3002;&#x7B2C;&#x4E00;&#x9879;: &#x5F53;&#x524D;&#x72B6;&#x6001;&#x7684;&#x503C;&#x3001;&#x7B2C;&#x4E8C;&#x9879;: &#x6539;&#x53D8;&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;</p>
+</li>
+<li>
+<p>&#x5E76;&#x4E14;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x4F7F;&#x7528;useState&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x72B6;&#x6001;1</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x72B6;&#x6001;2</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> setB<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001;<span class="token number">1</span> a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001;<span class="token number">2</span> b<span class="token operator">:</span> <span class="token punctuation">{</span>b<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setB</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token number">2</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="2">
+<li>
+<p>&#x5B9E;&#x73B0;&#x539F;&#x7406;:<br>
+useState&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x7EC4;&#x4EF6;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x7C7B;&#x4F3C;&#x6570;&#x7EC4;&#x3002;<br>
+&#x7B2C;&#x4E00;&#x4E2A;useState&#x8C03;&#x7528;&#x65F6;: &#x770B;&#x7B2C;0&#x4F4D;&#x6709;&#x6CA1;&#x6709;&#x5B58;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B58;&#x5165;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x4FEE;&#x6539;&#x8BE5;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x7136;&#x540E;&#x628A;&#x8BE5;&#x503C;&#x4E0E;&#x4FEE;&#x6539;&#x8BE5;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x653E;&#x5165;&#x6570;&#x7EC4;&#x4E2D;&#x8FD4;&#x56DE;&#x3002;<br>
+&#x7B2C;&#x4E8C;&#x4E2A;useState&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x770B;&#x7B2C;1&#x4F4D;&#x6709;&#x6CA1;&#x6709;&#x5B58;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B58;&#x5165;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x4FEE;&#x6539;&#x8BE5;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x7136;&#x540E;&#x628A;&#x8BE5;&#x503C;&#x4E0E;&#x4FEE;&#x6539;&#x8BE5;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x653E;&#x5165;&#x6570;&#x7EC4;&#x4E2D;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x4FEE;&#x6539;&#x8868;&#x4E2D;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x636E;&#x3002;&#x7136;&#x540E;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;<br>
+&#x6B64;&#x65F6;&#x53C8;&#x4F1A;&#x91CD;&#x65B0;&#x8C03;&#x7528;useState&#x65B9;&#x6CD5;&#x3002;<br>
+&#x7B2C;&#x4E00;&#x4E2A;useState&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x53D1;&#x73B0;&#x7B2C;0&#x4F4D;&#x6709;&#x6570;&#x636E;(&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;)&#xFF0C;&#x4E8E;&#x662F;&#x4E0D;&#x518D;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x503C;&#x7684;&#x8D4B;&#x503C;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x53CA;&#x4E4B;&#x524D;&#x4EA7;&#x751F;&#x7684;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5373;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x505A;&#x5904;&#x7406;&#x3002;<br>
+&#x7B2C;&#x4E8C;&#x4E2A;useState&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x53D1;&#x73B0;&#x7B2C;1&#x4F4D;&#x6709;&#x6570;&#x636E;(&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;)&#xFF0C;&#x4E8E;&#x662F;&#x4E0D;&#x518D;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x503C;&#x7684;&#x8D4B;&#x503C;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x53CA;&#x4E4B;&#x524D;&#x4EA7;&#x751F;&#x7684;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5373;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x505A;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x4F9D;&#x9760;&#x8BE5;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4E86;&#x7EC4;&#x4EF6;&#x72B6;&#x6001;&#x7684;&#x5207;&#x6362;&#x3002;</p>
+</li>
+<li>
+<p>&#x6CE8;&#x610F;&#x7EC6;&#x8282;:</p>
+<ol>
+<li>
+<p>useState&#x6700;&#x597D;&#x5199;&#x5728;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF0C;&#x4FBF;&#x4E8E;&#x9605;&#x8BFB;&#x3002;</p>
+</li>
+<li>
+<p>useState&#x4E25;&#x7981;&#x5199;&#x5728;&#x5224;&#x65AD;&#x3001;&#x5FAA;&#x73AF;&#x4E2D;<br>
+&#x539F;&#x56E0;:<br>
+useState&#x5BF9;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x662F;&#x6839;&#x636E;&#x6267;&#x884C;&#x7684;&#x6B21;&#x6570;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5224;&#x65AD;&#xFF0C;&#x6539;&#x53D8;useState&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x72B6;&#x6001;&#x7684;&#x6DF7;&#x4E71;&#x3002;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;&#x4E24;&#x6B21;&#x7684;&#x6570;&#x636E;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x8FBE;&#x5230;&#x4E86;&#x4F18;&#x5316;&#x6548;&#x7387;&#x7684;&#x76EE;&#x7684;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;&#x4FEE;&#x6539;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x8986;&#x76D6;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x5408;&#x5E76;&#xFF0C;&#x548C;setState&#x4E0D;&#x540C;&#x3002;<br>
+&#x6240;&#x4EE5;&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x8005;&#x6570;&#x7EC4;&#x5728;&#x6539;&#x53D8;&#x72B6;&#x6001;&#x65F6;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528;<code>setA({...a, name: 12})</code>&#x3002;<br>
+&#x628A;&#x4E4B;&#x524D;&#x7684;&#x5C5E;&#x6027;&#x5C55;&#x5F00;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4FEE;&#x6539;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x3002;&#x76EE;&#x7684;:<br>
+&#x9632;&#x6B62;&#x66FF;&#x6362;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x628A;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7ED9;&#x66FF;&#x6362;&#x6389;&#x4E86;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5173;&#x8054;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6700;&#x597D;&#x591A;&#x6B21;&#x4F7F;&#x7528;useState&#x5B9A;&#x4E49;&#x4E0D;&#x540C;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4E0D;&#x8981;&#x628A;&#x5B83;&#x4EEC;&#x5B9A;&#x4E49;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4FBF;&#x4E8E;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#xFF0C;&#x4EE3;&#x7801;&#x4E5F;&#x4E0D;&#x5BB9;&#x6613;&#x9605;&#x8BFB;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li>
+<p>&#x7EC4;&#x4EF6;&#x7684;&#x5F3A;&#x5236;&#x5237;&#x65B0;</p>
+<ol>
+<li>&#x7C7B;&#x7EC4;&#x4EF6;: &#x8C03;&#x7528;this.forceUpdate()&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x7684;&#x5F3A;&#x5236;&#x5237;&#x65B0;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x4E13;&#x95E8;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x9700;&#x8981;&#x5F3A;&#x5236;&#x5237;&#x65B0;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728;&#x7ED9;&#x8BE5;&#x72B6;&#x6001;&#x9644;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;&#xFF0C;&#x7531;&#x4E8E;&#x4E24;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x7D22;&#x5F15;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x5C31;&#x4F1A;&#x5F15;&#x53D1;&#x7EC4;&#x4EF6;&#x7684;&#x5237;&#x65B0;&#xFF0C;&#x8FBE;&#x5230;&#x5F3A;&#x5236;&#x5237;&#x65B0;&#x7684;&#x6548;&#x679C;</li>
+</ol>
+</li>
+<li>
+<p>&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x65B9;&#x6CD5;&#x7684;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x95EE;&#x9898;</p>
+<p>&#x5982;&#x679C;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x65B9;&#x6CD5;&#x5904;&#x4E8E;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5219;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x4F1A;&#x5F02;&#x6B65;&#x7684;&#x6267;&#x884C;&#x3002;&#x548C;setState&#x4E00;&#x6837;&#x4E3A;&#x4E86;&#x4F18;&#x5316;&#x6027;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x4E5F;&#x5177;&#x6709;setState&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+</li>
+<li>
+<p>useState&#x8FD4;&#x56DE;&#x7684;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x51FD;&#x6570;&#x7684;&#x5237;&#x65B0;&#x673A;&#x5236;</p>
+<ol>
+<li>&#x4F7F;&#x7528;useState&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x4E3A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x589E;&#x52A0;&#x4E86;&#x72B6;&#x6001;</li>
+<li>&#x521B;&#x5EFA;&#x7684;&#x51FD;&#x6570;&#x8868;&#x662F;&#x6302;&#x8F7D;&#x5230;&#x7EC4;&#x4EF6;&#x8282;&#x70B9;&#x7A7A;&#x95F4;&#x4E0A;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6302;&#x8F7D;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x51FD;&#x6570;&#x4E0A;</li>
+<li>&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x8FD0;&#x884C;&#x662F;&#x5728;&#x521B;&#x5EFA;&#x865A;&#x62DF;dom&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6B64;&#x65F6;&#x8BE5;&#x51FD;&#x6570;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x3002;</li>
+<li>&#x5F53;&#x8FD0;&#x884C;useState&#x521B;&#x5EFA;&#x51FA;&#x6570;&#x636E;&#x8868;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x6302;&#x8F7D;&#x5230;&#x8BE5;&#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#x8868;</li>
+<li>&#x5F53;&#x4F7F;&#x7528;useState&#x8FD4;&#x56DE;&#x7684;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5F15;&#x53D1;&#x7EC4;&#x4EF6;&#x7684;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x4F1A;&#x4ECE;&#x6302;&#x8F7D;&#x7684;&#x7EC4;&#x4EF6;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x4E2D;&#x627E;&#x5230;&#x8BE5;&#x8282;&#x70B9;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#xFF0C;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x3002;<br>
+&#x5E76;&#x4E0D;&#x662F;&#x90A3;&#x4E2A;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x4E86;useState&#x521B;&#x5EFA;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x8BE5;&#x6570;&#x636E;&#x8868;&#x4E0E;&#x8BE5;&#x51FD;&#x6570;&#x5EFA;&#x7ACB;&#x8054;&#x7CFB;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x91CD;&#x65B0;&#x8FD0;&#x884C;&#x7684;&#x662F;&#x8BE5;&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x6B63;&#x5F0F;&#x7531;&#x4E8E;&#x8FD9;&#x4E00;&#x7279;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;HOOK&#x8FDB;&#x884C;&#x63D0;&#x53D6;&#xFF0C;&#x5F62;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x7684;HOOK&#x3002;</li>
+</ol>
+</li>
+</ol>
+<p>&#x6BD4;&#x5982;:</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x70B9;&#x51FB;&#x6309;&#x94AE;&#xFF0C;&#x72B6;&#x6001;&#x5E76;&#x4E0D;&#x4F1A;&#x53D8;&#x6210;2&#xFF0C;&#x800C;&#x662F;&#x4E3A;1&#x3002;&#x539F;&#x56E0;&#x5C31;&#x5728;&#x4E8E;setA&#x8FDB;&#x884C;&#x4E86;&#x5F02;&#x6B65;&#x6267;&#x884C;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;setA&#x65F6;&#x4F20;&#x5165;&#x7684;&#x662F;1&#xFF0C;&#x4F46;&#x662F;&#x51FD;&#x6570;&#x5E76;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x3002;&#x6240;&#x4EE5;&#x7B2C;&#x4E8C;&#x6B21;&#x8C03;&#x7528;setA&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x8FD8;&#x662F;1&#x3002;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x7ED3;&#x679C;a&#x53D8;&#x6210;&#x4E86;1&#x3002;<br>
+&#x867D;&#x7136;setA&#x6267;&#x884C;&#x4E86;&#x4E24;&#x6B21;&#xFF0C;&#x4F46;&#x662F;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:<br>
+&#x91C7;&#x7528;&#x56DE;&#x8C03;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span><span class="token parameter">a</span> <span class="token arrow operator">=&gt;</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span><span class="token parameter">a</span> <span class="token arrow operator">=&gt;</span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x8FD9;&#x6837;setA&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4F20;&#x5165;&#x7684;&#x662F;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x628A;&#x65B9;&#x6CD5;&#x653E;&#x5165;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x5F53;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5148;&#x6267;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x5B58;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x5165;&#x521D;&#x59CB;&#x503C;0&#xFF0C;&#x628A;&#x8FD4;&#x56DE;&#x503C;&#x4F20;&#x5165;&#x4E0B;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x3002;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8986;&#x76D6;&#x5BF9;&#x5E94;&#x7684;&#x72B6;&#x6001;&#x3002;&#x7136;&#x540E;&#x5728;&#x5F15;&#x53D1;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x6240;&#x4EE5;a&#x7684;&#x503C;&#x53D8;&#x6210;&#x4E86;2&#x3002;</p>
+<h1 class="mume-header" id="effect-hook">Effect HOOK</h1>
+
+<p>&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x4E3A;<code>useEffect</code></p>
+<ol>
+<li>
+<p>&#x4F5C;&#x7528;</p>
+<ol>
+<li>
+<p>&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x3002;&#x6BD4;&#x5982;ajax&#x8BF7;&#x6C42;&#x3001;&#x8BA1;&#x65F6;&#x5668;&#x3001;&#x5176;&#x5B83;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3001;&#x64CD;&#x4F5C;&#x771F;&#x5B9E;&#x5BF9;&#x8C61;&#x3001;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x3001;&#x5176;&#x5B83;&#x64CD;&#x4F5C;&#x5916;&#x90E8;&#x6570;&#x636E;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x5C5E;&#x4E8E;&#x526F;&#x4F5C;&#x7528;&#x3002;</p>
+</li>
+<li>
+<p>React&#x4E3A;&#x4E86;&#x4F7F;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x7EAF;&#x7CB9;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x4E13;&#x95E8;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x526F;&#x4F5C;&#x7528;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</p>
+<ol>
+<li>
+<p>&#x8BE5;&#x51FD;&#x6570;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x4E2D;&#x8FDB;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li>
+<p>&#x5E76;&#x4E14;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x662F;&#x5728;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x540E;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x7684;&#x6267;&#x884C;&#x65F6;&#x5F02;&#x6B65;&#x7684;&#x3002;</p>
+</li>
+<li>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x7C7B;&#x7EC4;&#x4EF6;&#x7684;componentDidMount&#x548C;componentDidUpdate&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x4E9B;&#x533A;&#x522B;&#x3002;<br>
+&#x8BE5;&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x65F6;&#x95F4;&#x7A0D;&#x665A;&#xFF0C;&#x7C7B;&#x7EC4;&#x4EF6;&#x7684;&#x4E24;&#x4E2A;&#x5468;&#x671F;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x5728;&#x771F;&#x5B9E;dom&#x66F4;&#x65B0;&#xFF0C;&#x4F46;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x6CA1;&#x6709;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x524D;&#x6267;&#x884C;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x6E32;&#x67D3;&#x540E;&#x6267;&#x884C;&#x3002;</p>
+</li>
+<li>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x4F20;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x83B7;&#x53D6;&#x5230;dom&#x5143;&#x7D20;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x4E3A;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#xFF0C;&#x6B64;&#x65F6;dom&#x5C31;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x3002;</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">useEffect</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="3">
+<li>
+<p>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</p>
+<ol>
+<li>&#x8BE5;&#x65B9;&#x6CD5;&#x4E5F;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5728;&#x5224;&#x65AD;&#x548C;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;</li>
+<li>&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x591A;&#x6B21;&#x4F7F;&#x7528;&#x662F;&#xFF0C;&#x4F1A;&#x628A;&#x4F20;&#x5165;&#x7684;&#x65B9;&#x6CD5;&#x653E;&#x5165;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x5230;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+</ol>
+</li>
+<li>
+<p>&#x4F20;&#x5165;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;(&#x6E05;&#x7406;&#x51FD;&#x6570;)<br>
+&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD4;&#x56DE;&#x503C;&#x5FC5;&#x987B;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;<br>
+&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x4E3A;&#x6E05;&#x7406;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x6E05;&#x7406;&#x5B9A;&#x65F6;&#x5668;&#x3002;<br>
+&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;:<br>
+&#x6BCF;&#x4E00;&#x6B21;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x6267;&#x884C;&#x524D;&#x89E6;&#x53D1;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x662F;&#x4E0A;&#x4E00;&#x4E2A;&#x7684;&#x9500;&#x6BC1;&#x51FD;&#x6570;&#x3002;<br>
+&#x7B2C;&#x4E00;&#x6B21;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;<br>
+&#x7EC4;&#x4EF6;&#x88AB;&#x5378;&#x8F7D;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x7C7B;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;componentDidUnmount&#x51FD;&#x6570;&#x3002;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">useEffect</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FD4;&#x56DE;&#x6E05;&#x7406;&#x51FD;&#x6570;</span>
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6E05;&#x7406;&#xFF0C;&#x9500;&#x6BC1;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="5">
+<li>useEffect&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;(&#x4F9D;&#x8D56;&#x6570;&#x636E;)
+<ol>
+<li>
+<p>&#x8BE5;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x4E3A;&#x6570;&#x7EC4;</p>
+</li>
+<li>
+<p>&#x6570;&#x7EC4;&#x4E2D;&#x8BB0;&#x5F55;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x4F9D;&#x8D56;&#x6570;&#x636E;</p>
+</li>
+<li>
+<p>&#x5F53;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x540E;&#xFF0C;&#x5F53;&#x524D;&#x4F20;&#x5165;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4E0E;&#x4E0A;&#x4E00;&#x6B21;(&#x6E32;&#x67D3;&#x524D;)&#x4F20;&#x5165;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5B8C;&#x5168;&#x76F8;&#x540C;(&#x5BF9;&#x8C61;&#x53EA;&#x770B;&#x5F15;&#x7528;&#x503C;&#xFF0C;&#x4E0D;&#x4F1A;&#x770B;&#x5185;&#x90E8;)&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x53CA;&#x5904;&#x7406;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x6E05;&#x7406;&#x51FD;&#x6570;&#x90FD;&#x4E0D;&#x8FD0;&#x884C;&#x3002;<br>
+&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4EE5;&#x53CA;&#x6E05;&#x7406;&#x51FD;&#x6570;&#x90FD;&#x4F1A;&#x8FD0;&#x884C;</p>
+</li>
+<li>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x4E00;&#x5B9A;&#x4F1A;&#x8FD0;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#x4E00;&#x5B9A;&#x4F1A;&#x8FD0;&#x884C;&#x8FD4;&#x56DE;&#x7684;&#x6E05;&#x7406;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x4F20;&#x5165;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;&#xFF0C;&#x5219;React&#x8BA4;&#x4E3A;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4F9D;&#x8D56;&#x3002;<br>
+&#x8FD9;&#x6837;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#x53EA;&#x5728;&#x5F00;&#x59CB;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x540E;&#x9762;&#x90FD;&#x4E0D;&#x5728;&#x6267;&#x884C;&#x3002;<br>
+&#x6E05;&#x7406;&#x51FD;&#x6570;&#x53EA;&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x5176;&#x5B83;&#x65F6;&#x5019;&#x90FD;&#x4E0D;&#x5728;&#x6267;&#x884C;&#x3002;<br>
+&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x9700;&#x6C42;&#x3002;</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>n<span class="token operator">:</span> <span class="token number">123</span><span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token number">456</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">useEffect</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6E05;&#x7406;&#xFF0C;&#x9500;&#x6BC1;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>a<span class="token punctuation">.</span><span class="token property-access">n</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span><span class="token property-access">c</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment">// &#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#x6570;&#x636E;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">.</span><span class="token property-access">n</span><span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+        <span class="token operator">&lt;</span>button onClick <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token spread operator">...</span>a<span class="token punctuation">,</span> n<span class="token operator">:</span> <span class="token number">789</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&gt;</span>&#x4FEE;&#x6539;&#x72B6;&#x6001;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="6">
+<li>&#x7EC4;&#x4EF6;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;&#xFF0C;&#x7531;&#x4E8E;&#x95ED;&#x5305;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x3002;<br>
+&#x6BCF;&#x4E00;&#x6B21;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#x7684;&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x4E4B;&#x524D;&#x7684;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#x76F8;&#x5F53;&#x4E8E;&#x4EA7;&#x751F;&#x4E86;&#x95ED;&#x5305;&#x3002;<br>
+&#x5982;&#x679C;useEffect&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x5F02;&#x6B65;&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;&#xFF0C;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x5F00;&#x542F;&#x5F02;&#x6B65;&#x5904;&#x7406;&#xFF0C;&#x4F46;&#x662F;&#x8BE5;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x8FD8;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x6570;&#x636E;&#xFF0C;&#x7EC4;&#x4EF6;&#x5C31;&#x8FDB;&#x884C;&#x4E86;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;<br>
+&#x7531;&#x4E8E;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x662F;&#x4E4B;&#x524D;&#x7EC4;&#x4EF6;&#x5F00;&#x542F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5373;&#x4F7F;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F46;&#x662F;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x8FD8;&#x662F;&#x5904;&#x4E8E;&#x4E4B;&#x524D;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x83B7;&#x53D6;&#x7684;&#x8FD8;&#x662F;&#x65E7;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x65B0;&#x7684;&#x72B6;&#x6001;&#x3002;</li>
+</ol>
+<p>&#x6BD4;&#x5982;:</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">useEffect</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">setInterval</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token comment">// &#x53EA;&#x8BA9;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x53EA;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x73B0;&#x8C61;: a&#x5E76;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#x3002;<br>
+&#x539F;&#x56E0;: &#x5B9A;&#x65F6;&#x5668;&#x867D;&#x7136;&#x4E00;&#x76F4;&#x5728;&#x505A;a&#x7D2F;&#x52A0;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;a&#x7D2F;&#x52A0;&#x5B8C;&#xFF0C;&#x4FEE;&#x6539;&#x4E86;&#x72B6;&#x6001;&#x3002;<br>
+&#x5BFC;&#x81F4;A&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x5F97;&#x5230;&#x7684;a&#x662F;&#x7D2F;&#x52A0;&#x540E;&#x7684;&#x7ED3;&#x679C;1&#xFF0C;&#x4F46;&#x662F;&#x6B64;&#x65F6;A&#x91CD;&#x65B0;&#x6267;&#x884C;&#x5F97;&#x5230;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;a&#x4E3A;1&#x5728;&#x65B0;&#x7684;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x3002;<br>
+&#x7136;&#x540E;&#x5B9A;&#x65F6;&#x5668;&#x7EE7;&#x7EED;&#x7D2F;&#x52A0;&#xFF0C;&#x8BFB;&#x53D6;a&#x505A;a+1&#x7684;&#x8FD0;&#x7B97;&#xFF0C;&#x7531;&#x4E8E;&#x5B9A;&#x65F6;&#x5668;&#x662F;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8BFB;&#x53D6;&#x7684;a&#x8FD8;&#x662F;0&#x3002;&#x8FD0;&#x7B97;&#x5B8C;&#xFF0C;a&#x4E3A;1&#xFF0C;useState&#x4E00;&#x770B;&#x503C;&#x4E0E;&#x4E0A;&#x6B21;&#x4ED8;&#x7684;&#x4E00;&#x6837;&#xFF0C;&#x4E4B;&#x540E;&#x7EC4;&#x4EF6;&#x4E0D;&#x5728;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;<br>
+&#x5B9A;&#x65F6;&#x5668;&#x4E00;&#x76F4;&#x505A; 0 + 1&#x7684;&#x8FD0;&#x7B97;&#x3002;<br>
+&#x8FD9;&#x5C31;&#x662F;useEffect&#x4E2D;&#x5F02;&#x6B65;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x53D7;&#x95ED;&#x5305;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:<br>
+1) &#x628A;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x4F9D;&#x8D56;&#x53BB;&#x6389;&#xFF0C;&#x5B9A;&#x65F6;&#x5668;&#x91C7;&#x7528;setTimeout&#x3002;<br>
+setTimeout&#x65F6;&#x95F4;&#x4E00;&#x5230;&#xFF0C;a&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#xFF0C;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x7684;setTimeout&#x6D88;&#x5931;&#xFF0C;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x3002;<br>
+&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#xFF0C;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x65B0;&#x5F00;&#x4E00;&#x4E2A;setTimeout<br>
+&#x7531;&#x4E8E;setTimeout&#x662F;&#x5728;&#x65B0;&#x73AF;&#x5883;&#x4E2D;&#x5F00;&#x542F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6B64;&#x65F6;&#x83B7;&#x53D6;&#x7684;a&#x5C31;&#x662F;&#x4E0A;&#x6B21;&#x7D2F;&#x52A0;&#x5B8C;&#x7684;&#x503C;&#x3002;<br>
+&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;setTime&#xFF0C;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#x7684;&#x63A5;&#x529B;&#x3002;<br>
+setInterval&#x4E0D;&#x80FD;&#x6BCF;&#x6B21;&#x90FD;&#x65B0;&#x5F00;&#x4E00;&#x4E2A;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x5B83;&#x7684;&#x7D2F;&#x52A0;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x5DE5;&#x4F5C;&#x5B8C;&#x5C31;&#x9500;&#x6BC1;&#x3002;</p>
+<pre class="language-text">2) &#x4F7F;&#x7528;useState&#x5B9A;&#x4E49;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x7684;&#x4E13;&#x95E8;&#x7684;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x8D4B;&#x503C;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;   &#x6240;&#x4EE5;&#x65E0;&#x6CD5;&#x64CD;&#x4F5C;&#x65E7;&#x73AF;&#x5883;&#x7684;a&#xFF0C;&#x4F7F;&#x5176;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;
+
+3) &#x628A;&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x5B8C;&#x7684;&#x72B6;&#x6001;&#x4FDD;&#x5B58;&#x5230;&#x5916;&#x90E8;&#xFF0C;&#x6BCF;&#x6B21;&#x7D2F;&#x52A0;&#x4ECE;&#x5916;&#x90E8;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x505A;&#x7D2F;&#x52A0;&#x6548;&#x679C;&#x3002;
+   &#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x53EA;&#x4F7F;&#x7528;&#x4E00;&#x6B21;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x4E2A;&#x5730;&#x65B9;&#x90FD;&#x4F7F;&#x7528;&#x4E86;&#x8BE5;&#x7EC4;&#x4EF6;&#xFF0C;&#x5C31;&#x4F1A;&#x9020;&#x6210;&#x6570;&#x636E;&#x7684;&#x8986;&#x76D6;&#x3002;
+
+4) &#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x4FDD;&#x5B58;&#x6BCF;&#x6B21;&#x7D2F;&#x52A0;&#x5B8C;&#x7684;&#x72B6;&#x6001;&#x3002;
+   &#x5B9A;&#x65F6;&#x5668;&#x4F7F;&#x7528;&#x8BE5;&#x6570;&#x636E;&#x505A;&#x7D2F;&#x52A0;&#xFF0C;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7684;&#x3002;
+</pre>
+<h1 class="mume-header" id="reducer-hook">Reducer HOOK</h1>
+
+<p>&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x540D;&#x4E3A;<code>useReducer</code></p>
+<ol>
+<li>
+<p>&#x529F;&#x80FD;</p>
+<ol>
+<li>&#x4E13;&#x95E8;&#x7BA1;&#x7406;&#x72B6;&#x6001;&#x7684;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</li>
+<li>&#x76F8;&#x5F53;&#x4E8E;redux&#x4E2D;&#x7684;reducer&#x51FD;&#x6570;</li>
+</ol>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;</p>
+<ol>
+<li>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x662F;&#x524D;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x4F20;&#x5165;<br>
+&#x7B2C;&#x4E00;&#x6B21;&#x53C2;&#x6570;&#x4E3A;&#x5177;&#x4F53;&#x7684;&#x72B6;&#x6001;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;&#x72B6;&#x6001;&#x7684;&#x521D;&#x59CB;&#x503C;<br>
+&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x9879;&#x4E3A;&#x72B6;&#x6001;&#xFF0C;&#x7B2C;&#x4E8C;&#x9879;&#x4E3A;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;dispatch&#x3002;</p>
+</li>
+<li>
+<p>dispatch&#x51FD;&#x6570;&#x7684;&#x7528;&#x6CD5;&#x4E3A;&#xFF0C;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x5BF9;&#x8C61;action(&#x8868;&#x793A;&#x8981;&#x600E;&#x4E48;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x72B6;&#x6001;)<br>
+&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x539F;&#x7406;&#xFF0C;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4F20;&#x5165;&#x7684;&#x72B6;&#x6001;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x8FDB;&#x884C;&#x5177;&#x4F53;&#x7684;&#x72B6;&#x6001;&#x4FEE;&#x6539;&#x3002;<br>
+&#x72B6;&#x6001;&#x4E00;&#x53D1;&#x751F;&#x4FEE;&#x6539;&#xFF0C;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x7EC4;&#x4EF6;&#x51FD;&#x6570;&#x901A;&#x8FC7;useReducer&#x83B7;&#x53D6;&#x7684;&#x5C31;&#x662F;&#x65B0;&#x7684;&#x72B6;&#x6001;(&#x7B2C;&#x4E00;&#x6B21;useState&#x8D4B;&#x503C;&#x52A0;&#x8BFB;&#x53D6;&#xFF0C;&#x4E4B;&#x540E;&#x90FD;&#x662F;&#x8BFB;&#x53D6;)&#x3002;</p>
+</li>
+<li>
+<p>&#x548C;&#x81EA;&#x5B9A;&#x4E49;HOOK&#x7684;&#x539F;&#x7406;&#x4E00;&#x6837;&#x3002;useReducer&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#xFF0C;&#x4E0D;&#x7528;&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x7684;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useReducer <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">abc</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-switch">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-case">case</span> <span class="token string">&quot;a&#x72B6;&#x6001;&#x4E3A;12&quot;</span><span class="token operator">:</span>
+            <span class="token keyword control-flow keyword-return">return</span> action<span class="token punctuation">.</span><span class="token property-access">attrs</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword control-flow keyword-return">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x4F20;&#x5165;&#x5177;&#x4F53;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x72B6;&#x6001;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;(&#x628A;&#x9ED8;&#x8BA4;&#x503C;&#x5F53;&#x505A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;</span>
+    <span class="token comment">// &#x8FD4;&#x56DE;&#x503C;&#x4F5C;&#x4E3A;&#x5B9E;&#x9645;&#x7684;&#x9ED8;&#x8BA4;&#x503C;)</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useReducer</span><span class="token punctuation">(</span>abc<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword control-flow keyword-return">return</span> <span class="token number">5</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x4F7F;&#x7528;&#x72B6;&#x6001; a<span class="token operator">:</span> <span class="token punctuation">{</span>a<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x4F20;&#x5165;action&#x5BF9;&#x8C61;</span>
+            <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                type<span class="token operator">:</span> <span class="token string">&quot;a&#x72B6;&#x6001;&#x4E3A;12&quot;</span><span class="token punctuation">,</span>
+                attrs<span class="token operator">:</span> <span class="token number">12</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span>&#x6539;&#x53D8;&#x72B6;&#x6001;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="4">
+<li>
+<p>&#x6CE8;&#x610F;&#x70B9;</p>
+<ol>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x662F;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4F1A;&#x5728;useReducer&#x4E2D;&#x4F7F;&#x7528;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#xFF0C;&#x4ECE;&#x800C;&#x5F15;&#x53D1;&#x9875;&#x9762;&#x7684;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;</li>
+<li>&#x9875;&#x9762;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;useReducer&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;dispatch&#x51FD;&#x6570;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x521B;&#x5EFA;</li>
+<li>&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x4F7F;&#x7528;useReducer&#xFF0C;&#x7BA1;&#x7406;&#x591A;&#x4E2A;&#x72B6;&#x6001;&#xFF0C;&#x591A;&#x6B21;&#x4F7F;&#x7528;useReducer&#x8FD4;&#x56DE;&#x7684;dispatch&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;dispatch&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x867D;&#x7136;&#x6BCF;&#x6B21;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x90FD;&#x4F20;&#x5165;&#x521D;&#x59CB;&#x503C;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x521D;&#x59CB;&#x503C;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x5728;&#x5F00;&#x59CB;&#x65F6;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x548C;dispatch&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x5728;&#x5F00;&#x59CB;&#x65F6;&#x8FDB;&#x884C;&#x521B;&#x5EFA;&#x3002;</li>
+</ol>
+</li>
+<li>
+<p>&#x4EFF;&#x5199;useReducer</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">useReducer</span><span class="token punctuation">(</span><span class="token parameter">tubeReasonFun<span class="token punctuation">,</span> initial<span class="token punctuation">,</span> initialFunc</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x521B;&#x5EFA;</span>
+    <span class="token keyword control-flow keyword-if">if</span><span class="token punctuation">(</span>initialFunc<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">initialFunc</span><span class="token punctuation">(</span>initial<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x521B;&#x5EFA;&#x72B6;&#x6001;(&#x4EE5;&#x540E;&#x8BFB;&#x53D6;&#x72B6;&#x6001;)</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span>initial<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x521B;&#x5EFA;dispatch&#x51FD;&#x6570;</span>
+    <span class="token keyword keyword-function">function</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token parameter">action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-let">let</span> data <span class="token operator">=</span> <span class="token function">tubeReasonFun</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setState</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="context-hook">Context HOOK</h1>
+
+<p>&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x540D;&#x4E3A;<code>useContext</code></p>
+<ol>
+<li>
+<p>&#x4F5C;&#x7528;<br>
+&#x83B7;&#x53D6;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x6570;&#x636E;(&#x83B7;&#x53D6;&#x5168;&#x90E8;&#x6570;&#x636E;)&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x6570;&#x636E;&#x89E3;&#x6784;&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5230;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useContext <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x521B;&#x5EFA;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;</span>
+<span class="token keyword keyword-let">let</span> context01 <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">createContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// &#x4F7F;&#x7528;&#x539F;&#x59CB;&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token comment">/* &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x7ED3;&#x6784;&#x4E0A;&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x5C42;&#x7EA7; */</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>context01<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Consumer</span></span><span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>
+                <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>a<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+                    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span>a<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>context01<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Consumer</span></span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// &#x4F7F;&#x7528;useContext&#x83B7;&#x53D6;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x7684;&#x6570;&#x636E;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x4F20;&#x5165;&#x521B;&#x5EFA;&#x7684;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;</span>
+    <span class="token keyword keyword-let">let</span> <span class="token punctuation">{</span> a <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>context01<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token comment">/* &#x64CD;&#x4F5C;&#x7B80;&#x5355;&#x4E86;&#x8BB8;&#x591A; */</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span>a<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// &#x521B;&#x5EFA;&#x6267;&#x884C;&#x671F;&#x4E0A;&#x4E0B;&#x6587;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">C</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>context01<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Provider</span></span> value<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token punctuation">{</span>a<span class="token operator">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token constant">A</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token constant">B</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>context01<span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Provider</span></span><span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="callback-hook">Callback HOOK</h1>
+
+<p>&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x540D;<code>useCallback</code></p>
+<ol>
+<li>
+<p>&#x4F5C;&#x7528;<br>
+&#x56FA;&#x5316;&#x51FD;&#x6570;&#x7684;&#x5730;&#x5740;&#x5F15;&#x7528;&#xFF0C;&#x4F18;&#x5316;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+</li>
+<li>
+<p>&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</p>
+<ol>
+<li>
+<p>&#x5982;&#x679C;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;&#x884C;&#x95F4;&#x4F20;&#x53C2;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5411;&#x4E00;&#x4E2A;&#x7EAF;&#x7EC4;&#x4EF6;(&#x7C7B;&#x7EC4;&#x4EF6;)&#x4F20;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;<br>
+&#x7EAF;&#x7EC4;&#x4EF6;&#x662F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x9A8C;&#x8BC1;&#x4ECE;&#x800C;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x7684;&#x62E6;&#x622A;&#xFF0C;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x3002;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;&#x884C;&#x95F4;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x5199;&#x5728;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x5185;&#x90E8;&#x3002;<br>
+&#x5219;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x4E00;&#x8FDB;&#x884C;&#x5237;&#x65B0;&#xFF0C;&#x5219;&#x6BCF;&#x6B21;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x3002;<br>
+&#x6B64;&#x65F6;&#x7EAF;&#x7EC4;&#x4EF6;&#x662F;&#x65E0;&#x6CD5;&#x62E6;&#x622A;&#xFF0C;&#x6240;&#x4EE5;&#x7EAF;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;<br>
+&#x660E;&#x660E;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x548C;&#x7EAF;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x7EAF;&#x7EC4;&#x4EF6;&#x5374;&#x8FDB;&#x884C;&#x4E86;&#x6E32;&#x67D3;&#xFF0C;&#x6D6A;&#x8D39;&#x4E86;&#x6548;&#x7387;&#x3002;</p>
+</li>
+<li>
+<p>&#x628A;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x5728;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x5916;&#x90E8;&#x662F;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8BE5;&#x95EE;&#x9898;&#x7684;&#x3002;<br>
+&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x4E86;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x72B6;&#x6001;&#x3002;<br>
+&#x5219;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x5728;&#x5916;&#x90E8;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x91C7;&#x7528;&#x4F20;&#x53C2;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x628A;&#x72B6;&#x6001;&#x4F20;&#x5165;&#xFF0C;&#x6B64;&#x65F6;&#x884C;&#x95F4;&#x5C31;&#x9700;&#x8981;&#x501F;&#x52A9;bind&#x3002;<br>
+&#x4F46;&#x662F;bind&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x8FD4;&#x56DE;&#x7684;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x51FD;&#x6570;&#xFF0C;&#x7EAF;&#x7EC4;&#x4EF6;&#x6B64;&#x65F6;&#x53C8;&#x62E6;&#x622A;&#x4E0D;&#x4F4F;&#x4E86;&#x3002;</p>
+</li>
+<li>
+<p>&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;useCallBack&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x5F15;&#x7528;&#x7684;&#x56FA;&#x5316;&#x3002;<br>
+&#x6BCF;&#x6B21;&#x4F20;&#x5165;&#x7684;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7D22;&#x5F15;&#xFF0C;&#x7EAF;&#x7EC4;&#x4EF6;&#x81EA;&#x7136;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x62E6;&#x622A;&#x4E86;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;<br>
+&#x8BE5;&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x6570;&#x7EC4;<br>
+&#x53EA;&#x8981;&#x6570;&#x7EC4;&#x4F9D;&#x8D56;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x4E4B;&#x524D;&#x7684;&#x5730;&#x5740;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x65B0;&#x7684;&#x5730;&#x5740;&#x5F15;&#x7528;&#x3002;</p>
+</li>
+<li>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x5F15;&#x5165;&#x8BE5;&#x65B9;&#x6CD5;</span>
+<span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useCallback <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// &#x51FD;&#x6570;&#x7EC4;&#x4EF6;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>b<span class="token punctuation">,</span> setB<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x51FD;&#x6570;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x5230;&#x4E86;&#x72B6;&#x6001;&#xFF0C;&#x4E0D;&#x80FD;&#x5B9A;&#x4E49;&#x5728;&#x5916;&#x90E8;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x7684;&#x56FA;&#x5316;</span>
+    <span class="token comment">// &#x4F9D;&#x8D56;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x7C7B;&#x7EC4;&#x4EF6;&#x81EA;&#x7136;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5237;&#x65B0;&#xFF0C;&#x5373;&#x4F7F;&#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x6CA1;&#x4E8B;</span>
+    <span class="token keyword keyword-let">let</span> func <span class="token operator">=</span> <span class="token function">useCallback</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token constant">B</span> func<span class="token operator">=</span><span class="token punctuation">{</span> func <span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token comment">/* &#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x7EAF;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#x6CA1;&#x6709;&#x91CD;&#x65B0;&#x6E32;&#x67D3;(&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x7D22;&#x5F15;&#x4E00;&#x6837;) */</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setB</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span> b <span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// &#x7EAF;&#x7EC4;&#x4EF6;</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">B</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>PureComponent</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x4E86;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">func</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span>&#x70B9;&#x51FB;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h1 class="mume-header" id="memo-hook">Memo HOOK</h1>
+
+<p>&#x51FD;&#x6570;&#x540D;<code>useMemo</code></p>
+<ol>
+<li>&#x4F5C;&#x7528;<br>
+&#x4E5F;&#x662F;&#x5176;&#x4E00;&#x4E2A;&#x56FA;&#x5316;&#x5730;&#x5740;&#x7684;&#x4F5C;&#x7528;<br>
+&#x4F46;&#x662F;&#x8BE5;&#x65B9;&#x6CD5;&#x6BD4;useCallbacks&#x7684;&#x529F;&#x80FD;&#x66F4;&#x52A0;&#x5F3A;&#x5927;<br>
+useCallback&#x53EA;&#x80FD;&#x56FA;&#x5316;&#x51FD;&#x6570;&#x5F15;&#x7528;&#x3002;<br>
+useMemo&#x53EF;&#x4EE5;&#x56FA;&#x5316;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x8C61;&#xFF0C;&#x6570;&#x7EC4;&#xFF0C;&#x51FD;&#x6570;&#x3002;</li>
+</ol>
+<p><strong>useMemo&#x6700;&#x5927;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x4F18;&#x5316;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x65F6;&#x7684;&#x6548;&#x7387;</strong>&#x3002;</p>
+<ol start="2">
+<li>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;<br>
+&#x8BE5;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;<br>
+&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6570;&#x636E;&#x5F15;&#x7528;&#x3002;<br>
+&#x7B2C;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x56FA;&#x5316;&#x3002;<br>
+&#x4E4B;&#x540E;&#x53EA;&#x8981;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x4F1A;&#x518D;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x56FA;&#x5316;&#x7684;&#x5730;&#x5740;&#x7D22;&#x5F15;<br>
+&#x53EA;&#x6709;&#x5F53;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x91CD;&#x65B0;&#x56FA;&#x5316;&#x65B0;&#x7684;&#x5730;&#x5740;&#x5F15;&#x7528;</p>
+</li>
+<li>
+<p>&#x4F18;&#x5316;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x6027;&#x80FD;&#x7684;&#x6848;&#x4F8B;<br>
+&#x6BD4;&#x5982;: &#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x4ECE;&#x5916;&#x754C;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x975E;&#x5E38;&#x591A;&#x7684;&#x6570;&#x7EC4;&#x3002;<br>
+&#x7136;&#x540E;&#x4F7F;&#x7528;&#x4E86;&#x5217;&#x8868;&#x5FAA;&#x73AF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x7ED3;&#x6784;&#x3002;<br>
+&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5F53;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x6570;&#x636E;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;<br>
+&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x6050;&#x6016;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5217;&#x8868;&#x5FAA;&#x73AF;&#x4F1A;&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x65B0;dom&#xFF0C;&#x867D;&#x7136;dom&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;&#x590D;&#x7528;&#x3002;<br>
+&#x4F46;&#x662F;&#x5FAA;&#x73AF;&#x6570;&#x7EC4;&#x4F1A;&#x6D6A;&#x8D39;&#x5927;&#x91CF;&#x7684;&#x65F6;&#x95F4;&#x3002;<br>
+&#x660E;&#x660E;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#x4E0E;&#x6570;&#x7EC4;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x6839;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x3002;<br>
+&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;useMemo&#x5BF9;&#x6570;&#x7EC4;&#x5FAA;&#x73AF;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x56FA;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x4E3A;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x3002;<br>
+&#x53EA;&#x8981;&#x6570;&#x7EC4;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x4E0D;&#x5728;&#x91CD;&#x65B0;&#x5FAA;&#x73AF;&#x6784;&#x5EFA;React&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x6784;&#x5EFA;&#x597D;&#x7684;&#x3002;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// &#x6A21;&#x62DF;&#x6050;&#x6016;&#x7684;&#x6570;&#x7EC4;</span>
+<span class="token keyword keyword-let">let</span> arr <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+arr<span class="token punctuation">.</span><span class="token method function property-access">fill</span><span class="token punctuation">(</span><span class="token string">&quot;ahdufiahidf&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x4E00;&#x4E2A;&#x5C0F;&#x6570;&#x636E;</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-let">let</span> b <span class="token operator">=</span> <span class="token function">useMemo</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x5BF9;&#x5927;&#x6570;&#x7EC4;&#x5FAA;&#x73AF;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x8FDB;&#x884C;&#x56FA;&#x5316;&#xFF0C;&#x9632;&#x6B62;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x65F6;&#xFF0C;&#x91CD;&#x65B0;&#x8D70;&#x8BE5;&#x51FD;&#x6570;</span>
+        <span class="token keyword control-flow keyword-return">return</span> arr<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token parameter">k</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span><span class="token constant">B</span> text<span class="token operator">=</span><span class="token punctuation">{</span>k<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>arr<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span><span class="token comment">/* &#x7ED3;&#x6784;&#x4E0D;&#x9700;&#x8981;&#x4ECE;&#x65B0;&#x751F;&#x6210;&#xFF0C;dom&#x8FDB;&#x884C;&#x590D;&#x7528;&#xFF0C;&#x6548;&#x7387;&#x63D0;&#x5347; */</span><span class="token punctuation">}</span>
+        <span class="token punctuation">{</span> b <span class="token punctuation">}</span>
+        
+        <span class="token punctuation">{</span><span class="token comment">/* &#x6539;&#x53D8;&#x5C0F;&#x72B6;&#x6001; */</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span> a <span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token constant">B</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span> props<span class="token punctuation">.</span><span class="token property-access">text</span> <span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="4">
+<li>&#x6269;&#x5C55;<br>
+&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#x56FA;&#x5316;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#x6216;&#x6570;&#x7EC4;&#x3002;&#x7528;&#x6765;&#x5B58;&#x653E;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x4E0D;&#x5F15;&#x53D1;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7684;&#x6570;&#x636E;&#x3002;<br>
+&#x5E76;&#x4E14;&#x7EC4;&#x4EF6;&#x4ECE;&#x65B0;&#x6E32;&#x67D3;&#x540E;&#xFF0C;&#x83B7;&#x53D6;&#x7684;&#x8FD8;&#x662F;&#x4E4B;&#x524D;&#x8FDB;&#x884C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;<br>
+&#x5982;&#x679C;&#x76F4;&#x63A5;&#x901A;&#x8FC7; let obj = {}&#xFF0C;&#x6BCF;&#x6B21;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x6570;&#x636E;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x8986;&#x76D6;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;<br>
+&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x4EE5;&#x501F;&#x52A9;useMemo&#x56FA;&#x5316;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x867D;&#x7136;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x7684;&#x8FD8;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</li>
+</ol>
+<h1 class="mume-header" id="ref-hook">Ref HOOK</h1>
+
+<p>&#x51FD;&#x6570;&#x540D;<code>useRef</code></p>
+<ol>
+<li>
+<p>&#x4F5C;&#x7528;<br>
+&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x56FA;&#x5316;&#x5730;&#x5740;&#x7684;&#x7279;&#x6B8A;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;ref&#x5BF9;&#x8C61;( React.createRef() )&#x3002;<br>
+&#x7528;&#x6765;&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;dom&#xFF0C;&#x6216;&#x8005;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x73AF;&#x5883;&#x3002;<br>
+&#x5982;&#x679C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;React.createRef()&#x521B;&#x5EFA;ref&#x5BF9;&#x8C61;&#x7684;&#x8BDD;&#xFF0C;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6548;&#x679C;&#x3002;<br>
+&#x4F46;&#x662F;&#x6BCF;&#x6B21;&#x7EC4;&#x4EF6;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#xFF0C;&#x6D6A;&#x8D39;&#x4E86;&#x6548;&#x7387;&#x3002;<br>
+&#x7528;useRef&#xFF0C;&#x53EA;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#xFF0C;&#x4E4B;&#x540E;&#x7EC4;&#x4EF6;&#x5237;&#x65B0;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x7684;&#x5730;&#x5740;&#x7D22;&#x5F15;&#x3002;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;<br>
+&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4F20;&#x9012;&#xFF0C;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x548C;React.createRef()&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x4E00;&#x6837;&#x3002;<br>
+&#x5982;&#x679C;&#x4F20;&#x9012;&#x53C2;&#x6570;&#xFF0C;&#x7ED9;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;current&#x5C5E;&#x6027;&#x9644;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x503C;</p>
+</li>
+<li>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useRef <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-let">let</span> ref <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-let">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> setA<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x53D1;&#x73B0;&#x5237;&#x65B0;&#x540E;&#xFF0C;&#x6253;&#x5370;&#x7684;&#x8BE5;&#x5BF9;&#x8C61;&#x6709;ref&#x5BF9;&#x5E94;&#x7684;dom&#xFF0C;&#x8BC1;&#x660E;&#x4E86;&#x8BE5;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x540C;&#x4E00;&#x4E2A;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>ref<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div ref<span class="token operator">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span><span class="token operator">&gt;</span>&#x6807;&#x7B7E;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">setA</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span>&#x5237;&#x65B0;<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="4">
+<li>&#x6269;&#x5C55;
+<ol>
+<li>React.createRef()&#x53EF;&#x4EE5;&#x548C;useMemo&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x80FD;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x56FA;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#x56FA;&#x5316;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x7528;&#x6765;&#x5B58;&#x653E;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x4E0D;&#x5F15;&#x53D1;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7684;&#x6570;&#x636E;&#x3002;<br>
+&#x5E76;&#x4E14;&#x7EC4;&#x4EF6;&#x5237;&#x65B0;&#x540E;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x5BF9;&#x8BE5;&#x5BF9;&#x8C61;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x8986;&#x76D6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x8FD8;&#x662F;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#x3002;<br>
+&#x53EA;&#x4E0D;&#x8FC7;&#x4F1A;&#x591A;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;current</li>
+</ol>
+</li>
+</ol>
+<h1 class="mume-header" id="imperativehandle-hook">ImperativeHandle HOOK</h1>
+
+<p>&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x79F0;<code>useImperativeHandle</code></p>
+<ol>
+<li>
+<p>&#x4F5C;&#x7528;</p>
+<ol>
+<li>
+<p>&#x7ED9;ref&#x5BF9;&#x8C61;&#x4E2D;&#x7684;current&#x5C5E;&#x6027;&#x8D4B;&#x503C;</p>
+</li>
+<li>
+<p>&#x8981;&#x662F;&#x53EA;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x8D4B;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x76F4;&#x63A5;.current = ?&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x3002;<br>
+&#x4F46;&#x662F;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EA;&#x8981;&#x4E00;&#x5237;&#x65B0;&#x5C31;&#x4F1A;&#x591A;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x8D4B;&#x7684;&#x503C;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#xFF0C;&#x4E14;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x6709;&#x4E9B;&#x590D;&#x6742;&#x3002;<br>
+&#x5728;&#x4F7F;&#x7528; = &#x8D4B;&#x503C;&#x6709;&#x65F6;&#x5C31;&#x6D6A;&#x8D39;&#x4E86;&#x6027;&#x80FD;&#x3002;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;useImperativeHandle&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x6570;&#x7EC4;&#x3002;<br>
+&#x53EA;&#x6709;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x6570;&#x7EC4;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x624D;&#x8FDB;&#x884C;&#x590D;&#x6742;&#x7684;&#x8FD0;&#x7B97;&#xFF0C;&#x91CD;&#x65B0;&#x7ED9;current&#x8D4B;&#x503C;&#x3002;<br>
+&#x5982;&#x679C;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#x4E0D;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x76F4;&#x63A5;&#x8D4B;&#x4E4B;&#x524D;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x503C;&#x3002;</p>
+</li>
+</ol>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;<br>
+&#x4F20;&#x9012;&#x4E09;&#x4E2A;&#x53C2;&#x6570;:</p>
+<ol>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;: &#x4E3A;ref&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;: &#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x5728;&#x521D;&#x59CB;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x8D4B;&#x7ED9;ref&#x7684;current&#x5C5E;&#x6027;<br>
+&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#xFF0C;&#x5219;&#x7EC4;&#x4EF6;&#x6BCF;&#x6B21;&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x3002;<br>
+<strong>&#x5E76;&#x4E14;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x65F6;&#x5F02;&#x6B65;&#x6267;&#x884C;</strong></li>
+<li>&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;: &#x6570;&#x636E;&#x4F9D;&#x8D56;&#xFF0C;&#x53EA;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x624D;&#x4F1A;&#x91CD;&#x65B0;&#x6267;&#x884C;</li>
+</ol>
+</li>
+<li>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useImperativeHandle<span class="token punctuation">,</span> useRef <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;ref&#x5BF9;&#x8C61;</span>
+    <span class="token keyword keyword-let">let</span> ref <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">useImperativeHandle</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FD4;&#x56DE;&#x503C;&#x7ED9;ref&#x4E2D;&#x7684;current&#x8D4B;&#x503C;</span>
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">{</span>
+            <span class="token function-variable function">a</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;ref&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token number">222</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x6807;&#x7B7E;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><p>&#x5148;&#x6253;&#x5370;222&#x540E;&#x6253;&#x5370;111&#xFF0C;&#x8BF4;&#x660E;useImperativeHandle&#x4F20;&#x5165;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x51FD;&#x6570;&#xFF0C;&#x662F;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x7684;</p>
+<ol start="4">
+<li>&#x6269;&#x5C55;
+<ol>
+<li>&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x884C;&#x95F4;&#x662F;&#x4E0D;&#x80FD;&#x5199;ref&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x4F7F;&#x7528;ref&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;ref&#x7684;&#x8F6C;&#x53D1;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;useImperativeHandle&#x7ED9;ref&#x8F6C;&#x53D1;&#x5230;&#x51FD;&#x6570;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x7684;ref&#x5BF9;&#x8C61;&#x7684;current&#x8D4B;&#x503C;</li>
+<li>&#x6BD4;&#x5982;&#x8D4B;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x7236;&#x7EC4;&#x4EF6;&#x73AF;&#x5883;&#x4E2D;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ref&#x4F7F;&#x7528;&#x8D4B;&#x7684;&#x51FD;&#x6570;&#x3002;</li>
+</ol>
+</li>
+</ol>
+<h1 class="mume-header" id="layouteffect-hook">LayoutEffect HOOK</h1>
+
+<p>&#x51FD;&#x6570;&#x540D;<code>useLayoutEffout</code></p>
+<ol>
+<li>
+<p>&#x4F5C;&#x7528;<br>
+&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x526F;&#x4F5C;&#x7528;<br>
+&#x5E38;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x771F;&#x5B9E;dom&#x7684;&#x64CD;&#x4F5C;</p>
+</li>
+<li>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;<br>
+&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0E;useEffect&#x65B9;&#x5F0F;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x4F20;&#x5165;&#x7684;&#x51FD;&#x6570;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x4E0D;&#x540C;&#x3002;<br>
+&#x5728;&#x771F;&#x5B9E;dom&#x6539;&#x53D8;&#x540E;&#xFF0C;&#x4F46;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x8FD8;&#x6CA1;&#x6709;&#x5237;&#x65B0;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x800C;useEffect&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x5237;&#x65B0;&#x540E;&#x6267;&#x884C;&#x3002;<br>
+&#x6240;&#x4EE5;&#x6B64;&#x65F6;&#x5904;&#x7406;&#x771F;&#x5B9E;&#x7684;dom&#xFF0C;&#x4E0D;&#x4F1A;&#x5F15;&#x53D1;&#x95EA;&#x70C1;&#x7684;&#x6548;&#x679C;&#x3002;<br>
+&#x5982;&#x679C;&#x4F7F;&#x7528;useEffect&#x5904;&#x7406;&#x771F;&#x5B9E;&#x7684;dom&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x95EA;&#x4E00;&#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x5207;&#x6362;&#x5230;&#x8BBE;&#x7F6E;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+</li>
+<li>
+<p>&#x793A;&#x8303;&#x4EE3;&#x7801;</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword module keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useLayoutEffect <span class="token punctuation">}</span></span> <span class="token keyword module keyword-from">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-function">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">useLayoutEffect</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">&quot;&#x526F;&#x4F5C;&#x7528;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x9500;&#x6BC1;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x5904;&#x7406;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x524D;&#x6267;&#x884C;(&#x7B2C;&#x4E00;&#x6B21;&#x9664;&#x5916;)</span>
+        <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>&#x6807;&#x7B7E;<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</pre><ol start="4">
+<li>&#x6CE8;&#x610F;&#x4E8B;&#x9879;(&#x6267;&#x884C;&#x987A;&#x5E8F;&#x7684;&#x95EE;&#x9898;)
+<ol>
+<li>
+<p>&#x5982;&#x679C;&#x591A;&#x4E2A;useLayoutEffect&#x8FDE;&#x7528;&#x3002;&#x5F53;&#x4F20;&#x5165;&#x7684;&#x5904;&#x7406;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x91CD;&#x65B0;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x6267;&#x884C;&#x8FD4;&#x56DE;&#x7684;&#x51FD;&#x6570;&#x3002;<br>
+&#x5E76;&#x4E14;&#x6240;&#x6709;&#x7684;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5B8C;&#xFF0C;&#x624D;&#x4F1A;&#x5904;&#x7406;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;useLayoutEffect&#x4E0E;useEffect&#x5171;&#x7528;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x4E3A;: useLayoutEffect&#x7684;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x3001;&#x5904;&#x7406;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x3001;useEffect&#x7684;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x3001;&#x5904;&#x7406;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+<li>
+<p>&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x5C31;&#x4E0E;useLayoutEffect&#x548C;useEffect&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x4F1A;&#x6309;&#x7167;&#x987A;&#x5E8F;&#xFF0C;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#x3002;&#x5E76;&#x4E0D;&#x662F;&#x5148;&#x6267;&#x884C;useLayoutEffect&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6267;&#x884C;useEffect&#x7684;&#x3002;</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>import * as maptalks from &apos;maptalks&apos;;<br>
+import API from &apos;@/api/map&apos;;<br>
+import {cameraMoveCenter, createPolygon, removeCommunity, WGS84TurnBd09Spot} from &apos;@/utils/mapHandle&apos;;</p>
+<p>const mapStyle = <code>t%3Aland%7Ce%3Ag.f%7Cv%3Aon%7Cc%3A%23e5e3e3ff%2Ct%3Asubway%7Ce%3Aall%7Cv%3Aoff%2Ct%3Amanmade%7Ce%3Al%7Cv%3Aoff%2Ct%3Amanmade%7Ce%3Ag%7Cv%3Aon%7Cc%3A%23cfcfcfff%2Ct%3Abuilding%7Ce%3Aall%7Cc%3A%23ffffffff%2Ct%3Awater%7Ce%3Aall%7Cc%3A%239cbfd1ff%2Ct%3Alocal%7Ce%3Aall%7Cc%3A%23b9d1b6ff%2Ct%3Aroad%7Ce%3Ag.f%7Cc%3A%23ffffffff%2Ct%3Aarterial%7Ce%3Ag.s%7Cc%3A%23e1e1e1ff%7Cw%3A1%2Ct%3Ahighway%7Ce%3Ag.s%7Cc%3A%23e1e1e1ff%2Ct%3Alocal%7Ce%3Ag.s%7Cv%3Aon%7Cc%3A%23e6e6e6ff%7Cw%3A0.7%2Ct%3Apoi%7Ce%3Al%7Cv%3Aoff%2Ct%3Aadministrative%7Ce%3Aall%7Cv%3Aoff%2Ct%3Ahighway%7Ce%3Al.t.f%7Cv%3Aon%7Cc%3A%23c1bebeff%2Ct%3Ahighway%7Ce%3Al.t.s%7Cv%3Aon%7Cc%3A%23ffffffff%7Cw%3A0.1%2Ct%3Aarterial%7Ce%3Al%7Cc%3A%23c4c4c4ff%2Ct%3Aarterial%7Ce%3Al.t.f%7Cc%3A%23b8b7b7ff%2Ct%3Aarterial%7Ce%3Al.t.s%7Cc%3A%23ffffffff%2Ct%3Aeducation%7Ce%3Aall%7Cc%3A%23ddddddff%2Ct%3Ahighway%7Ce%3Al.i%7Cv%3Aoff%2Ct%3Alocal%7Ce%3Ag%7Cc%3A%23fcfffbfc%2Ct%3Agreen%7Ce%3Ag.f%7Cc%3A%23b7ccb1ff</code>;<br>
+const jvWei:any = {<br>
+&quot;&#x7531;&#x7531;&#x793E;&#x533A;&quot;: [&quot;&#x81EA;&#x7531;&#x4E00;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x81EA;&#x7531;&#x4E8C;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x81EA;&#x7531;&#x56DB;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x81EA;&#x7531;&#x4E94;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x81EA;&#x7531;&#x516D;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x81EA;&#x7531;&#x4E03;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x81EA;&#x7531;&#x516B;&#x6751;&#x5C45;&#x59D4;&quot;, &quot;&#x524D;&#x7A0B;&#x5C45;&#x59D4;&quot;]<br>
+}</p>
+<p>// &#x521B;&#x5EFA;&#x5730;&#x56FE;<br>
+export function createMap():maptalks.Map {<br>
+const map = new maptalks.Map(&apos;map&apos;, {<br>
+center: WGS84TurnBd09Spot([121.5422657917126, 31.21570662768545]),<br>
+zoom: 15,<br>
+spatialReference: {<br>
+projection: &apos;baidu&apos;<br>
+},<br>
+baseLayer: new maptalks.TileLayer(&apos;base&apos;, {<br>
+&apos;urlTemplate&apos;: <code>https://www.maicedata.com/webapi/bdimg/api0/customimage/tile?&amp;x={x}&amp;y={y}&amp;z={z}&amp;udt=20181205&amp;scale=2&amp;styles=</code> + mapStyle,<br>
+&apos;subdomains&apos;: [0, 1, 2, 3, 4, 5, 6, 7, 8],<br>
+&apos;attribution&apos;: &apos;&#xA9; <a href="http://map.baidu.com/">Baidu</a>&apos;<br>
+}),<br>
+});<br>
+return map;<br>
+}</p>
+<p>// &#x521B;&#x5EFA;&#x5916;&#x56F4;&#x8499;&#x5C42;<br>
+export async function createMantle(map: maptalks.Map) {<br>
+const res = await API.getMengCengPolygon();<br>
+const data = res.data.result;</p>
+<pre class="language-text">// &#x521B;&#x5EFA;&#x8499;&#x5C42;&#x56FE;&#x5C42;
+const lable = new maptalks.VectorLayer(&quot;mantle&quot;).addTo(map);
+// &#x7ED8;&#x5236;&#x8499;&#x5C42;&#x591A;&#x8FB9;&#x5F62;
+for(let i = 0; i &lt; data.length; i ++) {
+    const arr = data[i].geometry.coordinates;
+    createPolygon(arr, {
+        &apos;polygonFill&apos; : &apos;rgb(250, 250, 250)&apos;,
+        &apos;polygonOpacity&apos; : 0.9,
+        // &#x542F;&#x7528;&#x5750;&#x6807;&#x8F6C;&#x6362;
+        transformation: &quot;WGS84TurnBd09Polygon&quot;
+    }, lable);
+}
+</pre>
+<p>}</p>
+<p>// &#x4FDD;&#x5B58;&#x521B;&#x5EFA;&#x7684;&#x793E;&#x533A;&#x9762;<br>
+let communityPolygonData:maptalks.MultiPolygon[] = [];<br>
+// &#x793E;&#x533A;&#x7684;&#x4E0B;&#x94BB;&#x529F;&#x80FD;<br>
+function communityRun(name:string, communityPolygon:maptalks.MultiPolygon, map: maptalks.Map) {<br>
+// &#x76F8;&#x673A;&#x79FB;&#x52A8;&#x5230;&#x67D0;&#x4E2A;&#x9762;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;&#xFF08;&#x793E;&#x533A;&#xFF09;<br>
+cameraMoveCenter(communityPolygon, 16, map);<br>
+// &#x6E05;&#x7A7A;&#x793E;&#x533A;&#x9762;<br>
+removeCommunity(communityPolygonData);<br>
+// &#x521B;&#x5EFA;&#x5C45;&#x59D4;&#x56FE;&#x5C42;<br>
+createCommittee(name, map);<br>
+}<br>
+// &#x83B7;&#x53D6;&#x793E;&#x533A;&#x56FE;&#x5C42;&#x9762;&#x6570;&#x636E;<br>
+async function getCommunityData() {<br>
+const res = await API.getSheQuPolygon();<br>
+return res.data.result;<br>
+}<br>
+// &#x521B;&#x5EFA;&#x793E;&#x533A;&#x56FE;&#x5C42;<br>
+export async function createCommunity(map: maptalks.Map) {<br>
+const data = await getCommunityData();<br>
+// &#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x4E4B;&#x524D;&#xFF0C;&#x91CD;&#x65B0;&#x4FDD;&#x5B58;<br>
+communityPolygonData = [];</p>
+<pre class="language-text">// &#x521B;&#x5EFA;&#x56FE;&#x5C42;
+const lable = new maptalks.VectorLayer(&quot;community&quot;).addTo(map);
+// &#x7ED8;&#x5236;&#x591A;&#x8FB9;&#x5F62;
+for(let i = 0; i &lt; data.length; i ++) {
+    const arr = data[i].geometry.coordinates;
+    const polygon = createPolygon(arr, {
+        polygonFill: &quot;violet&quot;,
+        polygonOpacity: 0.6,
+        // &#x542F;&#x7528;&#x5750;&#x6807;&#x8F6C;&#x6362;
+        transformation: &quot;WGS84TurnBd09Polygon&quot;,
+        onClick: () =&gt; {
+            communityRun(data[i].name, communityPolygonData[i], map);
+        }
+    }, lable);
+    // &#x4FDD;&#x5B58;&#x793E;&#x533A;&#x9762;&#x6570;&#x636E;&#xFF0C;&#x4FBF;&#x4E8E;&#x6E05;&#x9664;
+    communityPolygonData.push(polygon);
+}
+</pre>
+<p>}</p>
+<p>// &#x83B7;&#x53D6;&#x5C45;&#x59D4;&#x9762;&#x6570;&#x636E;<br>
+async function getCommitteeData(communityName: string) {<br>
+const res = await API.getJvWeiPolygon();<br>
+// &#x7B5B;&#x9009;&#x9762;&#x6570;&#x636E;<br>
+const arr:any[] = [];<br>
+const committe = res.data.result;<br>
+const committeNames:string[] = jvWei[communityName];<br>
+committe.forEach((k:any) =&gt; {<br>
+if(committeNames.indexOf(<a href="http://k.name">k.name</a>) === -1) return;<br>
+arr.push(k);<br>
+})<br>
+return arr;<br>
+}<br>
+// &#x521B;&#x5EFA;&#x5C45;&#x59D4;&#x56FE;&#x5C42;<br>
+export async function createCommittee(communityName: string, map: maptalks.Map) {<br>
+const data = await getCommitteeData(communityName)</p>
+<pre class="language-text">// &#x521B;&#x5EFA;&#x56FE;&#x5C42;
+const lable = new maptalks.VectorLayer(&quot;mantle&quot;).addTo(map);
+// &#x7ED8;&#x5236;&#x591A;&#x8FB9;&#x5F62;
+for(let i = 0; i &lt; data.length; i ++) {
+    const arr = data[i].geometry.coordinates;
+    createPolygon(arr, {
+        polygonFill: &quot;violet&quot;,
+        polygonOpacity: 0.6,
+        // &#x542F;&#x7528;&#x5750;&#x6807;&#x8F6C;&#x6362;
+        transformation: &quot;WGS84TurnBd09Polygon&quot;,
+        onClick: () =&gt; {
+            console.log(i);
+        }
+    }, lable);
+}
+</pre>
+<p>}</p>
+<p>/**</p>
+<ul>
+<li>&#x5730;&#x56FE;&#x5904;&#x7406;</li>
+<li>liushanzhuang<br>
+*/<br>
+import * as maptalks from &apos;maptalks&apos;;<br>
+import { Layer, MultiPolygon } from &quot;maptalks&quot;;</li>
+</ul>
+<p>interface Config {<br>
+&apos;lineColor&apos;?: string<br>
+&apos;lineWidth&apos;?: number,<br>
+&apos;polygonFill&apos;?: string,<br>
+&apos;polygonOpacity&apos;?: number,<br>
+&quot;transformation&quot;?: string,<br>
+&apos;onClick&apos;?: Function<br>
+}</p>
+<p>// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9762;<br>
+export function createPolygon(polygonData:number[][][][] | number[][][], config:Config, layer: Layer):MultiPolygon {<br>
+// &#x56E0;&#x4E3A;&#x6709;&#x7684;&#x9762;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x4E24;&#x4E2A;&#x9762;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x8FDB;&#x884C;&#x5BB9;&#x9519;&#x5904;&#x7406;&#xFF0C;&#x7EDF;&#x4E00;&#x6309;&#x7167;&#x591A;&#x9762;&#x8FDB;&#x884C;&#x7ED8;&#x5236;<br>
+let data:number[][][][] = [];<br>
+// @ts-ignore<br>
+if(typeof polygonData[0][0][0] !== &quot;object&quot;) data = [polygonData]<br>
+// @ts-ignore<br>
+else data = polygonData;</p>
+<pre class="language-text">// &#x5224;&#x65AD;&#x662F;&#x4E0D;&#x662F;&#x542F;&#x7528;&#x4E86;&#x5750;&#x6807;&#x8F6C;&#x6362;
+if(config.transformation === &quot;WGS84TurnBd09Polygon&quot;) {
+    data = WGS84TurnBd09Polygon(data)
+}
+
+const polygon = new maptalks.MultiPolygon(data, {
+    symbol: {
+        &apos;lineColor&apos;: config.lineColor || &apos;#123456&apos;,
+        &apos;lineWidth&apos;: config.lineWidth || 0,
+        &apos;polygonFill&apos;: config.polygonFill || &apos;#123456&apos;,
+        &apos;polygonOpacity&apos;: config.polygonOpacity || 1
+    }
+})
+polygon.addTo(layer);
+polygon.on(&quot;click&quot;, () =&gt; {
+    if(config.onClick) config.onClick();
+})
+return polygon;
+</pre>
+<p>}</p>
+<p>// &#x76F8;&#x673A;&#x79FB;&#x52A8;&#x5230;&#x67D0;&#x4E2A;&#x9762;&#x6570;&#x636E;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;<br>
+export function cameraMoveCenter(polygon:maptalks.MultiPolygon, zoom:number, map:maptalks.Map) {<br>
+const center = polygon.getCenter();<br>
+const centerLngLat = [center.x, center.y];<br>
+cameraMove(centerLngLat, zoom, map);<br>
+}<br>
+// &#x76F8;&#x673A;&#x79FB;&#x52A8;<br>
+function cameraMove(center:number[], zoom:number, map:maptalks.Map) {<br>
+map.animateTo({<br>
+center: center,<br>
+zoom: zoom,<br>
+pitch: 0,<br>
+bearing: 0<br>
+}, {<br>
+duration: 400<br>
+});<br>
+}</p>
+<p>// &#x6E05;&#x7A7A;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x9762;&#x6570;&#x636E;<br>
+export function removeCommunity(arr:maptalks.MultiPolygon[]) {<br>
+arr.forEach((k) =&gt; {<br>
+k.remove();<br>
+})<br>
+}</p>
+<p>const coordtransform = ( () =&gt; {<br>
+//&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x5E38;&#x91CF;<br>
+const x_PI = 3.14159265358979324 * 3000.0 / 180.0;<br>
+const PI = 3.1415926535897932384626;<br>
+const a = 6378245.0;<br>
+const ee = 0.00669342162296594323;<br>
+/**<br>
+* &#x767E;&#x5EA6;&#x5750;&#x6807;&#x7CFB; (BD-09) &#x4E0E; &#x706B;&#x661F;&#x5750;&#x6807;&#x7CFB; (GCJ-02)&#x7684;&#x8F6C;&#x6362;<br>
+* &#x5373; &#x767E;&#x5EA6; &#x8F6C; &#x8C37;&#x6B4C;&#x3001;&#x9AD8;&#x5FB7;<br>
+* @param bd_lon<br>
+* @param bd_lat<br>
+* @returns {*[]}<br>
+*/<br>
+const bd09togcj02 = function bd09togcj02(bd_lon:number, bd_lat:number) {<br>
+const x = bd_lon - 0.0065;<br>
+const y = bd_lat - 0.006;<br>
+const z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * x_PI);<br>
+const theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_PI);<br>
+const gg_lng = z * Math.cos(theta);<br>
+const gg_lat = z * Math.sin(theta);<br>
+return [gg_lng, gg_lat]<br>
+};</p>
+<pre class="language-text">/**
+ * &#x706B;&#x661F;&#x5750;&#x6807;&#x7CFB; (GCJ-02) &#x4E0E;&#x767E;&#x5EA6;&#x5750;&#x6807;&#x7CFB; (BD-09) &#x7684;&#x8F6C;&#x6362;
+ * &#x5373;&#x8C37;&#x6B4C;&#x3001;&#x9AD8;&#x5FB7; &#x8F6C; &#x767E;&#x5EA6;
+ * @param lng
+ * @param lat
+ * @returns {*[]}
+ */
+const gcj02tobd09 = function gcj02tobd09(lng:number, lat:number) {
+    const z = Math.sqrt(lng * lng + lat * lat) + 0.00002 * Math.sin(lat * x_PI);
+    const theta = Math.atan2(lat, lng) + 0.000003 * Math.cos(lng * x_PI);
+    const bd_lng = z * Math.cos(theta) + 0.0065;
+    const bd_lat = z * Math.sin(theta) + 0.006;
+    return [bd_lng, bd_lat]
+};
+
+/**
+ * WGS84&#x8F6C;GCj02
+ * @param lng
+ * @param lat
+ * @returns {*[]}
+ */
+const wgs84togcj02 = function wgs84togcj02(lng:number, lat:number) {
+    if (out_of_china(lng, lat)) {
+        return [lng, lat]
+    } else {
+        let dlat = transformlat(lng - 105.0, lat - 35.0);
+        let dlng = transformlng(lng - 105.0, lat - 35.0);
+        const radlat = lat / 180.0 * PI;
+        let magic = Math.sin(radlat);
+        magic = 1 - ee * magic * magic;
+        const sqrtmagic = Math.sqrt(magic);
+        dlat = (dlat * 180.0) / ((a * (1 - ee)) / (magic * sqrtmagic) * PI);
+        dlng = (dlng * 180.0) / (a / sqrtmagic * Math.cos(radlat) * PI);
+        const mglat = lat + dlat;
+        const mglng = lng + dlng;
+        return [mglng, mglat]
+    }
+};
+
+/**
+ * GCJ02 &#x8F6C;&#x6362;&#x4E3A; WGS84
+ * @param lng
+ * @param lat
+ * @returns {*[]}
+ */
+const gcj02towgs84 = function gcj02towgs84(lng:number, lat:number) {
+    if (out_of_china(lng, lat)) {
+        return [lng, lat]
+    } else {
+        let dlat = transformlat(lng - 105.0, lat - 35.0);
+        let dlng = transformlng(lng - 105.0, lat - 35.0);
+        const radlat = lat / 180.0 * PI;
+        let magic = Math.sin(radlat);
+        magic = 1 - ee * magic * magic;
+        const sqrtmagic = Math.sqrt(magic);
+        dlat = (dlat * 180.0) / ((a * (1 - ee)) / (magic * sqrtmagic) * PI);
+        dlng = (dlng * 180.0) / (a / sqrtmagic * Math.cos(radlat) * PI);
+        const mglat = lat + dlat;
+        const mglng = lng + dlng;
+        return [lng * 2 - mglng, lat * 2 - mglat]
+    }
+};
+
+const transformlat = function transformlat(lng:number, lat:number) {
+    let ret = -100.0 + 2.0 * lng + 3.0 * lat + 0.2 * lat * lat + 0.1 * lng * lat + 0.2 * Math.sqrt(Math.abs(lng));
+    ret += (20.0 * Math.sin(6.0 * lng * PI) + 20.0 * Math.sin(2.0 * lng * PI)) * 2.0 / 3.0;
+    ret += (20.0 * Math.sin(lat * PI) + 40.0 * Math.sin(lat / 3.0 * PI)) * 2.0 / 3.0;
+    ret += (160.0 * Math.sin(lat / 12.0 * PI) + 320 * Math.sin(lat * PI / 30.0)) * 2.0 / 3.0;
+    return ret
+};
+
+const transformlng = function transformlng(lng:number, lat:number) {
+    let ret = 300.0 + lng + 2.0 * lat + 0.1 * lng * lng + 0.1 * lng * lat + 0.1 * Math.sqrt(Math.abs(lng));
+    ret += (20.0 * Math.sin(6.0 * lng * PI) + 20.0 * Math.sin(2.0 * lng * PI)) * 2.0 / 3.0;
+    ret += (20.0 * Math.sin(lng * PI) + 40.0 * Math.sin(lng / 3.0 * PI)) * 2.0 / 3.0;
+    ret += (150.0 * Math.sin(lng / 12.0 * PI) + 300.0 * Math.sin(lng / 30.0 * PI)) * 2.0 / 3.0;
+    return ret
+};
+
+/**
+ * &#x5224;&#x65AD;&#x662F;&#x5426;&#x5728;&#x56FD;&#x5185;&#xFF0C;&#x4E0D;&#x5728;&#x56FD;&#x5185;&#x5219;&#x4E0D;&#x505A;&#x504F;&#x79FB;
+ * @param lng
+ * @param lat
+ * @returns {boolean}
+ */
+const out_of_china = function out_of_china(lng:number, lat:number) {
+    // &#x7EAC;&#x5EA6;3.86~53.55,&#x7ECF;&#x5EA6;73.66~135.05
+    return !(lng &gt; 73.66 &amp;&amp; lng &lt; 135.05 &amp;&amp; lat &gt; 3.86 &amp;&amp; lat &lt; 53.55);
+};
+
+return {
+    bd09togcj02: bd09togcj02,
+    gcj02tobd09: gcj02tobd09,
+    wgs84togcj02: wgs84togcj02,
+    gcj02towgs84: gcj02towgs84
+}
+</pre>
+<p>} )()</p>
+<p>// &#x9762;&#x6570;&#x636E;&#x7684;&#x5750;&#x6807;&#x8F6C;&#x6362;&#xFF08;WGS84&#x8F6C;&#x767E;&#x5EA6;&#xFF09;<br>
+function WGS84TurnBd09Polygon(d:number[][][][]):number[][][][] {<br>
+const arr:number[][][][] = [];<br>
+for(let k = 0; k &lt; d.length; k ++) {<br>
+const data = d[k];<br>
+const _data = [];<br>
+for(let i = 0; i &lt; data.length; i ++) {<br>
+const _arr:number[][] = [];<br>
+for(let j = 0; j &lt; data[i].length; j ++) {<br>
+const bd09 = WGS84TurnBd09Spot(data[i][j]);<br>
+_arr.push(bd09);<br>
+}<br>
+_data.push(_arr);<br>
+}<br>
+arr.push(_data);<br>
+}<br>
+return arr;<br>
+}</p>
+<p>// &#x70B9;&#x6570;&#x636E;&#x7684;&#x5750;&#x6807;&#x8F6C;&#x6362;&#xFF08;WGS84&#x8F6C;&#x767E;&#x5EA6;&#xFF09;<br>
+export function WGS84TurnBd09Spot(arr:number[]):number[] {<br>
+if(typeof arr != &quot;object&quot;)  return [];</p>
+<pre class="language-text">// &#x7ECF;&#x7EAC;&#x5EA6;&#x8F6C;&#x5316;
+// WGS84&#x8F6C;GCj02
+const cj02 = coordtransform.wgs84togcj02(arr[0], arr[1]);
+// GCj02&#x8F6C;&#x767E;&#x5EA6;
+const bd09 = coordtransform.gcj02tobd09(cj02[0], cj02[1]);
+if( isNaN(bd09[0]) || isNaN(bd09[1]) ) return [];
+return bd09
+</pre>
+<p>}</p>
+<p>import main from &apos;@/store/main&apos;;<br>
+import { useMount } from &apos;ahooks&apos;;<br>
+import React, { FC, useContext } from &apos;react&apos;;<br>
+import &apos;./index.less&apos;;<br>
+import { createCommunity, createMantle, createMap } from &apos;./logic&apos;;</p>
+<p>const Map: FC = () =&gt; {<br>
+const { mapStore } = useContext(main);<br>
+useMount(async () =&gt; {<br>
+// &#x521B;&#x5EFA;&#x5730;&#x56FE;<br>
+const map = createMap();<br>
+mapStore.init(map);</p>
+<pre class="language-text">// &#x7ED8;&#x5236;&#x5916;&#x56F4;&#x8499;&#x5C42;
+createMantle(map);
+createCommunity(map);
+</pre>
+<p>});<br>
+return </p><div id="map" classname="map"></div>;<br>
+};<br>
+export default Map;<p></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

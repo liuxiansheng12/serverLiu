@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1.&#x8BBE;&#x7F6E;style</title>
+      <title>1.&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x6253;&#x5305;&#x914D;&#x7F6E;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -261,57 +261,75 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h4 class="mume-header" id="style%E4%BB%8Evue%E4%B8%AD%E5%8F%96%E5%80%BC%E7%9A%84%E6%96%B9%E5%BC%8F">style&#x4ECE;vue&#x4E2D;&#x53D6;&#x503C;&#x7684;&#x65B9;&#x5F0F;</h4>
-
-<ol>
+      <ol>
 <li>
-<p>css&#x6837;&#x5F0F;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x540D;&#x548C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x3002;</p>
+<p>vue&#x5DE5;&#x4F5C;&#x7684;&#x5165;&#x53E3;&#x662F;: <code>new Vue()</code>&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x6A21;&#x677F;&#x7684;&#x89E3;&#x6790;&#x4E0E;&#x66FF;&#x6362;</p>
 </li>
 <li>
-<p>&#x83B7;&#x53D6;&#x65B9;&#x5F0F;</p>
+<p>&#x9700;&#x8981;&#x501F;&#x52A9;&#x7684;&#x63D2;&#x4EF6;</p>
 <ol>
-<li>&#x628A;&#x6240;&#x6709;&#x6837;&#x5F0F;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x83B7;&#x53D6;
+<li><code>vue</code>: &#x63D0;&#x4F9B;vue&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li><code>vue-loader&#x3001;vue-template-compiler</code>: &#x7528;&#x4E8E;&#x89E3;&#x6790;<code>.vue</code>&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;
 <ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>sty: &quot;color: #f0f; &quot;</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&quot;sty&quot;</code></li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>:style=&quot;a &amp;&amp; sty&quot;</code>
+<li>&#x5982;&#x679C;&#x4E0D;&#x6D89;&#x53CA;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x5F15;&#x5165;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x63D2;&#x4EF6;&#x4E0D;&#x9700;&#x8981;&#x4E0B;&#x8F7D;&#x3002;
 <ol>
-<li>&#x628A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;style</li>
+<li>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x4EE3;&#x7801;</li>
+</ol>
+</li>
+<li><strong>&#x539F;&#x7406;(vue&#x6A21;&#x5757;&#x5316;&#x5F00;&#x53D1;&#x7684;&#x539F;&#x7406;)</strong>
+<ol>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x4E0D;&#x8BA4;&#x8BC6;&#x4EE5;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x65F6;webpack&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x6253;&#x5305;
+<ol>
+<li>&#x501F;&#x52A9;loader&#xFF0C;&#x628A;&#x4EE5;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x66FF;&#x6362;</li>
+</ol>
+</li>
+<li>&#x628A;&#x4EE5;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x89E3;&#x6790;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x5BF9;&#x8C61;</li>
+<li>&#x5C31;&#x662F;Vue&#x4F20;&#x53C2;&#x5BF9;&#x8C61;&#x4E2D;components&#x5C5E;&#x6027;&#xFF0C;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x5BF9;&#x8C61;</li>
+<li>&#x5F53;&#x4F7F;&#x7528;<code>import&#x6216;&#x8005;request</code>&#x5F15;&#x5165;&#x4EE5;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x5C31;&#x662F;&#x6A21;&#x5757;&#x5BF9;&#x8C61;
+<ol>
+<li>loader&#x5BF9;&#x4EE5;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4E86;&#x91CD;&#x5199;</li>
+<li>&#x628A;&#x539F;&#x5148;&#x7684;&#x4EE3;&#x7801;&#x89E3;&#x6790;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x6A21;&#x5757;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x629B;&#x51FA;</li>
+<li>&#x6BD4;&#x5982;: <code>const obj = {}; export default obj;</code></li>
+<li>&#x521D;&#x6B21;&#x5F15;&#x5165;&#x4EE5;vue&#x4E3A;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x8FD0;&#x884C;&#x7684;&#x5C31;&#x662F;&#x66FF;&#x6362;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5F97;&#x5230;&#x6A21;&#x5757;&#x5BF9;&#x8C61;</li>
+<li>&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x662F;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x53D6;&#x6A21;&#x5757;&#x5BF9;&#x8C61;</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>&#x628A;&#x6837;&#x5F0F;&#x5B9A;&#x4E49;&#x6210;&#x5BF9;&#x8C61;&#x683C;&#x5F0F;(&#x5E38;&#x7528;)&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>sty: {color: &apos;#f0f&apos;, fontSize: &apos;14px&apos; }</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&quot;[ sty, a ]&quot;</code>
-<ol>
-<li>&#x53EF;&#x4EE5;&#x53D6;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6837;&#x5F0F;&#x5BF9;&#x8C61;</li>
-</ol>
-</li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>v-bind:style=&quot;[ a &amp;&amp; sty, b ]&quot;</code></li>
-</ol>
-</li>
-<li>&#x6837;&#x5F0F;&#x53EA;&#x5B9A;&#x4E49;&#x952E;&#x503C;&#x5BF9;&#x4E2D;&#x7684;&#x952E;&#x503C;&#xFF0C;&#x952E;&#x540D;(&#x6837;&#x5F0F;&#x540D;)&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x8BBE;&#x7F6E;
-<ol>
-<li>&#x6BD4;&#x5982;: &#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x4E3A;<code>color: &quot;#f0f&quot;, fontSize: &apos;16px&apos;</code></li>
-<li>&#x53D6;&#x503C;&#x65B9;&#x5F0F;: <code>v-bind:style=&apos;{color: color, fontSize: fontSize}&apos;</code></li>
-<li>&#x8FD0;&#x884C;&#x8868;&#x8FBE;&#x5F0F;: <code>:style=&apos;{color: a &amp;&amp; color, fontSize: fontSize}&apos;</code></li>
 </ol>
 </li>
 </ol>
 </li>
 <li>
-<p><code>:style</code>&#x53EF;&#x4EE5;&#x4E0E;<code>style</code>&#x5171;&#x5B58;&#xFF0C;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x8986;&#x76D6;&#x73B0;&#x8C61;&#x3002;&#x4F46;&#x662F;<code>:style</code>&#x4F1A;&#x66FF;&#x6362;<code>style</code>&#x4E2D;&#x76F8;&#x540C;&#x7684;&#x6837;&#x5F0F;</p>
-</li>
-<li>
-<p>&#x6BCF;&#x4E00;&#x4E2A;vue&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;style&#x6837;&#x5F0F;&#xFF0C;&#x662F;&#x4F1A;&#x5BF9;&#x5168;&#x5C40;&#x8D77;&#x4F5C;&#x7528;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53EA;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x7684;vue&#x6587;&#x4EF6;</p>
-<ol>
-<li>&#x6700;&#x7EC8;&#x6253;&#x5305;&#x5F62;&#x6210;&#x884C;&#x95F4;&#x6807;&#x7B7E;<code>style</code>&#x4E2D;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x4F5C;&#x7528;&#x4E8E;&#x5168;&#x5C40;</li>
-</ol>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4EE3;&#x7801;</p>
 </li>
 </ol>
-
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword keyword-const">const</span> <span class="token maybe-class-name">VueLoaderPlugin</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;vue-loader/lib/plugin&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span><span class="token property-access">exports</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    entry<span class="token operator">:</span> <span class="token string">&quot;./src/index.js&quot;</span><span class="token punctuation">,</span>
+    mode<span class="token operator">:</span> <span class="token string">&quot;development&quot;</span><span class="token punctuation">,</span>
+    output<span class="token operator">:</span> <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> __dirname <span class="token operator">+</span> <span class="token string">&quot;/dist&quot;</span><span class="token punctuation">,</span>
+        filename<span class="token operator">:</span> <span class="token string">&quot;index.js&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token operator">:</span> <span class="token punctuation">{</span>
+        rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.vue$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+                use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;vue-loader&quot;</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword keyword-new">new</span> <span class="token class-name">VueLoaderPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+        alias<span class="token operator">:</span>  <span class="token punctuation">{</span>
+            vue<span class="token operator">:</span> <span class="token string">&quot;vue/dist/vue.js&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre>
       </div>
       
       
